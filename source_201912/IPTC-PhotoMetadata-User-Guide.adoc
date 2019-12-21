@@ -11,8 +11,8 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
 :version-label: December 2019
-:revnumber: rev 1
-:revremark: Revised 2019-12-13
+:revnumber: rev 1a
+:revremark: Revised 2019-12-21
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -856,7 +856,7 @@ A globally unique identifier (GUID) for the digital image. The identifier, may b
 
 ==== Introduction
 
-You can use the IPTC Image Region to record details for designated areas within a still photo using rectangles, circles and polygons. You can give each image region a name and an identifier (if desired) and note what type of role (see link:http://cv.iptc.org/newscodes/imageregionrole/[IPTC's CV]) the region plays and the type of content (see link:http://cv.iptc.org/newscodes/imageregiontype/[IPTC's CV]) within that region.
+You can use the IPTC Image Region to record details for designated areas within a still photo using rectangles, circles and polygons. You can give each image region a name and an identifier (if desired) and note what type of role (see link:http://cv.iptc.org/newscodes/imageregionrole/[IPTC's CV]) the region plays and the type of content (see link:http://cv.iptc.org/newscodes/imageregiontype/[IPTC's CV]) within that region. (The use of both IPTC CVs is recommended but not mandatory.)
 
 There are many times when you need to identify people within an image. This can be difficult especially when all the people don’t line up in nice ‘left-to-right’ rows. The Image Region feature gives you a way to: isolate each person’s face or body in an image (using a rectangle, circle or polygon), give it an identifier and name, indicate that the marked area is a link:http://cv.iptc.org/newscodes/imageregionrole/subjectArea[subject area] and indicate that the type of content is a link:http://cv.iptc.org/newscodes/imageregiontype/human[human]. Finally add the IPTC property link:https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#person-shown-in-the-image[Person Shown in Image] to the Image Region with the name of the framed person.
 
