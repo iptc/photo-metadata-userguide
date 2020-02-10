@@ -16,11 +16,14 @@ These top level directories are used:
 Install asciidoctor by following the instructions for your environment at https://asciidoctor.org/.
 
 Run the script:
-    Go to the directory of the version of the User Guide
-    Run
+
+* Go to the directory of the version of the User Guide
+* Run
+
     ./asciidoctor-to-html.sh - on Linux / MacOS
     ./asciidoctor-to-html.cmd - on Windows
-    (Note: in these script files in the file name of the output file - index_{version}.html - the version should be adjusted to the one of this directory.)
+
+(Note: in these script files in the file name of the output file - index_{version}.html - the version should be adjusted to the one of this directory.)
 
 The script should create a file at `../site/index_{version}.html`.
 
