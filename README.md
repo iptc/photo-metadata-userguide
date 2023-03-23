@@ -20,10 +20,9 @@ https://asciidoctor.org/.
 
 Run the script:
 
-* Go to the `source` directory
 * Run
 
     ./asciidoctor-to-html.sh - on Linux / MacOS
     ./asciidoctor-to-html.cmd - on Windows
 
-The script should create a file at `../site/index.html`.
+The script should create a file at `site/index.html`.
