@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: February 2020
-:revnumber: rev 1b
-:revremark: Revised 2020-02-10
+:version-label: March 2023
+:revnumber:
+:revremark: Revised 2023-03-23
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -841,13 +841,7 @@ These fields together define the maximum image size in pixel dimensions availabl
 
 ==== Digital Source Type
 
-This field indicates the media source from which the digital image was created. The values are taken from a controlled list, available at http://cv.iptc.org/newscodes/digitalsourcetype, which includes these values:
-
-* Original digital capture of a real life scene: _born digital images_
-* Digitised from a negative on film: _from bw or colour negatives_
-* Digitised from a positive on film: _from slides or transparencies_
-* Digitised from a print on non-transparent medium: _from photographic prints or flat artworks_
-* Created by software: _from computer or software generated images including designs, illustrations, and composite images_
+This field indicates the media source from which the digital image was created. The values are taken from a controlled list, available at http://cv.iptc.org/newscodes/digitalsourcetype. See <<digitalsourcetype,Guidance for using Digital Source Type>> in this document for more details.
 
 ==== Digital Image GUID
 
@@ -1208,6 +1202,167 @@ Each of these tools will allow you to edit fields a slightly different way. Usua
 Your site's digital asset management system, content management system, image management system or content delivery network may be stripping out embedded metadata fields. Some systems do this with the best of intentions, thinking that it will save a few bytes of bandwidth, but stripping out metadata actually infringes on the copyright holders' rights and may even be illegal in some countries.
 
 You should use a DAM and CMS that respects and conserves IPTC and XMP embedded metadata, and ensure that any configuration options that strip out metadata are turned off. Also you may need to look at image cropping and manipulation plugins for your CMS - for example the ImageMagick WordPress library retains embedded metadata, but some others strip it out.
+
+=== [[digitalsourcetype]]Guidance for using Digital Source Type
+
+The DigitalSourceType property and its corresponding controlled vocabulary https://cv.iptc.org/newscodes/digitalsourcetype
+were originally added to the IPTC Photo Metadata Standard in 2008. The original goal was to represent the various
+sources of a digital image such as a scan from print, a film negative or from positive film (also known as slide,
+reversal or transparency film), or a direct capture from a digital camera.
+
+In the first version of the vocabulary, there was a single term, "Created by Software" (softwareImage) which covered
+all forms of image created using a computer.
+
+In 2022, with the proliferation of generative AI and "synthetic media" systems, the vocabulary was extended to
+include a more complete list of the different ways in which content might be created by or with the help of computer
+software.
+
+The vocabulary can also be used to describe other media we created the definitions so that they can equally apply to
+video, audio or text.
+
+This table describes each of the terms and definitions, along with some examples of the kinds of content intended to
+be tagged with each category:
+
+[cols="1h,3",options="header"]
+|===
+|Term ID |digitalCapture
+|Name (en) |Original digital capture sampled from real life
+|Description (en) |The digital media is captured from a real-life source using a digital camera or digital recording device
+|Image example |Digital photo taken using a digital SLR or smartphone camera
+|Video example |Digital video taken using a digital film, video or smartphone camera
+|Audio example |Digital recording via microphone
+|Text example |Original authored or transcribed text
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | negativeFilm
+|Name (en) | Digitised from a negative on film
+|Description (en) | The digital image was digitised from a negative on film on any other transparent medium
+|Image example | Digital photo scanned from a photographic negative
+|Video example | Film scanned from a moving image negative
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | positiveFilm
+|Name (en) | Digitised from a positive on film
+|Description (en) | The digital image was digitised from a positive on a transparency on or any other transparent medium
+|Image example | Digital photo scanned from a photographic transparency
+|Video example | Film scanned from a moving image positive
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | print
+|Name (en) | Digitised from a print on non-transparent medium
+|Description (en) | The digital image was digitised from an image printed on a non-transparent medium
+|Image example | Digital photo scanned from a photographic print
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | minorHumanEdits
+|Name (en) | Original media with minor human edits
+|Description (en) | Minor augmentation or correction by a human, such as a digitally-retouched photo used in a magazine
+|Note |	Also covers digitally edited video, audio and text content
+|Image example | A digitally-retouched photo used in a magazine
+|Video example | Video camera recording, manipulated digitally 
+|Audio example | Original audio with minor edits (e.g. eliminate breaks)
+|Text example | Original text with minor edits
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | compositeCapture
+|Name (en) | Composite of captured elements
+|Description (en) | Mix or composite of several elements that are all captures of real life
+|Image example | A composite image created by a digital artist in Photoshop based on several source images
+|Video example | Edited sequence or composite of video shots
+|Audio example | Mixdown of several audio tracks
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | algorithmicallyEnhanced
+|Name (en) | Algorithmic enhancement
+|Description (en) | Minor augmentation or correction by algorithm
+|Image example | A photo that has been digitally enhanced using a mechanism such as Google Photos' "denoise" feature
+|Video example | Re-timing or other algorithmic enhancement
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | dataDrivenMedia
+|Name (en) | Data-driven media
+|Description (en) | Digital media representation of data via human programming or creativity
+|Image example a| * Data visualisation as a still image
+* A representation of a distant galaxy created by analysing the outputs of a deep-space telescope (as opposed to a regular camera)
+* An infographic created using a computer drawing tool such as Adobe Illustrator or AutoCAD
+|Video example | Data visualization of time-based events
+|Audio example | Audio generated from data
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | digitalArt
+|Name (en) | Digital art
+|Description (en) | Media created by a human using digital tools
+|Image example | A cartoon drawn by an artist into a digital tool using a digital pencil, a tablet and a drawing package such as Procreate or Affinity Designer (4)
+|Video example | A scene from a film/movie created using Computer Graphic Imagery (CGI)
+|Audio example | Electronic music composition using purely synthesised sounds
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | virtualRecording
+|Name (en) | Virtual recording
+|Description (en)  | Live recording of virtual event based on synthetic and optionally captured elements
+|Image example | Screenshot of a virtual event such as a virtual reality scene or a Zoom meeting
+|Video example a| * A recording of a computer-generated sequence, e.g. from a video game
+* A recording of a Zoom meeting
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | compositeSynthetic
+|Name (en) | Composite including synthetic elements
+|Description (en) | Mix or composite of several elements, at least one of which is synthetic 
+|Image example | A composite image created by a digital artist in Photoshop based on several source images, at least one of which is synthetic
+|Video example a| * Movie production using a combination of live-action and CGI content, e.g. using Unreal engine to generate backgrounds
+* A capture of an augmented reality interaction with computer imagery superimposed on a camera video, e.g. someone playing Pokemon Go
+|Audio example | Electronic music composition mixing sound samples and synthesised sounds
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | trainedAlgorithmicMedia
+|Name (en) | Trained algorithmic media
+|Description (en) | Digital media created algorithmically using a model derived from sampled content
+|Image example a| * Image based on deep learning from a series of reference examples (training data)
+* "Text to image" generation using a text prompt to feed an algorithm using a trained model to create a synthetic image. 
+|Video example a|* A "deepfake" video using a combination of a real actor and a trained model.
+* A video created using a text prompt and an algorithm using a trained model to create a synthetic video, with or without audio.
+|Audio example | A “speech-to-speech” generated audio clip created using a combination of a real actor and an AI model.
+|Text example | A GPT-3 generated news story
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | algorithmicMedia
+|Name (en) | Pure algorithmic media
+|Description (en) | Media created purely by an algorithm not based on any sampled training data, e.g. an image created by software using a mathematical formula
+|Image example | A purely computer-generated image such as a pattern of pixels generated mathematically e.g. a Mandelbrot set or fractal diagram
+|Video example | A purely computer-generated moving image such as a pattern of pixels generated mathematically
+|===
+
+[cols="1h,3",options="header"]
+|===
+|Term ID | softwareImage - RETIRED
+|Name (en) | Created by software
+|Description (en) | The digital image was created by computer software
+|Note | RETIRED. Use trainedAlgorithmicMedia or algorithmicMedia instead.
+|===
 
 === Guideline for mapping Category Codes to Subject NewsCodes
 
@@ -1702,6 +1857,12 @@ image::example-image-5.jpg[Example museum sculpture image]
 == User Guide History
 
 (Latest entry at the top of the list)
+
+March 2023::
+Add information on adding DigitalSourceType to images.
+
+February 2020::
+Fix some cross-references and links in the document.
 
 October 2019::
 Updated for the Photo Metadata Standard 2019.1 including Image Regions.

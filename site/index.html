@@ -433,8 +433,8 @@ body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: norma
 <div class="details">
 <span id="author" class="author">IPTC Photo Metadata Working Group</span><br>
 <span id="email" class="email"><a href="mailto:office@iptc.org">office@iptc.org</a></span><br>
-<span id="revnumber">february 2020 rev 1b</span>
-<br><span id="revremark">Revised 2020-02-10</span>
+<span id="revnumber">march 2023 </span>
+<br><span id="revremark">Revised 2023-03-23</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -487,6 +487,7 @@ body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: norma
 <li><a href="#_dates_and_times_and_different_software">Dates and times and different software</a></li>
 <li><a href="#_metadata_values_shown_multiple_times">Metadata values shown multiple times</a></li>
 <li><a href="#_iptc_photo_metadata_and_google_images">IPTC Photo Metadata and Google Images</a></li>
+<li><a href="#_guidance_for_using_digital_source_type">Guidance for using Digital Source Type</a></li>
 <li><a href="#_guideline_for_mapping_category_codes_to_subject_newscodes">Guideline for mapping Category Codes to Subject NewsCodes</a></li>
 <li><a href="#_iptc_recommendation_for_metadata_about_composite_images">IPTC recommendation for metadata about composite images</a></li>
 <li><a href="#_iim_metadata_deprecated_in_iptc_core">IIM Metadata deprecated in IPTC Core</a></li>
@@ -2531,26 +2532,7 @@ this field is limited by the IIM format to about 32 characters. In XMP there is 
 <div class="sect3">
 <h4 id="_digital_source_type"><a class="anchor" href="#_digital_source_type"></a><a class="link" href="#_digital_source_type">Digital Source Type</a></h4>
 <div class="paragraph">
-<p>This field indicates the media source from which the digital image was created. The values are taken from a controlled list, available at <a href="http://cv.iptc.org/newscodes/digitalsourcetype" class="bare">http://cv.iptc.org/newscodes/digitalsourcetype</a>, which includes these values:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Original digital capture of a real life scene: <em>born digital images</em></p>
-</li>
-<li>
-<p>Digitised from a negative on film: <em>from bw or colour negatives</em></p>
-</li>
-<li>
-<p>Digitised from a positive on film: <em>from slides or transparencies</em></p>
-</li>
-<li>
-<p>Digitised from a print on non-transparent medium: <em>from photographic prints or flat artworks</em></p>
-</li>
-<li>
-<p>Created by software: <em>from computer or software generated images including designs, illustrations, and composite images</em></p>
-</li>
-</ul>
+<p>This field indicates the media source from which the digital image was created. The values are taken from a controlled list, available at <a href="http://cv.iptc.org/newscodes/digitalsourcetype" class="bare">http://cv.iptc.org/newscodes/digitalsourcetype</a>. See <a href="#digitalsourcetype">Guidance for using Digital Source Type</a> in this document for more details.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3225,6 +3207,536 @@ Exif currently does not hold time zone information in its time stamp. A time zon
 <p>You should use a DAM and CMS that respects and conserves IPTC and XMP embedded metadata, and ensure that any configuration options that strip out metadata are turned off. Also you may need to look at image cropping and manipulation plugins for your CMS - for example the ImageMagick WordPress library retains embedded metadata, but some others strip it out.</p>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_guidance_for_using_digital_source_type"><a class="anchor" href="#_guidance_for_using_digital_source_type"></a><a class="link" href="#_guidance_for_using_digital_source_type"><a id="digitalsourcetype"></a>Guidance for using Digital Source Type</a></h3>
+<div class="paragraph">
+<p>The DigitalSourceType property and its corresponding controlled vocabulary <a href="https://cv.iptc.org/newscodes/digitalsourcetype" class="bare">https://cv.iptc.org/newscodes/digitalsourcetype</a>
+were originally added to the IPTC Photo Metadata Standard in 2008. The original goal was to represent the various
+sources of a digital image such as a scan from print, a film negative or from positive film (also known as slide,
+reversal or transparency film), or a direct capture from a digital camera.</p>
+</div>
+<div class="paragraph">
+<p>In the first version of the vocabulary, there was a single term, "Created by Software" (softwareImage) which covered
+all forms of image created using a computer.</p>
+</div>
+<div class="paragraph">
+<p>In 2022, with the proliferation of generative AI and "synthetic media" systems, the vocabulary was extended to
+include a more complete list of the different ways in which content might be created by or with the help of computer
+software.</p>
+</div>
+<div class="paragraph">
+<p>The vocabulary can also be used to describe other media we created the definitions so that they can equally apply to
+video, audio or text.</p>
+</div>
+<div class="paragraph">
+<p>This table describes each of the terms and definitions, along with some examples of the kinds of content intended to
+be tagged with each category:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">digitalCapture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Original digital capture sampled from real life</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The digital media is captured from a real-life source using a digital camera or digital recording device</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital photo taken using a digital SLR or smartphone camera</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital video taken using a digital film, video or smartphone camera</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital recording via microphone</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Text example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Original authored or transcribed text</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">negativeFilm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digitised from a negative on film</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The digital image was digitised from a negative on film on any other transparent medium</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital photo scanned from a photographic negative</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Film scanned from a moving image negative</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">positiveFilm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digitised from a positive on film</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The digital image was digitised from a positive on a transparency on or any other transparent medium</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital photo scanned from a photographic transparency</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Film scanned from a moving image positive</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">print</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digitised from a print on non-transparent medium</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The digital image was digitised from an image printed on a non-transparent medium</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital photo scanned from a photographic print</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">minorHumanEdits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Original media with minor human edits</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minor augmentation or correction by a human, such as a digitally-retouched photo used in a magazine</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Note</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Also covers digitally edited video, audio and text content</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A digitally-retouched photo used in a magazine</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Video camera recording, manipulated digitally</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Original audio with minor edits (e.g. eliminate breaks)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Text example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Original text with minor edits</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">compositeCapture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Composite of captured elements</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mix or composite of several elements that are all captures of real life</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A composite image created by a digital artist in Photoshop based on several source images</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edited sequence or composite of video shots</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mixdown of several audio tracks</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">algorithmicallyEnhanced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Algorithmic enhancement</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minor augmentation or correction by algorithm</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A photo that has been digitally enhanced using a mechanism such as Google Photos' "denoise" feature</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Re-timing or other algorithmic enhancement</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">dataDrivenMedia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data-driven media</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital media representation of data via human programming or creativity</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Data visualisation as a still image</p>
+</li>
+<li>
+<p>A representation of a distant galaxy created by analysing the outputs of a deep-space telescope (as opposed to a regular camera)</p>
+</li>
+<li>
+<p>An infographic created using a computer drawing tool such as Adobe Illustrator or AutoCAD</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data visualization of time-based events</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Audio generated from data</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">digitalArt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital art</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Media created by a human using digital tools</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A cartoon drawn by an artist into a digital tool using a digital pencil, a tablet and a drawing package such as Procreate or Affinity Designer (4)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A scene from a film/movie created using Computer Graphic Imagery (CGI)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Electronic music composition using purely synthesised sounds</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">virtualRecording</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Virtual recording</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Live recording of virtual event based on synthetic and optionally captured elements</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Screenshot of a virtual event such as a virtual reality scene or a Zoom meeting</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A recording of a computer-generated sequence, e.g. from a video game</p>
+</li>
+<li>
+<p>A recording of a Zoom meeting</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">compositeSynthetic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Composite including synthetic elements</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mix or composite of several elements, at least one of which is synthetic</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A composite image created by a digital artist in Photoshop based on several source images, at least one of which is synthetic</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Movie production using a combination of live-action and CGI content, e.g. using Unreal engine to generate backgrounds</p>
+</li>
+<li>
+<p>A capture of an augmented reality interaction with computer imagery superimposed on a camera video, e.g. someone playing Pokemon Go</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Electronic music composition mixing sound samples and synthesised sounds</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">trainedAlgorithmicMedia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trained algorithmic media</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital media created algorithmically using a model derived from sampled content</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Image based on deep learning from a series of reference examples (training data)</p>
+</li>
+<li>
+<p>"Text to image" generation using a text prompt to feed an algorithm using a trained model to create a synthetic image.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A "deepfake" video using a combination of a real actor and a trained model.</p>
+</li>
+<li>
+<p>A video created using a text prompt and an algorithm using a trained model to create a synthetic video, with or without audio.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A “speech-to-speech” generated audio clip created using a combination of a real actor and an AI model.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Text example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A GPT-3 generated news story</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">algorithmicMedia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pure algorithmic media</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Media created purely by an algorithm not based on any sampled training data, e.g. an image created by software using a mathematical formula</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Image example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A purely computer-generated image such as a pattern of pixels generated mathematically e.g. a Mandelbrot set or fractal diagram</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Video example</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A purely computer-generated moving image such as a pattern of pixels generated mathematically</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term ID</th>
+<th class="tableblock halign-left valign-top">softwareImage - RETIRED</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created by software</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description (en)</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The digital image was created by computer software</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Note</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RETIRED. Use trainedAlgorithmicMedia or algorithmicMedia instead.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_guideline_for_mapping_category_codes_to_subject_newscodes"><a class="anchor" href="#_guideline_for_mapping_category_codes_to_subject_newscodes"></a><a class="link" href="#_guideline_for_mapping_category_codes_to_subject_newscodes">Guideline for mapping Category Codes to Subject NewsCodes</a></h3>
@@ -5049,6 +5561,14 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 </div>
 <div class="dlist">
 <dl>
+<dt class="hdlist1">March 2023</dt>
+<dd>
+<p>Add information on adding DigitalSourceType to images.</p>
+</dd>
+<dt class="hdlist1">February 2020</dt>
+<dd>
+<p>Fix some cross-references and links in the document.</p>
+</dd>
 <dt class="hdlist1">October 2019</dt>
 <dd>
 <p>Updated for the Photo Metadata Standard 2019.1 including Image Regions.</p>
