@@ -1227,8 +1227,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID |digitalCapture
 |Name (en) |Original digital capture sampled from real life
+|Term URI |https://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture
 |Description (en) |The digital media is captured from a real-life source using a digital camera or digital recording device
 |Image example |Digital photo taken using a digital SLR or smartphone camera
 |Video example |Digital video taken using a digital film, video or smartphone camera
@@ -1238,8 +1238,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | negativeFilm
 |Name (en) | Digitised from a negative on film
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm
 |Description (en) | The digital image was digitised from a negative on film on any other transparent medium
 |Image example | Digital photo scanned from a photographic negative
 |Video example | Film scanned from a moving image negative
@@ -1247,8 +1247,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | positiveFilm
 |Name (en) | Digitised from a positive on film
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm
 |Description (en) | The digital image was digitised from a positive on a transparency on or any other transparent medium
 |Image example | Digital photo scanned from a photographic transparency
 |Video example | Film scanned from a moving image positive
@@ -1256,16 +1256,16 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | print
 |Name (en) | Digitised from a print on non-transparent medium
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/print
 |Description (en) | The digital image was digitised from an image printed on a non-transparent medium
 |Image example | Digital photo scanned from a photographic print
 |===
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | minorHumanEdits
 |Name (en) | Original media with minor human edits
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/minorHumanEdits
 |Description (en) | Minor augmentation or correction by a human, such as a digitally-retouched photo used in a magazine
 |Note |	Also covers digitally edited video, audio and text content
 |Image example | A digitally-retouched photo used in a magazine
@@ -1276,8 +1276,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | compositeCapture
 |Name (en) | Composite of captured elements
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeCapture
 |Description (en) | Mix or composite of several elements that are all captures of real life
 |Image example | A composite image created by a digital artist in Photoshop based on several source images
 |Video example | Edited sequence or composite of video shots
@@ -1286,8 +1286,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | algorithmicallyEnhanced
 |Name (en) | Algorithmic enhancement
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicallyEnhanced
 |Description (en) | Minor augmentation or correction by algorithm
 |Image example | A photo that has been digitally enhanced using a mechanism such as Google Photos' "denoise" feature
 |Video example | Re-timing or other algorithmic enhancement
@@ -1295,8 +1295,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | dataDrivenMedia
 |Name (en) | Data-driven media
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia
 |Description (en) | Digital media representation of data via human programming or creativity
 |Image example a| * Data visualisation as a still image
 * A representation of a distant galaxy created by analysing the outputs of a deep-space telescope (as opposed to a regular camera)
@@ -1307,8 +1307,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | digitalArt
 |Name (en) | Digital art
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/digitalArt
 |Description (en) | Media created by a human using digital tools
 |Image example | A cartoon drawn by an artist into a digital tool using a digital pencil, a tablet and a drawing package such as Procreate or Affinity Designer (4)
 |Video example | A scene from a film/movie created using Computer Graphic Imagery (CGI)
@@ -1317,8 +1317,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | virtualRecording
 |Name (en) | Virtual recording
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/virtualRecording
 |Description (en)  | Live recording of virtual event based on synthetic and optionally captured elements
 |Image example | Screenshot of a virtual event such as a virtual reality scene or a Zoom meeting
 |Video example a| * A recording of a computer-generated sequence, e.g. from a video game
@@ -1327,8 +1327,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | compositeSynthetic
 |Name (en) | Composite including synthetic elements
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic
 |Description (en) | Mix or composite of several elements, at least one of which is synthetic 
 |Image example | A composite image created by a digital artist in Photoshop based on several source images, at least one of which is synthetic
 |Video example a| * Movie production using a combination of live-action and CGI content, e.g. using Unreal engine to generate backgrounds
@@ -1338,8 +1338,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | trainedAlgorithmicMedia
 |Name (en) | Trained algorithmic media
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
 |Description (en) | Digital media created algorithmically using a model derived from sampled content
 |Image example a| * Image based on deep learning from a series of reference examples (training data)
 * "Text to image" generation using a text prompt to feed an algorithm using a trained model to create a synthetic image. 
@@ -1351,8 +1351,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | algorithmicMedia
 |Name (en) | Pure algorithmic media
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicMedia
 |Description (en) | Media created purely by an algorithm not based on any sampled training data, e.g. an image created by software using a mathematical formula
 |Image example | A purely computer-generated image such as a pattern of pixels generated mathematically e.g. a Mandelbrot set or fractal diagram
 |Video example | A purely computer-generated moving image such as a pattern of pixels generated mathematically
@@ -1360,8 +1360,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Term ID | softwareImage - RETIRED
 |Name (en) | Created by software
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/softwareImage - RETIRED
 |Description (en) | The digital image was created by computer software
 |Note | RETIRED. Use trainedAlgorithmicMedia or algorithmicMedia instead.
 |===
