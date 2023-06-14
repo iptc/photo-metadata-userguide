@@ -445,6 +445,7 @@ Use this field to note the name of a person or persons shown in the image. Typic
 Use this field structure to record details about each relevant and recognisable person(s) shown in the image. This might include links to a global online resource which lists the person uniquely with an identifier.  There are fields to record physical characteristics and other details to help distinguish this person from others in the image.
 
 These details are useful for identifying and distinguishing this person from others in the image.
+
 * Name
 +
 Use this field to note the name of a person or persons shown in the image. Typically, these would be recorded as they would be typed in a query, first name / last name (given name / surname).
@@ -478,6 +479,7 @@ The user should be aware of any legal implications of providing ages for young m
 This field summarises the availability and scope of model releases authorising usage of the likenesses of persons appearing in the photograph.
 
 There are four possible values: 
+
 * None (no release is available), 
 * Not Applicable (there are no recognisable people in the image), 
 * Unlimited Model Releases (releases are available for all people in the image, AND the terms of each release authorise unlimited usage of the model(s) likenesses)
