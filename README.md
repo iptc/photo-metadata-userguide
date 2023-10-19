@@ -10,8 +10,10 @@ These top level directories are used:
 
 * site: holds the HTML document (index.html) of the User Guide and the images subdirectory
 holds the required image files.
-* source: holds all files and sub-directories required to generate the User Guide HTML
-document (in the site directory) from Asciidoctor files (*.adoc).
+* source:
+  * holds all files and sub-directories required to generate the User Guide HTML
+document (in the site directory) from Asciidoctor files (*.adoc)
+  * holds copies of the Asciidoctor files used for publishing previous versions, the file names got the release date appended.
 
 ## Building from source
 
