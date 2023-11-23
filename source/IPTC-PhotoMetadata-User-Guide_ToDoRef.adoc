@@ -1,4 +1,4 @@
-= image:iptc_sv_gradient_70x70.jpg[IPTC logo] Photo Metadata User Guide (DRAFT)
+= image:iptc_sv_gradient_70x70.jpg[IPTC logo] Photo Metadata User Guide - ToDo Reference (2023)
 keywords: iptc, photo metadata, photo library, image metadata, photos, images, news, metadata, standard
 :doctype: book
 :imagesdir: ./images
@@ -10,7 +10,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: DRAFT 2023-11
+:version-label: ToDoRef (2023)
 :revnumber:
 :revremark: 2023-11-23
 :toc: left
@@ -19,6 +19,26 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :sectnumlevels: 4
 :sectanchors:
 :sectlinks:
+
+== About this ToDo Reference document
+
+NOTE: This document builds on the latest public version (of 23 March 2023). +
+It #highlights in yellow# text needing a change or update and adds IMPORTANT notes about something missing. The next step is to apply changes, updates and additional content - this is done in a different document! +
+Simply said this document is a reference of what needs to be done for a next version of the User Guide.
+
+The items below are planned actions and links to the corresponding section of this document:
+
+* ADD: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline]
+* CHANGE <<Event>>: add Event Identifier (new 2021.1)
+* CHANGE <<Source>>: field name got (Supply Chain) appended (2022.1), explain why
+* CHANGE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1)
+* CHANGE <<Product>>: the structure got Identifier as new property (new 2022.1)
+* CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)
+* CHANGE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael]
+* ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it
+* ADD: <<Data Mining>> (new 2023.1)
+
+WARNING: If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
 
 == Introduction
 
@@ -413,6 +433,11 @@ The Description field, often referred to as a ‘caption' is used to describe th
 
 WARNING: This field is limited by the IIM format to about 2000 characters. In XMP there is effectively no character limit.
 
+==== Accessibility Descriptions
+
+Some text about Alt Text and Extended Description.
+
+
 === Persons Depicted in the Image
 
 For a specific person shown in the image several properties can be used:
@@ -568,9 +593,11 @@ A code from a known controlled vocabulary for identifying the organisation or co
 
 The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony.
 
+#TODO: add the Event Identifier#
+
 ==== Product
 
-The Product Shown field structure is used to describe one to many products depicted by the image. The name of the product and a textual description can be applied to the corresponding fields. To identify the product a 14 digit GTIN (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used. 
+#The Product Shown field structure is used to describe one to many products depicted by the image. The name of the product and a textual description can be applied to the corresponding fields. To identify the product a 14 digit GTIN (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used.# 
 
 ==== Artwork or Object in the Image
 
@@ -676,6 +703,10 @@ The primary contact's business or work email address, such as name@domain.com. M
 Website(s) (CCI)::
 The URL or web address for the primary contact's business. Multiple addresses can be given, separated by a comma.
 
+==== Contributor
+
+Some text about this property/field.
+
 ==== Copyright Notice
 
 The Copyright Notice contains information required to assert copyright in the image and should contain the name of the current copyright holder, whether an individual or a company. The format will differ according to the relevant copyright legislation. It may include the copyright symbol ©, the year of publication, and other commonly used terms such as ‘All Rights Reserved.' If an image is Public Domain, it can be indicated here. 
@@ -711,6 +742,14 @@ NOTE: before the IPTC Photo Metadata Standard 2014 the semantics of this field w
 
 WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
+==== Web Statement of Rights
+
+The Web Statement of Rights can be used to link the viewer to a web page (by a URL) which provides a statement of the copyright ownership and usage rights of the image. In the Adobe ‘File Info' panel this field is called the ‘Copyright Info URL.'
+
+==== Data Mining
+
+IMPORTANT: a section about the Data Mining property (new 2023) needs to be added here.
+
 ==== Property Release Status
 
 This field summarises the availability and scope of property releases for the photograph.
@@ -729,9 +768,6 @@ Use this field to indicate the ID for each Property Release document. Ensure all
 
 TIP: Read about Model Releases on the page about persons in an image.
 
-==== Web Statement of Rights
-
-The Web Statement of Rights can be used to link the viewer to a web page (by a URL) which provides a statement of the copyright ownership and usage rights of the image. In the Adobe ‘File Info' panel this field is called the ‘Copyright Info URL.'
 
 === Licensing Use of the Image
 
@@ -898,6 +934,7 @@ In particular, to mitigate legal liability, IPTC recommends that users exercise 
 
 ==== Guide for mapping Exif SubjectArea to IPTC Image Region
 
+#Headline and language below must be changed#
 
 ===== *Introduction*
 

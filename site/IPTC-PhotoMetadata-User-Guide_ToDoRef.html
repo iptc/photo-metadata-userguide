@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
 <meta name="author" content="IPTC Photo Metadata Working Group">
-<title>Photo Metadata User Guide (DRAFT)</title>
+<title>Photo Metadata User Guide - ToDo Reference (2023)</title>
 <style>
 /* Asciidoctor default stylesheet plus IPTC styles | MIT License | http://asciidoctor.org */
 /* Remove comment around @import statement below when using as a custom stylesheet */
@@ -429,16 +429,17 @@ body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: norma
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1><span class="image"><img src="./images/iptc_sv_gradient_70x70.jpg" alt="IPTC logo"></span> Photo Metadata User Guide (DRAFT)</h1>
+<h1><span class="image"><img src="./images/iptc_sv_gradient_70x70.jpg" alt="IPTC logo"></span> Photo Metadata User Guide - ToDo Reference (2023)</h1>
 <div class="details">
 <span id="author" class="author">IPTC Photo Metadata Working Group</span><br>
 <span id="email" class="email"><a href="mailto:office@iptc.org">office@iptc.org</a></span><br>
-<span id="revnumber">draft 2023-11 </span>
+<span id="revnumber">todoref (2023) </span>
 <br><span id="revremark">2023-11-23</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#_about_this_todo_reference_document">About this ToDo Reference document</a></li>
 <li><a href="#_introduction">Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#_what_iptc_photo_metadata_is_made_for">What IPTC Photo Metadata is Made For</a></li>
@@ -507,6 +508,71 @@ body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: norma
 </div>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_about_this_todo_reference_document"><a class="anchor" href="#_about_this_todo_reference_document"></a><a class="link" href="#_about_this_todo_reference_document">About this ToDo Reference document</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This document builds on the latest public version (of 23 March 2023).<br>
+It <mark>highlights in yellow</mark> text needing a change or update and adds IMPORTANT notes about something missing. The next step is to apply changes, updates and additional content - this is done in a different document!<br>
+Simply said this document is a reference of what needs to be done for a next version of the User Guide.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The items below are planned actions and links to the corresponding section of this document:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ADD: <a href="#_accessibility_descriptions">Accessibility Descriptions</a> including Alt Text and Extended Description (new 2021.1) [David and Caroline]</p>
+</li>
+<li>
+<p>CHANGE <a href="#_event">Event</a>: add Event Identifier (new 2021.1)</p>
+</li>
+<li>
+<p>CHANGE <a href="#_source">Source</a>: field name got (Supply Chain) appended (2022.1), explain why</p>
+</li>
+<li>
+<p>CHANGE <a href="#_iptc_subject_code">IPTC Subject Code</a>: was set to <em>legacy</em> state (2022.1)</p>
+</li>
+<li>
+<p>CHANGE <a href="#_product">Product</a>: the structure got Identifier as new property (new 2022.1)</p>
+</li>
+<li>
+<p>CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)</p>
+</li>
+<li>
+<p>CHANGE <a href="#_guide_for_mapping_exif_subjectarea_to_iptc_image_region">Guide for mapping Exif SubjectArea to IPTC Image Region</a>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael]</p>
+</li>
+<li>
+<p>ADD: <a href="#_contributor">Contributor</a> (new 2022.1) - consider if Rights Information is the best section for it</p>
+</li>
+<li>
+<p>ADD: <a href="#_data_mining">Data Mining</a> (new 2023.1)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
 <div class="sectionbody">
@@ -1631,6 +1697,12 @@ This field is limited by the IIM format to about 2000 characters. In XMP there i
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_accessibility_descriptions"><a class="anchor" href="#_accessibility_descriptions"></a><a class="link" href="#_accessibility_descriptions">Accessibility Descriptions</a></h4>
+<div class="paragraph">
+<p>Some text about Alt Text and Extended Description.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_persons_depicted_in_the_image"><a class="anchor" href="#_persons_depicted_in_the_image"></a><a class="link" href="#_persons_depicted_in_the_image">Persons Depicted in the Image</a></h3>
@@ -1926,11 +1998,14 @@ artwork, objects).
 <div class="paragraph">
 <p>The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony.</p>
 </div>
+<div class="paragraph">
+<p><mark>TODO: add the Event Identifier</mark></p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_product"><a class="anchor" href="#_product"></a><a class="link" href="#_product">Product</a></h4>
 <div class="paragraph">
-<p>The Product Shown field structure is used to describe one to many products depicted by the image. The name of the product and a textual description can be applied to the corresponding fields. To identify the product a 14 digit GTIN (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used.</p>
+<p><mark>The Product Shown field structure is used to describe one to many products depicted by the image. The name of the product and a textual description can be applied to the corresponding fields. To identify the product a 14 digit GTIN (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used.</mark></p>
 </div>
 </div>
 <div class="sect3">
@@ -2150,6 +2225,12 @@ e.g. +1 (212) 1234578</p>
 </div>
 </div>
 <div class="sect3">
+<h4 id="_contributor"><a class="anchor" href="#_contributor"></a><a class="link" href="#_contributor">Contributor</a></h4>
+<div class="paragraph">
+<p>Some text about this property/field.</p>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_copyright_notice"><a class="anchor" href="#_copyright_notice"></a><a class="link" href="#_copyright_notice">Copyright Notice</a></h4>
 <div class="paragraph">
 <p>The Copyright Notice contains information required to assert copyright in the image and should contain the name of the current copyright holder, whether an individual or a company. The format will differ according to the relevant copyright legislation. It may include the copyright symbol ©, the year of publication, and other commonly used terms such as ‘All Rights Reserved.' If an image is Public Domain, it can be indicated here.</p>
@@ -2265,6 +2346,27 @@ this field is limited by the IIM format to about 32 characters. In XMP there is 
 </div>
 </div>
 <div class="sect3">
+<h4 id="_web_statement_of_rights"><a class="anchor" href="#_web_statement_of_rights"></a><a class="link" href="#_web_statement_of_rights">Web Statement of Rights</a></h4>
+<div class="paragraph">
+<p>The Web Statement of Rights can be used to link the viewer to a web page (by a URL) which provides a statement of the copyright ownership and usage rights of the image. In the Adobe ‘File Info' panel this field is called the ‘Copyright Info URL.'</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_data_mining"><a class="anchor" href="#_data_mining"></a><a class="link" href="#_data_mining">Data Mining</a></h4>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+a section about the Data Mining property (new 2023) needs to be added here.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_property_release_status"><a class="anchor" href="#_property_release_status"></a><a class="link" href="#_property_release_status">Property Release Status</a></h4>
 <div class="paragraph">
 <p>This field summarises the availability and scope of property releases for the photograph.</p>
@@ -2306,12 +2408,6 @@ Read about Model Releases on the page about persons in an image.
 </td>
 </tr>
 </table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_web_statement_of_rights"><a class="anchor" href="#_web_statement_of_rights"></a><a class="link" href="#_web_statement_of_rights">Web Statement of Rights</a></h4>
-<div class="paragraph">
-<p>The Web Statement of Rights can be used to link the viewer to a web page (by a URL) which provides a statement of the copyright ownership and usage rights of the image. In the Adobe ‘File Info' panel this field is called the ‘Copyright Info URL.'</p>
 </div>
 </div>
 </div>
@@ -2670,6 +2766,9 @@ If images are changed in artistic actions like resizing width and height differe
 </div>
 <div class="sect3">
 <h4 id="_guide_for_mapping_exif_subjectarea_to_iptc_image_region"><a class="anchor" href="#_guide_for_mapping_exif_subjectarea_to_iptc_image_region"></a><a class="link" href="#_guide_for_mapping_exif_subjectarea_to_iptc_image_region">Guide for mapping Exif SubjectArea to IPTC Image Region</a></h4>
+<div class="paragraph">
+<p><mark>Headline and language below must be changed</mark></p>
+</div>
 <div class="sect4">
 <h5 id="_introduction_3"><a class="anchor" href="#_introduction_3"></a><a class="link" href="#_introduction_3"><strong>Introduction</strong></a></h5>
 <div class="paragraph">
