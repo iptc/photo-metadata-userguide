@@ -34,11 +34,13 @@ The items below are planned actions and links to the corresponding section of th
 * CHANGE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1)
 * CHANGE <<Product>>: the structure got Identifier as new property (new 2022.1)
 * CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)
-* CHANGE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael]
+* change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael]
 * ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it
 * ADD: <<Data Mining>> (new 2023.1)
 
 WARNING: If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
+
+**Find DONE actions** in this https://www.iptc.org/std-dev/photometadata/documentation/userguide/[draft document]. 
 
 == Introduction
 

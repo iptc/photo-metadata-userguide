@@ -20,6 +20,12 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :sectanchors:
 :sectlinks:
 
+== About this draft
+
+This is the draft of the next version of the IPTC Photo Metadata User Guide.
+
+Find what changes are planned and done in the https://www.iptc.org/std-dev/photometadata/documentation/userguide/IPTC-PhotoMetadata-User-Guide_ToDoRef.html[ToDo Reference document].
+
 == Introduction
 
 This document is designed to familiarise photographers, photo editors and metadata managers with the use of the IPTC Photo Metadata Standard. It provides a short guideline on the use and semantics of each IPTC field (also called metadata property).
@@ -873,7 +879,7 @@ Metadata for one to many image regions can be embedded in the image files. In ti
 
 WARNING: The IPTC Image Region specification allows these various facets of the metadata to be embedded right after having set the boundaries and included details. However, during the lifecycle of an image its size and format may be changed and this requires that the software used to monitor image changes properly understands and updates these Image Region values each time changes are made. For example if you have a horizontal image with four people shown, and set Image Regions around the face of each person; then software used later to crop the image to a square needs to know which people have been removed by cropping and to adjust the coordinates of Image Regions of the persons remaining in the image as well as update/modify the metadata values and embed the values appropriately. If such adjustments are not made the boundaries of Image Regions may appear in the wrong positions and could even be invalid as coordinates may exceed the current width or height of an image.
 
-If images are cropped or resized and if the coordinates of the boundary of an Image Region are not adjusted it is very likely that they no longer frame the intended region. Therefore, if an Image Region asserts to be about a male person and the boundary touches or encompasses a female person one can assume that the image region is no longer valid. The CIPA Standard DC-008 Exif metadata tag ‘SubjectArea’ can be mapped to an IPTC Image Region (see the Note about that), in this case the data of the Exif SubjectArea must also be adjusted.
+If images are cropped or resized and if the coordinates of the boundary of an Image Region are not adjusted it is very likely that they no longer frame the intended region. Therefore, if an Image Region asserts to be about a male person and the boundary touches or encompasses a female person one can assume that the image region is no longer valid. 
 
 As IPTC Image Regions employ and rely upon coordinates expressed by relative size values or pixel count, Image Region metadata is vulnerable to corruption (rendering the metadata inaccurate) should any of the following changes occur:
 
@@ -896,156 +902,9 @@ The IPTC invites and encourages developers to create solutions designed to allow
 
 In particular, to mitigate legal liability, IPTC recommends that users exercise extreme caution if/when using the IPTC Image Regions to express rights-related information pertaining to any element/s of a photograph (such as copyright, property rights or model release information).  
 
-==== Guide for mapping Exif SubjectArea to IPTC Image Region
+==== Note about the Exif SubjectArea and the IPTC Image Region
 
-
-===== *Introduction*
-
-The CIPA Standard DC-008 Exif and the IPTC Photo Metadata Standard are widely used specification for metadata embedded into image files. Exif sets a focus on facts about and technical details of a picture taken by a camera while IPTC sets a focus on descriptive, administrative and rights related metadata of an image edited in a next step of the workflow. 
-Even with these different scopes of metadata four metadata fields of both standards have highly similar semantics since many years:
-
-- The date and time when the picture was taken
-- The name of the person taking the photo
-- A description of what the photo shows
-- A statement about copyright
-- A mapping of these Exif metadata and IPTC metadata fields is implemented by software vendors since about 20 years.
-
-The IPTC Photo Metadata Standard 2019.1 introduces the Image Region property with a use case similar to the Exif property SubjectArea field. This paper explains how to map data from an Exif Subject Area to the IPTC Image Region.
-
-===== *About this section*
-
-This section about mapping Exif SubjectArea to IPTC Image Region was created by link:https://iptc.org[IPTC] and its content was reviewed by link:http://www.cipa.jp/guide/aboutcipa_e.html[CIPA].
-
-It refers to the copyrighted standard documents of CIPA and IPTC:
-
-* Exif standard: see http://www.cipa.jp/std/std-sec_e.html - used version: 2.32 in the document DC-008-2019-E=Exif.pdf in English.
-* IPTC Photo Metadata Standard 2019.1: see https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata 
-
-===== *Mapping Guideline*
-
-*Exif SubjectArea specification*
-
-(_This is an overview of the Exif specification, please read the specification document about the SubjectArea field in full._)
-
-The specification defines these details of a SubjectArea (37396, 0x9214) field/tag among others:
-
-* Semantic definition: The tag indicates the location and area of the main subject in the overall scene.
-* Values: 2 or 3 or 4 SHORT values. A SHORT value is a 16-bit (2-byte) unsigned integer. All the values are measured in pixels.
-
-The Exif specification defines further that the shape of the area is set by the count of values:
-
-* 2 values: the x- and the y-coordinate of a single point
-* 3 values: the x- and the y-coordinate of the centre of a circle and its diameter
-* 4 values: the x- and the y-coordinate of the centre of a rectangle and its width and height.
-
-*IPTC Image Region specification*
-
-(_This is an overview of the IPTC Photo Metadata specification, please read the specification document about the Image Region in full._)
-
-The specification defines these details of a single Image Region among others (multiple regions may be used):
-
-* The boundary of the region, it includes:
-** A setting of the shape of the region by a value from the enumeration “rectangle”, “circle” and “polygon”
-** A setting of the measuring unit by a value from the enumeration “pixel” or “relative”.
-** For the rectangle shape: an x- and a y-coordinate of the upper left corner of the rectangle and its width and height
-** For the circle shape: an x- and a y-coordinate of the centre of the circle and its radius measured along the x-axis.
-** For the polygon shape: a sequence of x- and y-coordinates for each vertice of the polygon. The count of vertices starts at 1 for a single point, 2 vertices define a line.
-* The type of the content of the region. The value is an globally unique identifier of a term expressing the type, e.g. “Person”, “Animal”, “Building”, “Artwork”, etc. (IPTC works on a vocabulary of such terms.)
-* The role of the region, among other regions. The value is an globally unique identifier of a term expressing the role, e.g. “recommended cropping”, “entity”, or “subject area”.
-* Further an identifier and a name of the region. The scope of identifier and name is only local to the image.
-
-===== *Mapping Exif SubjectArea → IPTC Image Region*
-
-Point zero of the coordinates is defined in the same way for the Exif SubjectArea and for the IPTC Image region: the upper left corner of the pixels of an image, no rotation/orientation processing is applied.
-
-For an Exif Subject area an IPTC Image Region structure must be created.
-This structure includes:
-
-* An Image Region structure with values mapped as shown in the table below. 
-* The Measuring Unit value “pixel” is mandatory as the Exif specification builds on pixels only.
-* The Region Role property may show the value for “main subject area”, defined by the identifier http://cv.iptc.org/newscodes/imageregionrole/mainSubjectArea.
-* No other Image Region properties are required by the mapping. A local identifier and name may be applied as needed by the user.
-
-The table below describes how Exif SubjectArea metadata should be transformed to IPTC Image Region metadata.
-
-[%autowidth,options="header"]
-|===
-|Exif SubjectArea field value|Image Region Boundary property and its value|Processing instruction
-
-|*Shape: single point, 2 values*
-|
-|
-
-|
-|Boundary Shape = “polygon”
-|This value is mandatory
-
-|
-|Measuring Unit = “pixel”
-|This value is mandatory
-
-|SubjecArea 1st value
-|→ Polygon Vertices, 1st vertex: X-Axis Coordinate
-|Use the Exif value
-
-|SubjecArea 2nd value
-|→ Polygon Vertices, 1st vertex: Y-Axis Coordinate
-|Use the Exif value
-
-|*Shape: circle, 3 values*
-|
-|
-
-|
-|Boundary Shape = “circle”
-|This value is mandatory
-
-|
-|Measuring Unit = “pixel”
-|This value is mandatory
-
-|SubjectArea 1st value
-|→ X-Axis Coordinate
-|Use the Exif value
-
-|SubjectArea 2nd value
-|→ Y-Axis Coordinate
-|Use the Exif value
-
-|SubjectArea 3rd value
-|→ Circle Radius
-|SubjectArea 3rd value divided by 2, rounded as integer
-
-|*Shape: rectangle, 4 values*
-|
-|
-
-|
-|Boundary Shape = “rectangle”
-|This value is mandatory
-
-|
-|Measuring Unit = “pixel”
-|This value is mandatory
-
-|SubjectArea 1st value
-|→ X-Axis Coordinate
-|SubjectArea 1st value minus (SubjectArea 3rd value divided by 2, rounded as integer)
-
-
-|SubjectArea 2nd value
-|→ Y-Axis Coordinate
-|SubjectArea 2nd value minus (SubjectArea 4th value divided by 2, rounded as integer)
-
-|SubjectArea 3rd value
-|→ Rectangle Width
-|Use the Exif value
-
-|SubjectArea 4th value
-|→ Rectangle Height
-|Use the Exif value
-
-|===
+From 2020 to the end of 2023 this section had a guideline for mapping data between the IPTC Image Region and the Exif SubjectArea. Unfortunately this mapping was built on the assumption Exif’s SubjectArea may be used for metadata about what this area shows, e.g. the name of a person or an object. This assumption was wrong and therefore the guideline about this mapping was removed in 2023. Please do not map between the IPTC Image Region and the Exif SubjectArea.
 
 == What is a ... (help)
 

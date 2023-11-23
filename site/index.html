@@ -439,6 +439,7 @@ body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: norma
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#_about_this_draft">About this draft</a></li>
 <li><a href="#_introduction">Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#_what_iptc_photo_metadata_is_made_for">What IPTC Photo Metadata is Made For</a></li>
@@ -507,6 +508,17 @@ body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: norma
 </div>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_about_this_draft"><a class="anchor" href="#_about_this_draft"></a><a class="link" href="#_about_this_draft">About this draft</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the draft of the next version of the IPTC Photo Metadata User Guide.</p>
+</div>
+<div class="paragraph">
+<p>Find what changes are planned and done in the <a href="https://www.iptc.org/std-dev/photometadata/documentation/userguide/IPTC-PhotoMetadata-User-Guide_ToDoRef.html">ToDo Reference document</a>.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
 <div class="sectionbody">
@@ -2606,7 +2618,7 @@ The IPTC Image Region specification allows these various facets of the metadata 
 </table>
 </div>
 <div class="paragraph">
-<p>If images are cropped or resized and if the coordinates of the boundary of an Image Region are not adjusted it is very likely that they no longer frame the intended region. Therefore, if an Image Region asserts to be about a male person and the boundary touches or encompasses a female person one can assume that the image region is no longer valid. The CIPA Standard DC-008 Exif metadata tag ‘SubjectArea’ can be mapped to an IPTC Image Region (see the Note about that), in this case the data of the Exif SubjectArea must also be adjusted.</p>
+<p>If images are cropped or resized and if the coordinates of the boundary of an Image Region are not adjusted it is very likely that they no longer frame the intended region. Therefore, if an Image Region asserts to be about a male person and the boundary touches or encompasses a female person one can assume that the image region is no longer valid.</p>
 </div>
 <div class="paragraph">
 <p>As IPTC Image Regions employ and rely upon coordinates expressed by relative size values or pixel count, Image Region metadata is vulnerable to corruption (rendering the metadata inaccurate) should any of the following changes occur:</p>
@@ -2669,271 +2681,9 @@ If images are changed in artistic actions like resizing width and height differe
 </div>
 </div>
 <div class="sect3">
-<h4 id="_guide_for_mapping_exif_subjectarea_to_iptc_image_region"><a class="anchor" href="#_guide_for_mapping_exif_subjectarea_to_iptc_image_region"></a><a class="link" href="#_guide_for_mapping_exif_subjectarea_to_iptc_image_region">Guide for mapping Exif SubjectArea to IPTC Image Region</a></h4>
-<div class="sect4">
-<h5 id="_introduction_3"><a class="anchor" href="#_introduction_3"></a><a class="link" href="#_introduction_3"><strong>Introduction</strong></a></h5>
+<h4 id="_note_about_the_exif_subjectarea_and_the_iptc_image_region"><a class="anchor" href="#_note_about_the_exif_subjectarea_and_the_iptc_image_region"></a><a class="link" href="#_note_about_the_exif_subjectarea_and_the_iptc_image_region">Note about the Exif SubjectArea and the IPTC Image Region</a></h4>
 <div class="paragraph">
-<p>The CIPA Standard DC-008 Exif and the IPTC Photo Metadata Standard are widely used specification for metadata embedded into image files. Exif sets a focus on facts about and technical details of a picture taken by a camera while IPTC sets a focus on descriptive, administrative and rights related metadata of an image edited in a next step of the workflow.
-Even with these different scopes of metadata four metadata fields of both standards have highly similar semantics since many years:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The date and time when the picture was taken</p>
-</li>
-<li>
-<p>The name of the person taking the photo</p>
-</li>
-<li>
-<p>A description of what the photo shows</p>
-</li>
-<li>
-<p>A statement about copyright</p>
-</li>
-<li>
-<p>A mapping of these Exif metadata and IPTC metadata fields is implemented by software vendors since about 20 years.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The IPTC Photo Metadata Standard 2019.1 introduces the Image Region property with a use case similar to the Exif property SubjectArea field. This paper explains how to map data from an Exif Subject Area to the IPTC Image Region.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_about_this_section"><a class="anchor" href="#_about_this_section"></a><a class="link" href="#_about_this_section"><strong>About this section</strong></a></h5>
-<div class="paragraph">
-<p>This section about mapping Exif SubjectArea to IPTC Image Region was created by <a href="https://iptc.org">IPTC</a> and its content was reviewed by <a href="http://www.cipa.jp/guide/aboutcipa_e.html">CIPA</a>.</p>
-</div>
-<div class="paragraph">
-<p>It refers to the copyrighted standard documents of CIPA and IPTC:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Exif standard: see <a href="http://www.cipa.jp/std/std-sec_e.html" class="bare">http://www.cipa.jp/std/std-sec_e.html</a> - used version: 2.32 in the document DC-008-2019-E=Exif.pdf in English.</p>
-</li>
-<li>
-<p>IPTC Photo Metadata Standard 2019.1: see <a href="https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata" class="bare">https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_mapping_guideline"><a class="anchor" href="#_mapping_guideline"></a><a class="link" href="#_mapping_guideline"><strong>Mapping Guideline</strong></a></h5>
-<div class="paragraph">
-<p><strong>Exif SubjectArea specification</strong></p>
-</div>
-<div class="paragraph">
-<p>(<em>This is an overview of the Exif specification, please read the specification document about the SubjectArea field in full.</em>)</p>
-</div>
-<div class="paragraph">
-<p>The specification defines these details of a SubjectArea (37396, 0x9214) field/tag among others:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Semantic definition: The tag indicates the location and area of the main subject in the overall scene.</p>
-</li>
-<li>
-<p>Values: 2 or 3 or 4 SHORT values. A SHORT value is a 16-bit (2-byte) unsigned integer. All the values are measured in pixels.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The Exif specification defines further that the shape of the area is set by the count of values:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>2 values: the x- and the y-coordinate of a single point</p>
-</li>
-<li>
-<p>3 values: the x- and the y-coordinate of the centre of a circle and its diameter</p>
-</li>
-<li>
-<p>4 values: the x- and the y-coordinate of the centre of a rectangle and its width and height.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>IPTC Image Region specification</strong></p>
-</div>
-<div class="paragraph">
-<p>(<em>This is an overview of the IPTC Photo Metadata specification, please read the specification document about the Image Region in full.</em>)</p>
-</div>
-<div class="paragraph">
-<p>The specification defines these details of a single Image Region among others (multiple regions may be used):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The boundary of the region, it includes:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>A setting of the shape of the region by a value from the enumeration “rectangle”, “circle” and “polygon”</p>
-</li>
-<li>
-<p>A setting of the measuring unit by a value from the enumeration “pixel” or “relative”.</p>
-</li>
-<li>
-<p>For the rectangle shape: an x- and a y-coordinate of the upper left corner of the rectangle and its width and height</p>
-</li>
-<li>
-<p>For the circle shape: an x- and a y-coordinate of the centre of the circle and its radius measured along the x-axis.</p>
-</li>
-<li>
-<p>For the polygon shape: a sequence of x- and y-coordinates for each vertice of the polygon. The count of vertices starts at 1 for a single point, 2 vertices define a line.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>The type of the content of the region. The value is an globally unique identifier of a term expressing the type, e.g. “Person”, “Animal”, “Building”, “Artwork”, etc. (IPTC works on a vocabulary of such terms.)</p>
-</li>
-<li>
-<p>The role of the region, among other regions. The value is an globally unique identifier of a term expressing the role, e.g. “recommended cropping”, “entity”, or “subject area”.</p>
-</li>
-<li>
-<p>Further an identifier and a name of the region. The scope of identifier and name is only local to the image.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_mapping_exif_subjectarea_iptc_image_region"><a class="anchor" href="#_mapping_exif_subjectarea_iptc_image_region"></a><a class="link" href="#_mapping_exif_subjectarea_iptc_image_region"><strong>Mapping Exif SubjectArea → IPTC Image Region</strong></a></h5>
-<div class="paragraph">
-<p>Point zero of the coordinates is defined in the same way for the Exif SubjectArea and for the IPTC Image region: the upper left corner of the pixels of an image, no rotation/orientation processing is applied.</p>
-</div>
-<div class="paragraph">
-<p>For an Exif Subject area an IPTC Image Region structure must be created.
-This structure includes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An Image Region structure with values mapped as shown in the table below.</p>
-</li>
-<li>
-<p>The Measuring Unit value “pixel” is mandatory as the Exif specification builds on pixels only.</p>
-</li>
-<li>
-<p>The Region Role property may show the value for “main subject area”, defined by the identifier <a href="http://cv.iptc.org/newscodes/imageregionrole/mainSubjectArea" class="bare">http://cv.iptc.org/newscodes/imageregionrole/mainSubjectArea</a>.</p>
-</li>
-<li>
-<p>No other Image Region properties are required by the mapping. A local identifier and name may be applied as needed by the user.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The table below describes how Exif SubjectArea metadata should be transformed to IPTC Image Region metadata.</p>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Exif SubjectArea field value</th>
-<th class="tableblock halign-left valign-top">Image Region Boundary property and its value</th>
-<th class="tableblock halign-left valign-top">Processing instruction</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shape: single point, 2 values</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary Shape = “polygon”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This value is mandatory</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Measuring Unit = “pixel”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This value is mandatory</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjecArea 1st value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ Polygon Vertices, 1st vertex: X-Axis Coordinate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Exif value</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjecArea 2nd value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ Polygon Vertices, 1st vertex: Y-Axis Coordinate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Exif value</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shape: circle, 3 values</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary Shape = “circle”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This value is mandatory</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Measuring Unit = “pixel”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This value is mandatory</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 1st value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ X-Axis Coordinate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Exif value</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 2nd value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ Y-Axis Coordinate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Exif value</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 3rd value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ Circle Radius</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 3rd value divided by 2, rounded as integer</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shape: rectangle, 4 values</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boundary Shape = “rectangle”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This value is mandatory</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Measuring Unit = “pixel”</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This value is mandatory</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 1st value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ X-Axis Coordinate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 1st value minus (SubjectArea 3rd value divided by 2, rounded as integer)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 2nd value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ Y-Axis Coordinate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 2nd value minus (SubjectArea 4th value divided by 2, rounded as integer)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 3rd value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ Rectangle Width</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Exif value</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SubjectArea 4th value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">→ Rectangle Height</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Exif value</p></td>
-</tr>
-</tbody>
-</table>
+<p>From 2020 to the end of 2023 this section had a guideline for mapping data between the IPTC Image Region and the Exif SubjectArea. Unfortunately this mapping was built on the assumption Exif’s SubjectArea may be used for metadata about what this area shows, e.g. the name of a person or an object. This assumption was wrong and therefore the guideline about this mapping was removed in 2023. Please do not map between the IPTC Image Region and the Exif SubjectArea.</p>
 </div>
 </div>
 </div>
