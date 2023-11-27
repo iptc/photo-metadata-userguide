@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: ToDoRef (2023)
 :revnumber:
-:revremark: 2023-11-23
+:revremark: 2023-11-27
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -36,6 +36,7 @@ The items below are planned actions and links to the corresponding section of th
 * CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)
 * change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael]
 * ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it
+* ADD: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more)
 * ADD: <<Data Mining>> (new 2023.1)
 
 WARNING: If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
