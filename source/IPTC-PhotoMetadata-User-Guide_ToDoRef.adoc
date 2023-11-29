@@ -35,9 +35,9 @@ The items below are planned actions and links to the corresponding section of th
 * CHANGE <<Product>>: the structure got Identifier as new property (new 2022.1)
 * CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)
 * change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael]
-* ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it
-* ADD: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more)
-* ADD: <<Data Mining>> (new 2023.1)
+* ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David]
+* ADD: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan]
+* ADD: <<Data Mining>> (new 2023.1) [David and Jeff S.]
 
 WARNING: If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
 
