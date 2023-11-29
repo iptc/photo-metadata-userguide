@@ -29,12 +29,12 @@ Simply said this document is a reference of what needs to be done for a next ver
 The items below are planned actions and links to the corresponding section of this document:
 
 * ADD: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline]
-* CHANGE <<Event>>: add Event Identifier (new 2021.1)
-* CHANGE <<Source>>: field name got (Supply Chain) appended (2022.1), explain why
-* CHANGE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1)
-* CHANGE <<Product>>: the structure got Identifier as new property (new 2022.1)
+* change DONE <<Event>>: add Event Identifier (new 2021.1) [Michael, 2023-11-29]
+* change DONE <<Source>>: field name got (Supply Chain) appended (2022.1) [Michael, 2023-11-29]
+* change DONE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1) [Michael, 2023-11-29]
+* change DONE <<Product>>: the structure got Identifier as new property (new 2022.1) [Michael, 2023-11-29]
 * CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)
-* change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael]
+* change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael, 2023-11-23]
 * ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David]
 * ADD: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan]
 * ADD: <<Data Mining>> (new 2023.1) [David and Jeff S.]

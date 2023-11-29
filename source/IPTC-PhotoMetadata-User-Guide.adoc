@@ -4,7 +4,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :imagesdir: ./images
 :includedir: ./_includes
 :stylesdir: stylesheets/
-:stylesheet: asciidoctor-iptc-stds-02.css
+:stylesheet: asciidoctor-iptc-stds-02bis.css
 :source-highlighter: coderay
 :source-language: asciidoc
 :icons: font
@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: DRAFT 2023-11
 :revnumber:
-:revremark: 2023-11-23
+:revremark: 2023-11-29
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -234,6 +234,7 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Licensing Use of the Image,Encoding type>> {EERE detail} ||Extension
 |<<Licensing Use of the Image,Encoding type>> {LERE detail} ||Extension
 |<<Other Things Shown in the Image,Event>> ||Extension
+|Event Identifier in <<Event>> ||Extension
 |<<Other Things Shown in the Image,GTIN>> {Product detail} ||Extension
 |<<General Image Content,Genre (generic)>> ||Extension
 |<<General Image Content,Headline>> ||Core
@@ -285,14 +286,14 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Licensing Use of the Image,Rights Expression Language ID>> {LERE detail}||Extension
 |<<Licensing Use of the Image,Rights Usage Terms>>||Core
 |<<General Image Content,Scene Code>>||Core
-|<<Rights Information,Source>>||Core
+|<<Rights Information,Source (Supply Chain)>>||Core
 |<<Other Things Shown in the Image,Source>> {Artwork or Object detail}||Extension
 |<<Other Things Shown in the Image,Source Inventory Number>> {Artwork or Object detail}	||Extension
 |<<Other Things Shown in the Image,Source Inventory URL>> {Artwork or Object detail}	||Extension
 |*Special Instructions*|<<Administration and Commissioning Details,Instructions>>|
 |<<Locations,State/Province>> {Contact detail} ||Core
 |<<Other Things Shown in the Image,Style Period>> {Artwork or Object detail} ||Extension
-|<<General Image Content,Subject Code>> ||Core
+|<<General Image Content,IPTC Subject Code (Legacy)>> ||Core
 |<<Locations,Sublocation>> (legacy) || Core
 |<<Locations,Sublocation>> {Location Created detail} ||Extension
 |<<Locations,Sublocation>> {Location Shown detail} ||Extension
@@ -334,9 +335,10 @@ Values from the controlled vocabulary IPTC Subject Codes should be placed into t
 
 WARNING: Keywords may have to be separated by commas or other separators depending on the software. The field for each keyword is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 
-==== IPTC Subject Code
+==== IPTC Subject Code (Legacy)
 
-This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC “Subject NewsCodes” taxonomy (available from http://cv.iptc.org/newscodes/subjectcode). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field.
+This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC “Subject NewsCodes” taxonomy (available from http://cv.iptc.org/newscodes/subjectcode). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field. +
+As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: http://cv.iptc.org/newscodes/mediatopic. For the Media Topics the CV Term About Image property must be used - see it just below.
 
 ==== CV-Term About the Image
 
@@ -530,7 +532,7 @@ The codes are available from: https://www.iso.org/obp/ui/. If both the Country a
 World Region::
 The name of the region of the world.
 
-WARNING: the location fields are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: The location fields are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Location (Original/Legacy)
 
@@ -572,11 +574,12 @@ A code from a known controlled vocabulary for identifying the organisation or co
 
 ==== Event
 
-The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony.
+The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony. +
+In 2023 the field **Event Indentifier** was introduced to add a unique identifier to the event. Example: the URL of a page about the event can be used as identifier.
 
 ==== Product
 
-The Product Shown field structure is used to describe one to many products depicted by the image. The name of the product and a textual description can be applied to the corresponding fields. To identify the product a 14 digit GTIN (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used. 
+The Product Shown field structure is used to describe one to many products depicted by the image. The **name** of the product and a textual **description** can be applied to the corresponding fields. To identify the product a single 14 digit **GTIN** (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used too. For identifiers beyond GTIN the field **Identifier** can be used, multiple may be applied.
 
 ==== Artwork or Object in the Image
 
@@ -658,7 +661,7 @@ This property can be used to indicate the creator or creators of the image by na
 
 The job title of the person who created the photograph. For examples this might include titles such as: Staff Photographer, Independent Commercial Photographer, or staff writer. Since this is a qualifier for the Creator field, the Creator field must also be filled out. 
 
-WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Creator's Contact Info
 
@@ -690,9 +693,9 @@ For legal advice on asserting copyright, you should consult a lawyer.
 
 Notes on usage rights (how the image may be used) should be provided in the “Rights Usage Terms” field.
 
-WARNING: this field is limited by the IIM format to about 128 characters. In XMP there is effectively no character limit.
+WARNING: This field is limited by the IIM format to about 128 characters. In XMP there is effectively no character limit.
 
-IMPORTANT: this field is shown in the Image Credits of a photo in the results of a Google image search.
+IMPORTANT: This field is shown in the Image Credits of a photo in the results of a Google image search.
 
 ==== Copyright Owner
 
@@ -705,17 +708,17 @@ The Credit Line may contain information also listed in other fields such as Crea
 
 NOTE: In IPTC Core version 1.0 this field was named 'Provider'.
 
-WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
-IMPORTANT: this field is shown in the Image Credits of a photo in the results of a Google image search.
+IMPORTANT: This field is shown as Image Credits of a photo in the results of a Google image search.
 
-==== Source
+==== Source (Supply Chain)
 
 The Source field is used to name parties with a role in the supply chain, such as agencies, originating organisations, or photographers. The Source field is useful for syndication where the original supplier agency or photographer  is different from the end supplier. 
 
-NOTE: before the IPTC Photo Metadata Standard 2014 the semantics of this field were restricted to the original copyright owner of the image.)
+NOTE: Before the IPTC Photo Metadata Standard 2014 the semantics of this field were restricted to the original copyright owner of the image.)
 
-WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Property Release Status
 
@@ -811,7 +814,7 @@ More about dates and times and different software
 
 The name of the person creating or editing the description of the image.
 
-WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Title
 
@@ -819,14 +822,14 @@ A short human readable reference for the image. It can be a text reference or a 
 
 A short human readable reference for the image. It can be a text reference or a numeric reference, and serves primarily as an identifier. The Title field has often been used by photographers for the image filename, but IPTC now provides specific fields for image IDs including the Supplier's Image ID, The Digital Image GUID,  and the Registry Entry fields.  The Title field should not be confused with the Headline field which is a short descriptive field about the content of an image, or with the AO Title field which contains the title of the artwork or object in the the image.
 
-WARNING: this field is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
+WARNING: This field is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 
 ==== Job Identifier
 A number or textual identifier for the job for which the image was supplied. This field can allow job information to be tracked through the workflow.
 
 NOTE: This field is named ‘Transmission Reference' in the IIM but its use has changed as reflected by this name after the adoption by Adobe Photoshop.
 
-WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Instructions
 

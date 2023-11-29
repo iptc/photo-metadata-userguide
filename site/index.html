@@ -423,6 +423,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 /* IPTC Settings for NewsML-G2 Implementation Guidelines*/
 body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel1 li a {font-weight: bold;}
 body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: normal;}
+/* v 02bis, 2023-11 MS */
+h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -434,7 +436,7 @@ body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: norma
 <span id="author" class="author">IPTC Photo Metadata Working Group</span><br>
 <span id="email" class="email"><a href="mailto:office@iptc.org">office@iptc.org</a></span><br>
 <span id="revnumber">draft 2023-11 </span>
-<br><span id="revremark">2023-11-23</span>
+<br><span id="revremark">2023-11-29</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1061,6 +1063,11 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Event Identifier in <a href="#_event">Event</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">GTIN</a> {Product detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
@@ -1316,7 +1323,7 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Source</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Source (Supply Chain)</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
@@ -1351,7 +1358,7 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Subject Code</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">IPTC Subject Code (Legacy)</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
@@ -1474,9 +1481,10 @@ Keywords may have to be separated by commas or other separators depending on the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_iptc_subject_code"><a class="anchor" href="#_iptc_subject_code"></a><a class="link" href="#_iptc_subject_code">IPTC Subject Code</a></h4>
+<h4 id="_iptc_subject_code_legacy"><a class="anchor" href="#_iptc_subject_code_legacy"></a><a class="link" href="#_iptc_subject_code_legacy">IPTC Subject Code (Legacy)</a></h4>
 <div class="paragraph">
-<p>This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC “Subject NewsCodes” taxonomy (available from <a href="http://cv.iptc.org/newscodes/subjectcode" class="bare">http://cv.iptc.org/newscodes/subjectcode</a>). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field.</p>
+<p>This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC “Subject NewsCodes” taxonomy (available from <a href="http://cv.iptc.org/newscodes/subjectcode" class="bare">http://cv.iptc.org/newscodes/subjectcode</a>). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field.<br>
+As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: <a href="http://cv.iptc.org/newscodes/mediatopic" class="bare">http://cv.iptc.org/newscodes/mediatopic</a>. For the Media Topics the CV Term About Image property must be used - see it just below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1862,7 +1870,7 @@ The codes are available from: <a href="https://www.iso.org/obp/ui/" class="bare"
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-the location fields are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+The location fields are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
@@ -1936,13 +1944,14 @@ artwork, objects).
 <div class="sect3">
 <h4 id="_event"><a class="anchor" href="#_event"></a><a class="link" href="#_event">Event</a></h4>
 <div class="paragraph">
-<p>The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony.</p>
+<p>The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony.<br>
+In 2023 the field <strong>Event Indentifier</strong> was introduced to add a unique identifier to the event. Example: the URL of a page about the event can be used as identifier.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_product"><a class="anchor" href="#_product"></a><a class="link" href="#_product">Product</a></h4>
 <div class="paragraph">
-<p>The Product Shown field structure is used to describe one to many products depicted by the image. The name of the product and a textual description can be applied to the corresponding fields. To identify the product a 14 digit GTIN (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used.</p>
+<p>The Product Shown field structure is used to describe one to many products depicted by the image. The <strong>name</strong> of the product and a textual <strong>description</strong> can be applied to the corresponding fields. To identify the product a single 14 digit <strong>GTIN</strong> (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used too. For identifiers beyond GTIN the field <strong>Identifier</strong> can be used, multiple may be applied.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2112,7 +2121,7 @@ This field is shown in the Image Credits of a photo in the results of a Google i
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
@@ -2179,7 +2188,7 @@ e.g. +1 (212) 1234578</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-this field is limited by the IIM format to about 128 characters. In XMP there is effectively no character limit.
+This field is limited by the IIM format to about 128 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
@@ -2191,7 +2200,7 @@ this field is limited by the IIM format to about 128 characters. In XMP there is
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-this field is shown in the Image Credits of a photo in the results of a Google image search.
+This field is shown in the Image Credits of a photo in the results of a Google image search.
 </td>
 </tr>
 </table>
@@ -2228,7 +2237,7 @@ In IPTC Core version 1.0 this field was named 'Provider'.
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
@@ -2240,14 +2249,14 @@ this field is limited by the IIM format to about 32 characters. In XMP there is 
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-this field is shown in the Image Credits of a photo in the results of a Google image search.
+This field is shown as Image Credits of a photo in the results of a Google image search.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_source"><a class="anchor" href="#_source"></a><a class="link" href="#_source">Source</a></h4>
+<h4 id="_source_supply_chain"><a class="anchor" href="#_source_supply_chain"></a><a class="link" href="#_source_supply_chain">Source (Supply Chain)</a></h4>
 <div class="paragraph">
 <p>The Source field is used to name parties with a role in the supply chain, such as agencies, originating organisations, or photographers. The Source field is useful for syndication where the original supplier agency or photographer  is different from the end supplier.</p>
 </div>
@@ -2258,7 +2267,7 @@ this field is shown in the Image Credits of a photo in the results of a Google i
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-before the IPTC Photo Metadata Standard 2014 the semantics of this field were restricted to the original copyright owner of the image.)
+Before the IPTC Photo Metadata Standard 2014 the semantics of this field were restricted to the original copyright owner of the image.)
 </td>
 </tr>
 </table>
@@ -2270,7 +2279,7 @@ before the IPTC Photo Metadata Standard 2014 the semantics of this field were re
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
@@ -2470,7 +2479,7 @@ Read also the page about rights information.
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
@@ -2491,7 +2500,7 @@ this field is limited by the IIM format to about 32 characters. In XMP there is 
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-this field is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
+This field is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
@@ -2521,7 +2530,7 @@ This field is named ‘Transmission Reference' in the IIM but its use has change
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 </td>
 </tr>
 </table>
