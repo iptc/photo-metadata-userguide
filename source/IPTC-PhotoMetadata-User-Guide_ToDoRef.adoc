@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: ToDoRef (2023)
 :revnumber:
-:revremark: 2023-11-27
+:revremark: 2023-12-01
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -28,7 +28,7 @@ Simply said this document is a reference of what needs to be done for a next ver
 
 The items below are planned actions and links to the corresponding section of this document:
 
-* ADD: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline]
+* adding DONE: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline]
 * change DONE <<Event>>: add Event Identifier (new 2021.1) [Michael, 2023-11-29]
 * change DONE <<Source>>: field name got (Supply Chain) appended (2022.1) [Michael, 2023-11-29]
 * change DONE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1) [Michael, 2023-11-29]

@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: DRAFT 2023-11
+:version-label: DRAFT 2023-12
 :revnumber:
-:revremark: 2023-11-29
+:revremark: 2023-12-01
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -173,7 +173,7 @@ This section provides a reference of field labels and names in alphabetical orde
 
 Each *Label (IPTC Name)* is linked to the User Guide section which describes this field. Click on the name and follow.
 
-Labels in *bold* are not defined by the IPTC Photo Metadata Standard. The *Same as IPTC Name* column shows the name of the corresponding IPTC field.
+Labels in *bold* are not defined by the IPTC Photo Metadata Standard but used by popular software. The *Same as IPTC Name* column shows the name of the corresponding IPTC field.
 
 The column *Schema* indicates which IPTC schema the field belongs to.
 
@@ -183,10 +183,12 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Additional Model Information>>||Extension
 |<<Creator’s Contact Info,Address>> {Contact Detail}||Core
 |<<Other Things Shown in the Image,Artwork or Object in the Image>>||Extension
+|<<General Image Content,Alt Text (Accessibility)>> ||Core
 |*Author*|<<Rights Information,Creator>>|
 |*Author's Title*|<<Rights Information,Creator's Job Title>>|
 |*Byline*|<<Rights Information,Creator>>|
 |*Byline's Title*|<<Rights Information,Creator's Job Title>>|
+|*Caption*|<<General Image Content,Description>>|
 |<<Persons Depicted in the Image,Characteristics>> {Person detail}||Extension
 |<<Other Things Shown in the Image,Circa Date Created>> {Artwork or Object detail}||Extension
 |<<Locations,City>> (legacy)||Core
@@ -222,10 +224,10 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<General Image Content,CV-Term name>> {CV-Term detail}||Extension
 |<<Other Things Shown in the Image,Date Created>> {Artwork or Object detail}||Extension
 |<<Administration and Commissioning Details,Date Created>> ||Core
+|<<General Image Content,Description Writer>> ||Core
+|<<General Image Content,Description>> (of the full image) ||Core
 |<<Persons Depicted in the Image,Description>> {Person detail} ||Extension
 |<<Other Things Shown in the Image,Description>> {Product detail} ||Extension
-|<<General Image Content,Description Writer>> ||Core
-|<<General Image Content,Description>> ||Core
 |<<Administration and Commissioning Details,Digital Image GUID>> ||Extension
 |<<Administration and Commissioning Details,Digital Source Type>> ||Extension
 |<<Rights Information,Email address(es)>> {Contact detail} ||Core
@@ -235,6 +237,7 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Licensing Use of the Image,Encoding type>> {LERE detail} ||Extension
 |<<Other Things Shown in the Image,Event>> ||Extension
 |Event Identifier in <<Event>> ||Extension
+|<<General Image Content,Extended Description (Accessibility)>> ||Core
 |<<Other Things Shown in the Image,GTIN>> {Product detail} ||Extension
 |<<General Image Content,Genre (generic)>> ||Extension
 |<<General Image Content,Headline>> ||Core
@@ -417,9 +420,41 @@ WARNING: This field is limited by the IIM format to about 256 characters. In XMP
 
 ==== Description/Caption
 
-The Description field, often referred to as a ‘caption' is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people's names, their role in the action, the location. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.
+The Description field, often referred to as a ‘caption' is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people’s names, their role in the action, the location. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.
+
+The Description field should not be confused with the field for Alt Text (Accessibility), see below. The Description is often presented as a visible caption below the image and provides the facts about an image. Alt Text may be hidden from view within the HTML coding of a website; this field is intended to be read out loud by text-to-speech and assistive technologies. 
+
 
 WARNING: This field is limited by the IIM format to about 2000 characters. In XMP there is effectively no character limit.
+
+==== Alt Text (Accessibility)
+
+This field is used to provide a brief textual description of the purpose and meaning of an image that can be accessed by assistive technology or displayed when the image is disabled in the browser. The purpose of Alt Text is to provide a text alternative that serves the equivalent purpose. 
+
+While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative that serves the equivalent purpose, use Alt Text (Accessibility) to provide a summary and Extended Description (Accessibility) (see below) to provide additional details about the image. 
+
+This property should not be confused with the IPTC field Headline, which is a brief synopsis or summary of the contents of the image. +
+The Alt Text is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used the values in the Headline or Description fields to populate the alt text for websites and digital products. IPTC created this dedicated Alt Text (Accessibility) field which should be used instead.
+
+Top 5 Tips for Writing Alt Text:
+
+. **Be specific:** Effectively convey the visual message by describing all meaningful and relevant details.
+. **Keep it short:** Be as brief as you can. Know when you need to write more for complex images.
+. **Limit keywords:** Alt Text is definitely not for boosting SEO. Beware of SEO-focused alt text “shortcuts.”
+. **Don’t repeat information:** Don’t copy/paste or auto-populate from adjacent text on the page.
+. **Incorporate context:** Alt Text must make sense and flow with the surrounding page content.
+
+WARNING: In XMP there is effectively no character limit. However, some editing interfaces may indicate when a specific number - of about 250 - of charactersis exceeded. 
+
+
+==== Extended Description (Accessibility)
+
+The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the Alt Text (Accessibility) property. Extended Description (Accessibility)  is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose. 
+
+This property should not be confused with the IPTC property Description/Caption. Extended Description (Accessibility) can be combined with Alt Text (Accessibility) if and when a brief description does not provide a text equivalent to the image. It should not repeat the information in the Alt Text (Accessibility) property. This property is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products. IPTC created this dedicated Extended Description (Accessibility) field and this should be used instead. 
+
+WARNING: Be aware that this IPTC field does not support formatted text or HTML markup.  
+
 
 === Persons Depicted in the Image
 
@@ -812,7 +847,7 @@ More about dates and times and different software
 
 ==== Description writer
 
-The name of the person creating or editing the description of the image.
+The name of the most recent person(s) involved in creating, editing or correcting the entries for the Description, Alt Text (Accessibility), or Extended Description (Accessibility) fields of the image. There may be more than one person writing descriptions for the image. In this case, make sure to specify the descriptions each writer worked on. For example, Description: Jane Doe; Alt Text and Extended Description: John Doe. 
 
 WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
@@ -1348,12 +1383,13 @@ Example photo provided by and © David Riecks
 !Email(s)!infor@riecks.com
 !Website(s)!www.riecks.com
 !===
-
 |Creator's Jobtitle|Photographer
 |Credit Line|©1985 David Riecks: www.riecks.com
 |Date Created|1985-11-25
 |Description writer|David Riecks
 |Description|Southern Himalayan Mountains, from Snow Peak, Nainital, Uttarakhand, India longitude: 79.444542 latitude: 29.39805
+|Alt Text (Accessibility)| Landscape view of the snow-capped Southern Himalayan mountain range with jagged peaks towering above rolling foothills in the foreground.
+|Extended Description (Accessibility) | (empty, not required)
 |Digital Source Type|Original digital capture of a real life scene
 |Event|
 |Featured Organisation (code)|
@@ -1436,8 +1472,6 @@ Example photo provided by ©David Riecks
 |===
 |Field Name|Field Value
 |Additional Model Info|
-|Caption/Description writer|Susan Brown
-|Caption/Description|After digging the furrows another ten yards with the tractor, Jim Moore hops off to hand-set more leeks and onions.
 |City|Watseka
 |Copyright Notice| ©2007 Big Newspaper, all rights reserved
 |Copyright Owner Name|
@@ -1463,6 +1497,10 @@ Example photo provided by ©David Riecks
 |Creator's Jobtitle|Staff photographer
 |Credit Line|John Doe / Big Newspaper
 |Date Created|2007-04-19
+|Description writer|Susan Brown
+|Description|After digging the furrows another ten yards with the tractor, Jim Moore hops off to hand-set more leeks and onions.
+|Alt Text (Accessibility)|Ground-level shot of a farmer bending forward to hand-set a tiny onion sprout. An older red tractor is seen in the row of crops in the background. 
+|Extended Description (Accessibility) |The farmer is wearing denim overalls, a white t-shirt, and faded blue baseball cap. We look up along the row of crops towards a red tractor and cloud-filled sky beyond. 
 |Digital Source Type|Original digital capture of a real life scene
 |Event|
 |Featured Organisation (code)|http://www.prairielandcsa.org/
@@ -1587,6 +1625,8 @@ Example photo provided by ©David Riecks
 |Date Created|2009-06-24
 |Description writer|Jacques Brown
 |Description|This statue of the 16th President of the United States depicts a 19 foot high seated Abraham Lincoln in contemplation inside the Lincoln Memorial. It was carved of Georgia white marble by the Piccirilli Brothers under the supervision of the sculptor, Daniel Chester French and took four years to create, and completed in 1920.
+|Alt Text (Accessibility)|Closeup of the Lincoln Memorial statue with Abraham Lincoln’s face and hand in view. Lincoln looks off with a steady expression, his hand curled into a loose fist resting on the arm of a large classical chair.
+|Extended Description (Accessibility) |Lincoln is depicted with deep-set eyes, a strong browline, prominent cheekbones, short wavy hair, and a close beard. Two creases extend down at an angle from his nose to his lower cheekbones. His fixed gaze is directed slightly upward, mouth set in a straight line. His wrist is resting on the edge of the chair, held out straight so we see the bony knuckles of his hand. 
 |Digital Source Type|Original digital capture of a real life scene
 |Event|
 |Featured Organisation (code)|
@@ -1682,6 +1722,8 @@ image::example-image-4.jpg[Example museum painting image]
 !===
 |Credit Line|Photo Credit: St Edmundsbury Museums
 |Description|Beale, Mary; Portrait of a Girl with a Cat; St Edmundsbury Museums; http://www.artuk.org/artworks/portrait-of-a-girl-with-a-cat-10550
+|Alt Text (Accessibility)|Painting of a young girl posing for a portrait with a cat curled up in her lap.
+|Extended Description (Accessibility) |She wears a dark gold dress with a low scooped neckline and short sleeves that are pinned up in front and draping down to her elbow. She looks at us with a serene expression, full rosy cheeks, pale skin, dark brown eyes, and a small pink mouth curling up slightly at the corners. Her hands delicately cradle the brown and black striped cat in her lap, one hand resting on its back and the other positioned close to its chest beside its head. The cat looks relaxed, perhaps sleepy, with its head tilted slightly towards the girl’s arm.
 |Headline|Beale, Mary, 1633-1699; Portrait of a Girl with a Cat
 |Image Supplier|
 !===
@@ -1714,14 +1756,49 @@ image::example-image-5.jpg[Example museum sculpture image]
 !===
 |Copyright Notice|Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 |Description|Figure; Hellenistic; Limestone sculpture; Height: 27.5 centimetres (max) ;Excavated/Findspot: Larnaka; Donated by Henry Christy; British Museum; 1852.0609.56; Upper part of limestone figure of Hera or Aphrodite; right arm and legs lost.
+|Alt Text (Accessibility)|Limestone sculpture shows a partial bust of Hera or Aphrodite, depicted with long hair, parted at the middle and tucked behind her ears, and a calm, focused expression.
+|Extended Description (Accessibility) |Her right arm is missing from the bust but we can see part of her left arm extending out and down to just above the elbow. Her face has a rounded oval shape with wide-set eyes, a small nose and mouth, and gaze directed slightly off to her left. She wears a tunic with delicate detailing around the high scooped neckline, hanging in loose folds down her arm and torso.
 |Headline|Figure
 |Keyword|Hellenistic,Woman,Upper Torso,Hera,Aphrodite
 |Usage Terms|For uses not covered under the Creative Commons license, or to license high-resolution versions of the images for commercial uses, contact the British Museum's image service at bmimages.com.
 |===
 
+=== Street photography image
+
+image::example-image-6.jpg[Example street photography image]
+
+(Fields listed in alphabetical order - see also Field Reference Table)
+
+[cols="1,2a",options="header"]
+|===
+|Field Name|Field Value
+|Creator|Yaopey Yong
+|Creator's Contact Info|
+!===
+!City!Manchester
+!County!United Kingdom
+!Website(s)!yaopey.com
+!===
+|Description|Little Children on a Bicycle, 2012 mural by Lithuanian artist Ernest Zacharevic in George Town, Penang, Malaysia.
+|Alt Text (Accessibility)|A realist street art wall mural of two life-size children positioned to appear as if they are riding an actual bicycle that is parked on a city sidewalk.
+|Extended Description (Accessibility) |The older child appears to be sitting on the seat of the black bicycle reaching towards the curved handlebars and looking out ahead with a joyous expression on their face. The younger child appears to be perched on the top of the back bicycle rack, hugging their arms tightly around the other’s waist and opening their mouth wide as if to scream. The distressed muted colors in the mural blend with the weathered gray and black patina stone wall and cracked sidewalk.
+|Date Created|2020-03-31
+|Headline|Mural by Lithuanian artist Zacharevic in Malaysia
+|Location Created|
+!===
+!City!Penang
+!Country Name!Malaysia
+!Country Code!MYS
+!World Region!Asia
+!===
+|===
+
 == User Guide History
 
 (Latest entry at the top of the list)
+
+December 2023::
+List with changes will follow ...
 
 March 2023::
 Add information on adding DigitalSourceType to images.

@@ -435,8 +435,8 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="details">
 <span id="author" class="author">IPTC Photo Metadata Working Group</span><br>
 <span id="email" class="email"><a href="mailto:office@iptc.org">office@iptc.org</a></span><br>
-<span id="revnumber">draft 2023-11 </span>
-<br><span id="revremark">2023-11-29</span>
+<span id="revnumber">draft 2023-12 </span>
+<br><span id="revremark">2023-12-01</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -503,6 +503,7 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <li><a href="#_a_heritage_artwork_image_by_an_agency_photographer">A heritage artwork image - by an agency photographer</a></li>
 <li><a href="#_image_of_a_painting_by_a_museum_or_gallery">Image of a painting - by a museum or gallery</a></li>
 <li><a href="#_image_of_a_sculpture_by_a_museum">Image of a sculpture - by a museum</a></li>
+<li><a href="#_street_photography_image">Street photography image</a></li>
 </ul>
 </li>
 <li><a href="#_user_guide_history">User Guide History</a></li>
@@ -773,7 +774,7 @@ United Kingdom</pre>
 <p>Each <strong>Label (IPTC Name)</strong> is linked to the User Guide section which describes this field. Click on the name and follow.</p>
 </div>
 <div class="paragraph">
-<p>Labels in <strong>bold</strong> are not defined by the IPTC Photo Metadata Standard. The <strong>Same as IPTC Name</strong> column shows the name of the corresponding IPTC field.</p>
+<p>Labels in <strong>bold</strong> are not defined by the IPTC Photo Metadata Standard but used by popular software. The <strong>Same as IPTC Name</strong> column shows the name of the corresponding IPTC field.</p>
 </div>
 <div class="paragraph">
 <p>The column <strong>Schema</strong> indicates which IPTC schema the field belongs to.</p>
@@ -808,6 +809,11 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Alt Text (Accessibility)</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Author</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -825,6 +831,11 @@ United Kingdom</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Byline&#8217;s Title</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator&#8217;s Job Title</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Caption</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1003,6 +1014,16 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description Writer</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description</a> (of the full image)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_persons_depicted_in_the_image">Description</a> {Person detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
@@ -1011,16 +1032,6 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Description</a> {Product detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description Writer</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Digital Image GUID</a></p></td>
@@ -1066,6 +1077,11 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Event Identifier in <a href="#_event">Event</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Extended Description (Accessibility)</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">GTIN</a> {Product detail}</p></td>
@@ -1636,7 +1652,10 @@ This field is limited by the IIM format to about 256 characters. In XMP there is
 <div class="sect3">
 <h4 id="_descriptioncaption"><a class="anchor" href="#_descriptioncaption"></a><a class="link" href="#_descriptioncaption">Description/Caption</a></h4>
 <div class="paragraph">
-<p>The Description field, often referred to as a ‘caption' is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people&#8217;s names, their role in the action, the location. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.</p>
+<p>The Description field, often referred to as a ‘caption' is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people’s names, their role in the action, the location. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.</p>
+</div>
+<div class="paragraph">
+<p>The Description field should not be confused with the field for Alt Text (Accessibility), see below. The Description is often presented as a visible caption below the image and provides the facts about an image. Alt Text may be hidden from view within the HTML coding of a website; this field is intended to be read out loud by text-to-speech and assistive technologies.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1646,6 +1665,74 @@ This field is limited by the IIM format to about 256 characters. In XMP there is
 </td>
 <td class="content">
 This field is limited by the IIM format to about 2000 characters. In XMP there is effectively no character limit.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_alt_text_accessibility"><a class="anchor" href="#_alt_text_accessibility"></a><a class="link" href="#_alt_text_accessibility">Alt Text (Accessibility)</a></h4>
+<div class="paragraph">
+<p>This field is used to provide a brief textual description of the purpose and meaning of an image that can be accessed by assistive technology or displayed when the image is disabled in the browser. The purpose of Alt Text is to provide a text alternative that serves the equivalent purpose.</p>
+</div>
+<div class="paragraph">
+<p>While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative that serves the equivalent purpose, use Alt Text (Accessibility) to provide a summary and Extended Description (Accessibility) (see below) to provide additional details about the image.</p>
+</div>
+<div class="paragraph">
+<p>This property should not be confused with the IPTC field Headline, which is a brief synopsis or summary of the contents of the image.<br>
+The Alt Text is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used the values in the Headline or Description fields to populate the alt text for websites and digital products. IPTC created this dedicated Alt Text (Accessibility) field which should be used instead.</p>
+</div>
+<div class="paragraph">
+<p>Top 5 Tips for Writing Alt Text:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Be specific:</strong> Effectively convey the visual message by describing all meaningful and relevant details.</p>
+</li>
+<li>
+<p><strong>Keep it short:</strong> Be as brief as you can. Know when you need to write more for complex images.</p>
+</li>
+<li>
+<p><strong>Limit keywords:</strong> Alt Text is definitely not for boosting SEO. Beware of SEO-focused alt text “shortcuts.”</p>
+</li>
+<li>
+<p><strong>Don’t repeat information:</strong> Don’t copy/paste or auto-populate from adjacent text on the page.</p>
+</li>
+<li>
+<p><strong>Incorporate context:</strong> Alt Text must make sense and flow with the surrounding page content.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+In XMP there is effectively no character limit. However, some editing interfaces may indicate when a specific number - of about 250 - of charactersis exceeded.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_extended_description_accessibility"><a class="anchor" href="#_extended_description_accessibility"></a><a class="link" href="#_extended_description_accessibility">Extended Description (Accessibility)</a></h4>
+<div class="paragraph">
+<p>The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the Alt Text (Accessibility) property. Extended Description (Accessibility)  is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose.</p>
+</div>
+<div class="paragraph">
+<p>This property should not be confused with the IPTC property Description/Caption. Extended Description (Accessibility) can be combined with Alt Text (Accessibility) if and when a brief description does not provide a text equivalent to the image. It should not repeat the information in the Alt Text (Accessibility) property. This property is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products. IPTC created this dedicated Extended Description (Accessibility) field and this should be used instead.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Be aware that this IPTC field does not support formatted text or HTML markup.
 </td>
 </tr>
 </table>
@@ -2470,7 +2557,7 @@ Read also the page about rights information.
 <div class="sect3">
 <h4 id="_description_writer"><a class="anchor" href="#_description_writer"></a><a class="link" href="#_description_writer">Description writer</a></h4>
 <div class="paragraph">
-<p>The name of the person creating or editing the description of the image.</p>
+<p>The name of the most recent person(s) involved in creating, editing or correcting the entries for the Description, Alt Text (Accessibility), or Extended Description (Accessibility) fields of the image. There may be more than one person writing descriptions for the image. In this case, make sure to specify the descriptions each writer worked on. For example, Description: Jane Doe; Alt Text and Extended Description: John Doe.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -3863,6 +3950,18 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt Text (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Landscape view of the snow-capped Southern Himalayan mountain range with jagged peaks towering above rolling foothills in the foreground.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Description (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>(empty, not required)</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Digital Source Type</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Original digital capture of a real life scene</p>
@@ -4179,18 +4278,6 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Caption/Description writer</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Susan Brown</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Caption/Description</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>After digging the furrows another ten yards with the tractor, Jim Moore hops off to hand-set more leeks and onions.</p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">City</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Watseka</p>
@@ -4292,6 +4379,30 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date Created</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2007-04-19</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description writer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Susan Brown</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>After digging the furrows another ten yards with the tractor, Jim Moore hops off to hand-set more leeks and onions.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt Text (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ground-level shot of a farmer bending forward to hand-set a tiny onion sprout. An older red tractor is seen in the row of crops in the background.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Description (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The farmer is wearing denim overalls, a white t-shirt, and faded blue baseball cap. We look up along the row of crops towards a red tractor and cloud-filled sky beyond.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -4804,6 +4915,18 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt Text (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Closeup of the Lincoln Memorial statue with Abraham Lincoln’s face and hand in view. Lincoln looks off with a steady expression, his hand curled into a loose fist resting on the arm of a large classical chair.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Description (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lincoln is depicted with deep-set eyes, a strong browline, prominent cheekbones, short wavy hair, and a close beard. Two creases extend down at an angle from his nose to his lower cheekbones. His fixed gaze is directed slightly upward, mouth set in a straight line. His wrist is resting on the edge of the chair, held out straight so we see the bony knuckles of his hand.</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Digital Source Type</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Original digital capture of a real life scene</p>
@@ -5193,6 +5316,18 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt Text (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Painting of a young girl posing for a portrait with a cat curled up in her lap.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Description (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>She wears a dark gold dress with a low scooped neckline and short sleeves that are pinned up in front and draping down to her elbow. She looks at us with a serene expression, full rosy cheeks, pale skin, dark brown eyes, and a small pink mouth curling up slightly at the corners. Her hands delicately cradle the brown and black striped cat in her lap, one hand resting on its back and the other positioned close to its chest beside its head. The cat looks relaxed, perhaps sleepy, with its head tilted slightly towards the girl’s arm.</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Headline</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Beale, Mary, 1633-1699; Portrait of a Girl with a Cat</p>
@@ -5314,6 +5449,18 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt Text (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Limestone sculpture shows a partial bust of Hera or Aphrodite, depicted with long hair, parted at the middle and tucked behind her ears, and a calm, focused expression.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Description (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Her right arm is missing from the bust but we can see part of her left arm extending out and down to just above the elbow. Her face has a rounded oval shape with wide-set eyes, a small nose and mouth, and gaze directed slightly off to her left. She wears a tunic with delicate detailing around the high scooped neckline, hanging in loose folds down her arm and torso.</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Headline</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Figure</p>
@@ -5334,6 +5481,117 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_street_photography_image"><a class="anchor" href="#_street_photography_image"></a><a class="link" href="#_street_photography_image">Street photography image</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="./images/example-image-6.jpg" alt="Example street photography image">
+</div>
+</div>
+<div class="paragraph">
+<p>(Fields listed in alphabetical order - see also Field Reference Table)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field Name</th>
+<th class="tableblock halign-left valign-top">Field Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creator</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Yaopey Yong</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creator&#8217;s Contact Info</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">City</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manchester</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">County</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">United Kingdom</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Website(s)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yaopey.com</p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Little Children on a Bicycle, 2012 mural by Lithuanian artist Ernest Zacharevic in George Town, Penang, Malaysia.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alt Text (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A realist street art wall mural of two life-size children positioned to appear as if they are riding an actual bicycle that is parked on a city sidewalk.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Description (Accessibility)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The older child appears to be sitting on the seat of the black bicycle reaching towards the curved handlebars and looking out ahead with a joyous expression on their face. The younger child appears to be perched on the top of the back bicycle rack, hugging their arms tightly around the other’s waist and opening their mouth wide as if to scream. The distressed muted colors in the mural blend with the weathered gray and black patina stone wall and cracked sidewalk.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date Created</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>2020-03-31</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Headline</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mural by Lithuanian artist Zacharevic in Malaysia</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location Created</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">City</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Penang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Malaysia</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MYS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">World Region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Asia</p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -5344,6 +5602,10 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 </div>
 <div class="dlist">
 <dl>
+<dt class="hdlist1">December 2023</dt>
+<dd>
+<p>List with changes will follow &#8230;&#8203;</p>
+</dd>
 <dt class="hdlist1">March 2023</dt>
 <dd>
 <p>Add information on adding DigitalSourceType to images.</p>
