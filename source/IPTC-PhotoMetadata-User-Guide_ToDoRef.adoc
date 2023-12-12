@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: ToDoRef (2023)
 :revnumber:
-:revremark: 2023-12-01
+:revremark: 2023-12-12
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -28,7 +28,7 @@ Simply said this document is a reference of what needs to be done for a next ver
 
 The items below are planned actions and links to the corresponding section of this document:
 
-* adding DONE: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline]
+* ADD: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline] - in progress
 * change DONE <<Event>>: add Event Identifier (new 2021.1) [Michael, 2023-11-29]
 * change DONE <<Source>>: field name got (Supply Chain) appended (2022.1) [Michael, 2023-11-29]
 * change DONE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1) [Michael, 2023-11-29]
@@ -37,7 +37,9 @@ The items below are planned actions and links to the corresponding section of th
 * change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael, 2023-11-23]
 * ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David]
 * ADD: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan]
-* ADD: <<Data Mining>> (new 2023.1) [David and Jeff S.]
+* ADD: <<Data Mining>> (new 2023.1) [David and Jeff] - in progress
+* CHANGE: all links of the Field Reference Table should link to the field and not to the group [Michael]
+* CHANGE: if a URL/URI is the data type of a listed field value: apply the URL as link to the field value [Michael]
 
 WARNING: If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
 
@@ -266,7 +268,7 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Administration and Commissioning Details,Item Id>> (Registry Entry) ||Extension
 |*Job*|<<Administration and Commissioning Details,Job Id>> |
 |<<Administration and Commissioning Details,Job Id>>||Core
-|<<General Image Content,Keywords>> ||Core
+|<<Keyword>> ||Core
 |<<Licensing Use of the Image,Licensor>> ||Extension
 |<<Licensing Use of the Image,Link to Encoded Rights Expression>> {LERE detail} ||Extension
 |<<Licensing Use of the Image,Linked  Encoded Rights Expression>> {LERE} ||Extension

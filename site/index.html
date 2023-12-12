@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
 <meta name="author" content="IPTC Photo Metadata Working Group">
-<title>Photo Metadata User Guide (DRAFT)</title>
+<title>IPTC Photo Metadata User Guide (DRAFT)</title>
 <style>
 /* Asciidoctor default stylesheet plus IPTC styles | MIT License | http://asciidoctor.org */
 /* Remove comment around @import statement below when using as a custom stylesheet */
@@ -431,12 +431,12 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1><span class="image"><img src="./images/iptc_sv_gradient_70x70.jpg" alt="IPTC logo"></span> Photo Metadata User Guide (DRAFT)</h1>
+<h1><span class="image"><a class="image" href="https://iptc.org/standards/photo-metadata/"><img src="./images/iptc_sv_gradient_70x70.jpg" alt="iptc sv gradient 70x70"></a></span> <a href="https://iptc.org/standards/photo-metadata/">IPTC Photo Metadata</a> User Guide (DRAFT)</h1>
 <div class="details">
 <span id="author" class="author">IPTC Photo Metadata Working Group</span><br>
 <span id="email" class="email"><a href="mailto:office@iptc.org">office@iptc.org</a></span><br>
 <span id="revnumber">draft 2023-12 </span>
-<br><span id="revremark">2023-12-01</span>
+<br><span id="revremark">2023-12-12</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -586,10 +586,10 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <p>IPTC&#8217;s older standard for metadata, the Information Interchange Model (IIM), was issued in 1991 and defined a set of metadata properties and a data format to embed the metadata values into image files. In the early nineties a subset of this IIM was adopted as the well-known “IPTC Fields” by Adobe Photoshop and can be embedded into JPEG, TIFF and PSD files since then.</p>
 </div>
 <div class="paragraph">
-<p>In the early 2000s, a new technology for embedding metadata into image files was invented. It is called XMP, was developed by Adobe and is now an ISO standard. This technology required defining new technical specifications for the well-known “IPTC Fields” of the IIM standard and this was done by the IPTC Core schema which was initially released in 2005 and has evolved to version 1.2 since then. A key feature in the transition to IPTC Core in XMP was that the definition of the purpose and the specified use of an IIM field should remain the same, with only the underlying technical details changed. As the IPTC Core is in fact a mirror of the IIM fields it will no longer be extended.</p>
+<p>In the early 2000s, a new technology for embedding metadata into image files was invented. It is called XMP, was developed by Adobe and is now an ISO standard. This technology required defining new technical specifications for the well-known “IPTC Fields” of the IIM standard and this was done by the IPTC Core schema which was initially released in 2005 and has evolved to version 1.4 since then. A key feature in the transition to IPTC Core in XMP was that the definition of the purpose and the specified use of an IIM field should remain the same, with only the underlying technical details changed. As the IPTC Core is in fact a mirror of the IIM fields it will no longer be extended.</p>
 </div>
 <div class="paragraph">
-<p>Discussion of IPTC Core raised the need for additional metadata properties not covered by the IIM standard. IPTC created the IPTC Extension schema in 2008. IPTC Extension has been updated twice and is since November 2014 at version 1.2. Any future additions to the IPTC Photo Metadata will be part of the IPTC Extension schema.</p>
+<p>Discussion of IPTC Core raised the need for additional metadata properties not covered by the IIM standard. IPTC created the IPTC Extension schema in 2008. In almost all cases new fields were added to the IPTC Extension, the only exception are the Accessibility fields which were added to the Core as they complement the Core field Description.</p>
 </div>
 <div class="paragraph">
 <p>After development over two decades IPTC Photo Metadata can be embedded in the following ways:</p>
@@ -608,11 +608,17 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <p>To help users, the IPTC collects information from software vendors on their support for IPTC Photo Metadata. Find out more at <a href="https://www.iptc.org/photometadata" class="bare">https://www.iptc.org/photometadata</a>.</p>
 </div>
 <div class="paragraph">
-<p>Be aware that IPTC Core and IPTC Extension fields can be saved as XMP “sidecar files” for camera Raw files and those file formats which do not support embedded metadata.</p>
+<p>Be aware that IPTC Core and IPTC Extension fields can be saved as XMP “sidecar files” for camera Raw files as some of these file formats do not support embedded metadata.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_photo_metadata_under_the_hood"><a class="anchor" href="#_photo_metadata_under_the_hood"></a><a class="link" href="#_photo_metadata_under_the_hood">Photo Metadata - Under the Hood</a></h3>
+<div class="paragraph">
+<p>This section explains the technical background of embedding photo metadata in an image file. (Click Details below to see it.)</p>
+</div>
+<details>
+<summary class="title">Details</summary>
+<div class="content">
 <div class="paragraph">
 <p>Photo metadata has to be processed by software under the hood of panels on your computer screen. See below how this is done.</p>
 </div>
@@ -622,14 +628,15 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="paragraph">
 <p>The diagram shows the flow of metadata values from an input panel on your computer screen into an image file and the way back from an image file to their display on the panel.</p>
 </div>
-<div class="sect3">
-<h4 id="_what_you_see_on_your_computer_screen"><a class="anchor" href="#_what_you_see_on_your_computer_screen"></a><a class="link" href="#_what_you_see_on_your_computer_screen">What you see on your computer screen</a></h4>
+<div class="paragraph">
+<p><strong>What you see on your computer screen</strong></p>
+</div>
 <div class="paragraph">
 <p>On the left, the diagram shows a metadata input panel for IPTC fields in your software, only a few fields are shown here.</p>
 </div>
+<div class="paragraph">
+<p><strong>Inside imaging software on your computer</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_inside_imaging_software_on_your_computer"><a class="anchor" href="#_inside_imaging_software_on_your_computer"></a><a class="link" href="#_inside_imaging_software_on_your_computer">Inside imaging software on your computer</a></h4>
 <div class="paragraph">
 <p>In the centre, the diagram shows how your software handles the metadata. The software creates a temporary internal structure to support the data in both IIM (in blue) and XMP (in red) formats.</p>
 </div>
@@ -639,9 +646,9 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="paragraph">
 <p>As some fields are replicated in IIM and XMP, the software has to keep these values in synch (dotted lines). This is less an issue for data transferred from the input panel than for data read from an image file.</p>
 </div>
+<div class="paragraph">
+<p><strong>Inside your JPEG image file</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_inside_your_jpeg_image_file"><a class="anchor" href="#_inside_your_jpeg_image_file"></a><a class="link" href="#_inside_your_jpeg_image_file">Inside your JPEG image file</a></h4>
 <div class="paragraph">
 <p>On the right you see the structure of an image file with sections for metadata (headers) and a section for image data (the pixels). The diagram shows that the IIM and XMP data structures are stored in two different headers. In a JPEG file the headers are of type APP1 and APP13 and they may have additional internal identifiers for the metadata formats.</p>
 </div>
@@ -661,9 +668,9 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="paragraph">
 <p>The green arrows show how data from the internal software structure is embedded in the headers of the image file. If this file is copied to another computer, then exactly this set of embedded bytes takes the metadata to the new location.</p>
 </div>
+<div class="paragraph">
+<p><strong>Metadata from the image file to your screen panel</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_metadata_from_the_image_file_to_your_screen_panel"><a class="anchor" href="#_metadata_from_the_image_file_to_your_screen_panel"></a><a class="link" href="#_metadata_from_the_image_file_to_your_screen_panel">Metadata from the image file to your screen panel</a></h4>
 <div class="paragraph">
 <p>Data embedded in the image file can be read by software, so the process also works from right to left on the diagram, as shown by the bi-directional arrows. The software reads from the metadata headers and stores the information in its internal structures. The software has to verify that the IIM and XMP values are the same; if they are not, there are rules about which value should take precedence. At the end of this process IIM and XMP values are the same.</p>
 </div>
@@ -671,6 +678,7 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <p>The values are then displayed on the panel on your computer screen and are ready for editing. Pressing Save, sends the data back to the image file for embedding as before.</p>
 </div>
 </div>
+</details>
 </div>
 </div>
 </div>
@@ -685,16 +693,16 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="ulist">
 <ul>
 <li>
-<p>IPTC Core schema, version 1.2 of 18 June 2014</p>
+<p>IPTC Core schema, version 1.4 of 19 October 2022</p>
 </li>
 <li>
-<p>IPTC Extension schema, version 1.5 as of 16 October 2019</p>
+<p>IPTC Extension schema, version 1.8 as of 4 October 2023</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The full IPTC specification document can be obtained from
-<a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata">https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata</a></p>
+<p>All formal details of the standard can be obtained from
+<a href="https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata">the specification document</a>.</p>
 </div>
 <div class="paragraph">
 <p>The referenced PLUS standard specification is available at <a href="http://ns.useplus.org/LDF/ldf-XMPReference" class="bare">http://ns.useplus.org/LDF/ldf-XMPReference</a></p>
@@ -706,7 +714,7 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="sect2">
 <h3 id="_copyright"><a class="anchor" href="#_copyright"></a><a class="link" href="#_copyright">Copyright</a></h3>
 <div class="paragraph">
-<p>Copyright © 2020 IPTC, International Press Telecommunications Council. Rights Reserved.</p>
+<p>Copyright © 2024 IPTC, International Press Telecommunications Council. Rights Reserved.</p>
 </div>
 <div class="paragraph">
 <p>The IPTC Photo Metadata User Guide document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at <a href="http://creativecommons.org/licenses/by/4.0/" class="bare">http://creativecommons.org/licenses/by/4.0/</a>.</p>
@@ -724,7 +732,7 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <p>This document is the result of a team effort by members of the Photo Metadata Working Group of the International Press Telecommunications Council (IPTC), with input and assistance from other contributors.</p>
 </div>
 <div class="paragraph">
-<p>The User Guide up to this version was edited by (in alphabetical order): Linda Burman (Individual IPTC member), Annette Feldman (<a href="http://www.ap.org/">AP</a>), Brendan Quinn (<a href="https://iptc.org/">IPTC</a>), David Riecks (<a href="http://www.controlledvocabulary.com/">www.controlledvocabulary.com</a>/PLUS), Sarah Saunders (was <a href="http://www.cepic.org/">CEPIC</a>), Jeff Sedlik (<a href="http://www.useplus.org/">PLUS</a>), Michael Steidl (Honorary IPTC member).</p>
+<p>The User Guide up to this version was edited by (in alphabetical order): Linda Burman (Individual IPTC member), Caroline Desrosiers (<a href="https://scribely.com" class="bare">https://scribely.com</a>),  Annette Feldman (<a href="https://ap.org/">AP</a>), Brendan Quinn (<a href="https://iptc.org/">IPTC</a>), David Riecks (<a href="http://www.controlledvocabulary.com/">www.controlledvocabulary.com</a>/PLUS), Sarah Saunders (was <a href="http://www.cepic.org/">CEPIC</a>), Jeff Sedlik (<a href="http://www.useplus.org/">PLUS</a>), Michael Steidl (Honorary IPTC member).</p>
 </div>
 </div>
 <div class="sect2">
@@ -745,7 +753,9 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="sect2">
 <h3 id="_about_iptc"><a class="anchor" href="#_about_iptc"></a><a class="link" href="#_about_iptc">About IPTC</a></h3>
 <div class="paragraph">
-<p>The IPTC, based in London, brings together the world&#8217;s leading news agencies, publishers and industry vendors. It develops and promotes efficient technical standards to improve the management and exchange of information between content providers, intermediaries and consumers. The standards enable easy, cost-effective and rapid innovation and include the Photo Metadata standard, the Video Metadata Hub, the news exchange formats NewsML-G2, ninjs, SportsML-G2 and NITF, rNews for marking up online news, the rights expression language RightsML, and NewsCodes taxonomies for categorising news.</p>
+<p>Our mission is to simplify the distribution of information. We develop and promote efficient technical standards to improve the management and exchange of information between content providers, intermediaries and consumers. We thereby enable easy, cost-effective and rapid innovation and product development.<br>
+We are committed to open standards and make all of our standards freely available to our members and the wider community.<br>
+Founded in 1965 and based in London, the IPTC brings together the world&#8217;s leading news agencies, publishers and industry vendors.</p>
 </div>
 <div class="paragraph">
 <p>IPTC is a not-for-profit membership organisation registered in England - <a href="https://iptc.org/participate/membership/">find more about membership</a>.</p>
@@ -799,52 +809,52 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Creator’s Contact Info">Address</a> {Contact Detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">Address</a> {Creator&#8217;s Contact detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Artwork or Object in the Image</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Artwork or Object in the Image</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Alt Text (Accessibility)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_alt_text_accessibility">Alt Text (Accessibility)</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Author</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Creator">[Creator]</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Author&#8217;s Title</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator&#8217;s Job Title</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_job_title">Creator&#8217;s Job Title</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Byline</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Creator">[Creator]</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Byline&#8217;s Title</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator&#8217;s Job Title</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_job_title">Creator&#8217;s Job Title</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Caption</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Description">[Description]</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_persons_depicted_in_the_image">Characteristics</a> {Person detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_person_shown_in_the_image_with_details">Characteristics</a> {Person detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Circa Date Created</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Circa Date Created</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
@@ -864,42 +874,42 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">City</a> {Contact detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">City</a> {Creator&#8217;s Contact detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Code of Organisation Featured in the Image</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_organisations_including_companies_featured_by_the_image">Code of Organisation Featured in the Image</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Content Description</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Content Description</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Contribution Description</a>{Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Contribution Description</a>{Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Copyright Notice</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_copyright_notice">Copyright Notice</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Copyright Notice</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Copyright Notice</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Copyright Owner</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_copyright_owner">Copyright Owner</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Creator’s Contact Info">Country</a> {Contact detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">Country</a> {Creator&#8217;s Contact detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
@@ -934,97 +944,102 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creator_free_text">Creator</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator&#8217;s Contact Info</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">Creator&#8217;s Contact Info</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Creator&#8217;s Job Title</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_job_title">Creator&#8217;s Job Title</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Creator</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Creator</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Creator ID</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Creator ID</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Credit Line</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_credit_line">Credit Line</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Current Copyright Owner ID</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Current Copyright Owner ID</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Current Copyright Owner Name</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Current Copyright Owner Name</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Current Licensor ID</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Current Licensor ID</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Current Licensor Name</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Current Licensor Name</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">CV-Term About Image</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_cv_term_about_the_image">CV-Term About the Image</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">CV-Term CV ID</a> {CV-Term detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_cv_term_about_the_image">CV-Term CV ID</a> {CV-Term detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">CV-Term ID</a> {CV-Term detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_cv_term_about_the_image">CV-Term ID</a> {CV-Term detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">CV-Term name</a> {CV-Term detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_cv_term_about_the_image">CV-Term name</a> {CV-Term detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Date Created</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Date Created</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Date Created</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_data_mining">Data Mining</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_date_created">Date Created</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description Writer</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_description_writer">Description writer</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Description</a> (of the full image)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_descriptioncaption">Description</a> (of the full image)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_persons_depicted_in_the_image">Description</a> {Person detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_person_shown_in_the_image_with_details">Description</a> {Person detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
@@ -1034,42 +1049,42 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Digital Image GUID</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_digital_image_guid">Digital Image GUID</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Digital Source Type</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_digital_source_type">Digital Source Type</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Email address(es)</a> {Contact detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">Email(s)</a> {Creator&#8217;s Contact detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Embedded Encoded Rights Expression</a> {EERE}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_embedded_encoded_rights_expressions">Embedded Encoded Rights Expressions</a> {EERE}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Encoded Rights Expression</a> {EERE detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_embedded_encoded_rights_expressions">Encoded Rights Expressions</a> {EERE detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Encoding type</a> {EERE detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_embedded_encoded_rights_expressions">Encoding type</a> {EERE detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Encoding type</a> {LERE detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_linked_encoded_rights_expressions">Encoding type</a> {LERE detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Event</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_event">Event</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
@@ -1079,37 +1094,42 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Extended Description (Accessibility)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_extended_description_accessibility">Extended Description (Accessibility)</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">GTIN</a> {Product detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Product Shown in the Image">GTIN</a> {Product detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Genre (generic)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_genre_generic">Genre (generic)</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Headline</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_headline">Headline</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_persons_depicted_in_the_image">Identifier</a> {Person detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_person_shown_in_the_image_with_details">Identifier</a> {Person detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Image Creator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Product Shown in the Image">Idenfier</a> {Product detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Image Rating</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_image_creator_structure">Image Creator</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_image_rating">Image Rating</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
@@ -1119,62 +1139,62 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Image Registry Entry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_image_registry_entry">Image Registry Entry</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Image Supplier</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_image_supplier">Image Supplier</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Image Supplier Image ID</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_suppliers_image_id">Image Supplier Image ID</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Instructions</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_instructions">Instructions</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Intellectual Genre</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_intellectual_genre">Intellectual Genre</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Item Id</a> (Registry Entry)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_image_registry_entry">Item Id</a> {Registry Entry detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Job</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Job Id</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_job_identifier">Job Id</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Job Id</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Keywords</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_job_identifier">Job Id</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Licensor</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_keyword">Keywords</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensor">Licensor</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Link to Encoded Rights Expression</a> {LERE detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_linked_encoded_rights_expressions">Link to Encoded Rights Expression</a> {LERE detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Linked  Encoded Rights Expression</a> {LERE}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_linked_encoded_rights_expressions">Linked  Encoded Rights Expression</a> {LERE}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
@@ -1199,12 +1219,12 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Max Avail Height</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_max_avail_widthheight">Max Avail Height</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Max Avail Width</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_max_avail_widthheight">Max Avail Width</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
@@ -1234,22 +1254,27 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Name</a> {Product  detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Product Shown in the Image">Name</a> {Product  detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Name of Organisation Featured in the Image</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_organisations_including_companies_featured_by_the_image">Name of Organisation Featured in the Image</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Object Name</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Title</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_title">Title</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Organisation Id</a> {Registry Entry Detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_image_registry_entry">Organisation Id</a> {Registry Entry detail}</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_constraints">Other Constraints</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
@@ -1264,38 +1289,38 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Phone number(s)</a> {Contact detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">Phone(s)</a> {Creator&#8217;s Contact detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Physical Description</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Physical Description</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Postal Code</a>{Contact detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">Postal Code</a>{Creator&#8217;s Contact detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Product Shown in the Image</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Product Shown in the Image">[Product Shown in the Image]</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Property Release Id</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Property Release Id">[Property Release Id]</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Property Release Status</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_property_release_status">Property Release Status</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Provider</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Credit Line</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_credit_line">Credit Line</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1314,67 +1339,72 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Refined 'about' Relationship of the CV-Term</a> {CV-Term detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_cv_term_about_the_image">Refined 'about'</a> {CV-Term detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Rights Expression Language ID</a> {EERE detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_embedded_encoded_rights_expressions">Rights Expression Language ID</a> {EERE detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Rights Expression Language ID</a> {LERE detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_linked_encoded_rights_expressions">Rights Expression Language ID</a> {LERE detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_licensing_use_of_the_image">Rights Usage Terms</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_usage_terms">Rights Usage Terms</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">Scene Code</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Source (Supply Chain)</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Source</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_image_registry_entry">Role</a> {Registry Entry detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Source Inventory Number</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_iptc_scene_code">Scene Code</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_source_supply_chain">Source (Supply Chain)</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Source</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Source Inventory URL</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Source Inventory Number</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Source Inventory URL</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Special Instructions</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Instructions</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_instructions">Instructions</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_locations">State/Province</a> {Contact detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_locations">State/Province</a> {Location detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Style Period</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Style Period</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_image_content">IPTC Subject Code (Legacy)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_iptc_subject_code_legacy">IPTC Subject Code (Legacy)</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
@@ -1394,27 +1424,27 @@ United Kingdom</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Title</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_title">Title</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_other_things_shown_in_the_image">Title</a> {Artwork or Object detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_artwork_or_object_in_the_image">Title</a> {Artwork or Object detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transmission Reference</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_administration_and_commissioning_details">Job Id</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Job Id">[Job Id]</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_rights_information">Web Statement of Rights</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_web_statement_of_rights">Web Statement of Rights</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Extension</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_locations">Web URL(s)</a> {Contact detail}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_creators_contact_info">Website(s)</a> {Creator&#8217;s Contact detail}</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
 </tr>
@@ -1500,7 +1530,7 @@ Keywords may have to be separated by commas or other separators depending on the
 <h4 id="_iptc_subject_code_legacy"><a class="anchor" href="#_iptc_subject_code_legacy"></a><a class="link" href="#_iptc_subject_code_legacy">IPTC Subject Code (Legacy)</a></h4>
 <div class="paragraph">
 <p>This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC “Subject NewsCodes” taxonomy (available from <a href="http://cv.iptc.org/newscodes/subjectcode" class="bare">http://cv.iptc.org/newscodes/subjectcode</a>). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field.<br>
-As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: <a href="http://cv.iptc.org/newscodes/mediatopic" class="bare">http://cv.iptc.org/newscodes/mediatopic</a>. For the Media Topics the CV Term About Image property must be used - see it just below.</p>
+As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: <a href="http://cv.iptc.org/newscodes/mediatopic" class="bare">http://cv.iptc.org/newscodes/mediatopic</a>. For the Media Topics the CV Term About Image field must be used - see it just below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1679,7 +1709,7 @@ This field is limited by the IIM format to about 2000 characters. In XMP there i
 <p>While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative that serves the equivalent purpose, use Alt Text (Accessibility) to provide a summary and Extended Description (Accessibility) (see below) to provide additional details about the image.</p>
 </div>
 <div class="paragraph">
-<p>This property should not be confused with the IPTC field Headline, which is a brief synopsis or summary of the contents of the image.<br>
+<p>This field should not be confused with the IPTC field Headline, which is a brief synopsis or summary of the contents of the image.<br>
 The Alt Text is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used the values in the Headline or Description fields to populate the alt text for websites and digital products. IPTC created this dedicated Alt Text (Accessibility) field which should be used instead.</p>
 </div>
 <div class="paragraph">
@@ -1720,7 +1750,7 @@ In XMP there is effectively no character limit. However, some editing interfaces
 <div class="sect3">
 <h4 id="_extended_description_accessibility"><a class="anchor" href="#_extended_description_accessibility"></a><a class="link" href="#_extended_description_accessibility">Extended Description (Accessibility)</a></h4>
 <div class="paragraph">
-<p>The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the Alt Text (Accessibility) property. Extended Description (Accessibility)  is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose.</p>
+<p>The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the Alt Text (Accessibility) field. Extended Description (Accessibility)  is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose.</p>
 </div>
 <div class="paragraph">
 <p>This property should not be confused with the IPTC property Description/Caption. Extended Description (Accessibility) can be combined with Alt Text (Accessibility) if and when a brief description does not provide a text equivalent to the image. It should not repeat the information in the Alt Text (Accessibility) property. This property is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products. IPTC created this dedicated Extended Description (Accessibility) field and this should be used instead.</p>
@@ -1763,19 +1793,19 @@ Be aware that this IPTC field does not support formatted text or HTML markup.
 <div class="ulist">
 <ul>
 <li>
-<p>Additional model info</p>
+<p><a href="#_additional_model_information">Additional Model Information</a></p>
 </li>
 <li>
-<p>Model Age</p>
+<p><a href="#_model_age">Model Age</a></p>
 </li>
 <li>
-<p>Minor model age disclosure</p>
+<p><a href="#_minor_model_age_disclosure">Minor Model Age Disclosure</a></p>
 </li>
 <li>
-<p>Model Release Status</p>
+<p><a href="#_model_release_status">Model Release Status</a></p>
 </li>
 <li>
-<p>Model Release Identifiers</p>
+<p><a href="#_model_release_identifiers">Model Release Identifiers</a></p>
 </li>
 </ul>
 </div>
@@ -1812,28 +1842,20 @@ artwork, objects).
 <div class="ulist">
 <ul>
 <li>
-<p>Name</p>
-<div class="paragraph">
-<p>Use this field to note the name of a person or persons shown in the image. Typically, these would be recorded as they would be typed in a query, first name / last name (given name / surname).</p>
-</div>
+<p><strong>Name</strong><br>
+Use this field to note the name of a person or persons shown in the image. Typically, these would be recorded as they would be typed in a query, first name / last name (given name / surname).</p>
 </li>
 <li>
-<p>Identifier</p>
-<div class="paragraph">
-<p>Use this field to enter one or more Globally Unique Identifier(s) for the person, such as those from WikiData or Freebase. This should be entered in the form of a URI.</p>
-</div>
+<p><strong>Identifier</strong><br>
+Use this field to enter one or more Globally Unique Identifier(s) for the person, such as those from WikiData or Freebase. This should be entered in the form of a URI.</p>
 </li>
 <li>
-<p>Characteristics</p>
-<div class="paragraph">
-<p>Use this field structure including CV Term Name, CV Term ID, CV ID and Refined ‘About' for properties or traits of the person by selecting a term from a Controlled Vocabulary (CV).</p>
-</div>
+<p><strong>Characteristics</strong><br>
+Use this field structure including CV Term Name, CV Term ID, CV ID and Refined ‘About' for properties or traits of the person by selecting a term from a Controlled Vocabulary (CV).</p>
 </li>
 <li>
-<p>Description</p>
-<div class="paragraph">
-<p>A free-text description of any actions taken, as well as any gestures or emotional expressions shown, by the person shown in the image.</p>
-</div>
+<p><strong>Description</strong><br>
+A free-text description of any actions taken, as well as any gestures or emotional expressions shown, by the person shown in the image.</p>
 </li>
 </ul>
 </div>
@@ -2139,17 +2161,27 @@ Do not confuse this field value with the Identifier field of the Licensor of the
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Read also the page about licensing the use of the image.
+Read also the section about <a href="#_licensing_use_of_the_image">licensing the use of the image</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected a) by laws and other regulations of the region in which the image is used, and b) by contracts applying to the image.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The creator of the image as owner of rights can be identified by two properties:
-Creator::
-a free text field for the name of the Creator
-Image Creator::
-a field structure including the name of the Creator and an identifier for the Creator.</p>
+<p>The creator of the image as owner of rights can be identified by two fields:
+<a href="#_creator_free_text">Creator</a> a free text field for the name of the Creator and
+<a href="#_image_creator_structure">Image Creator</a> a field structure including the name of the Creator and an identifier for the Creator.</p>
 </div>
 <div class="paragraph">
 <p>IPTC recommends using the older Creator name only field for all images. The newer field structure (Name and ID) should be used in addition to this, when a Creator identifier is available.</p>
@@ -2193,7 +2225,7 @@ This field is shown in the Image Credits of a photo in the results of a Google i
 <div class="sect3">
 <h4 id="_image_creator_structure"><a class="anchor" href="#_image_creator_structure"></a><a class="link" href="#_image_creator_structure">Image Creator (structure)</a></h4>
 <div class="paragraph">
-<p>This property can be used to indicate the creator or creators of the image by name and identifier.</p>
+<p>This field can be used to indicate the creator or creators of the image by name and identifier.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2373,6 +2405,77 @@ This field is limited by the IIM format to about 32 characters. In XMP there is 
 </div>
 </div>
 <div class="sect3">
+<h4 id="_data_mining"><a class="anchor" href="#_data_mining"></a><a class="link" href="#_data_mining">Data Mining</a></h4>
+<div class="paragraph">
+<p>This field can be used to communicate permissions and prohibitions on the use of your images for data mining for the purpose of AI/ML training, generative AI/ML traning and more. It uses a standardised list of values, jointly developed by IPTC and the PLUS Coalition, see it below.<br>
+You can choose a single value for this field only; or you use a value for this field in combination with another field like the <a href="#_other_constraints">Other Constraints</a>, or the <a href="#_linked_encoded_rights_expressions">Linked  Encoded Rights Expression</a> field or <a href="#_embedded_encoded_rights_expressions">Embedded Encoded Rights Expressions</a> field. See the notes on this use below.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please note that regional laws applying to an image may prohibit, constrain, or allow data mining for certain purposes (such as search indexing or research), and may overrule the value selected for this field. Similarly, the absence of a prohibition does not indicate that the asset owner grants permission for data mining or any other use of an image.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>One of these values can be applied to the Data Mining field:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED">Unspecified</a> - no prohibition defined</p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-ALLOWED">Allowed</a> - any kind of data mining</p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING">Prohibited for AI/ML training</a></p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING">Prohibited for Generative AI/ML training</a></p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING">Prohibited except for search engine indexing</a> - it permits only data mining by search engines available to the public to identify the URL for an image and its associated data, and prohibits all other uses</p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED">Prohibited</a> - any kind of data mining</p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT">Prohibited, see Other Constraints</a> field - the <a href="#_other_constraints">Other Constraints</a> field should have a value</p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR">Prohibited, see Embedded Encoded Rights Expression</a> field - the <a href="#_embedded_encoded_rights_expressions">Embedded Encoded Rights Expressions</a> field should have a value</p>
+</li>
+<li>
+<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR">Prohibited, see Linked Encoded Rights Expression</a> field - the <a href="#_linked_encoded_rights_expressions">Linked Encoded Rights Expression</a> field should have a value</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Each value above has a URL as link to a page specifying it. This URL MUST be used as value and not the free text name.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_other_constraints"><a class="anchor" href="#_other_constraints"></a><a class="link" href="#_other_constraints">Other Constraints</a></h4>
+<div class="paragraph">
+<p>This field can be used to indicate any additional constraints on the use of the image by natural free text. These constraints may be used to limit the scope of usage allowed.</p>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_property_release_status"><a class="anchor" href="#_property_release_status"></a><a class="link" href="#_property_release_status">Property Release Status</a></h4>
 <div class="paragraph">
 <p>This field summarises the availability and scope of property releases for the photograph.</p>
@@ -2435,7 +2538,19 @@ Read about Model Releases on the page about persons in an image.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Read also the page about rights information.
+Read also the section about <a href="#_rights_information">rights information</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected a) by laws and other regulations of the region in which the image is used, and b) by contracts applying to the image.
 </td>
 </tr>
 </table>
@@ -2678,7 +2793,7 @@ This field is limited by the IIM format to about 32 characters. In XMP there is 
 <p>You can use the IPTC Image Region to record details for designated areas within a still photo using rectangles, circles and polygons. You can give each image region a name and an identifier (if desired) and note what type of role (see <a href="http://cv.iptc.org/newscodes/imageregionrole/">IPTC&#8217;s CV</a>) the region plays and the type of content (see <a href="http://cv.iptc.org/newscodes/imageregiontype/">IPTC&#8217;s CV</a>) within that region. (The use of both IPTC CVs is recommended but not mandatory.)</p>
 </div>
 <div class="paragraph">
-<p>There are many times when you need to identify people within an image. This can be difficult especially when all the people don’t line up in nice ‘left-to-right’ rows. The Image Region feature gives you a way to: isolate each person’s face or body in an image (using a rectangle, circle or polygon), give it an identifier and name, indicate that the marked area is a <a href="http://cv.iptc.org/newscodes/imageregionrole/subjectArea">subject area</a> and indicate that the type of content is a <a href="http://cv.iptc.org/newscodes/imageregiontype/human">human</a>. Finally add the IPTC property <a href="https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#person-shown-in-the-image">Person Shown in Image</a> to the Image Region with the name of the framed person.</p>
+<p>There are many times when you need to identify people within an image. This can be difficult especially when all the people don’t line up in nice ‘left-to-right’ rows. The Image Region feature gives you a way to: isolate each person’s face or body in an image (using a rectangle, circle or polygon), give it an identifier and name, indicate that the marked area is a <a href="http://cv.iptc.org/newscodes/imageregionrole/subjectArea">subject area</a> and indicate that the type of content is a <a href="http://cv.iptc.org/newscodes/imageregiontype/human">human</a>. Finally add the IPTC field <a href="https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#person-shown-in-the-image">Person Shown in Image</a> to the Image Region with the name of the framed person.</p>
 </div>
 <div class="paragraph">
 <p>If you create photo composites, the IPTC Image Region can be used to identify each of the different entities making up the composite and tie the provider’s name or copyright notice back to each.</p>
@@ -2997,7 +3112,7 @@ Exif currently does not hold time zone information in its time stamp. A time zon
 <div class="sect2">
 <h3 id="_metadata_values_shown_multiple_times"><a class="anchor" href="#_metadata_values_shown_multiple_times"></a><a class="link" href="#_metadata_values_shown_multiple_times">Metadata values shown multiple times</a></h3>
 <div class="paragraph">
-<p>Some values may appear multiple times within software panels or tabs. This data is stored in only one location in the image file, but appears in the tabs for different schemas which use it as a ‘shared property'.</p>
+<p>Some values may appear multiple times within software panels or tabs. This data is stored in only one location in the image file, but appears in the tabs for different schemas which use it as a ‘shared field'.</p>
 </div>
 <div class="paragraph">
 <p>For example, in Adobe products data entered in the IPTC Creator field also appears in the Author field in the Description Panel. If a change is made to the data in any tab or panel, that change is replicated in the other locations.</p>
@@ -3077,7 +3192,7 @@ Exif currently does not hold time zone information in its time stamp. A time zon
 <div class="sect2">
 <h3 id="_guidance_for_using_digital_source_type"><a class="anchor" href="#_guidance_for_using_digital_source_type"></a><a class="link" href="#_guidance_for_using_digital_source_type"><a id="digitalsourcetype"></a>Guidance for using Digital Source Type</a></h3>
 <div class="paragraph">
-<p>The DigitalSourceType property and its corresponding controlled vocabulary <a href="https://cv.iptc.org/newscodes/digitalsourcetype" class="bare">https://cv.iptc.org/newscodes/digitalsourcetype</a>
+<p>The DigitalSourceType field and its corresponding controlled vocabulary <a href="https://cv.iptc.org/newscodes/digitalsourcetype" class="bare">https://cv.iptc.org/newscodes/digitalsourcetype</a>
 were originally added to the IPTC Photo Metadata Standard in 2008. The original goal was to represent the various
 sources of a digital image such as a scan from print, a film negative or from positive film (also known as slide,
 reversal or transparency film), or a direct capture from a digital camera.</p>
@@ -3781,7 +3896,7 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 <dl>
 <dt class="hdlist1">Urgency</dt>
 <dd>
-<p>is used for distribution management and is synchronised with the XMP property ‘photoshop:Urgency'</p>
+<p>is used for distribution management and is synchronised with the XMP field ‘photoshop:Urgency'</p>
 </dd>
 <dt class="hdlist1"><strong>Category</strong> and <strong>Supplemental Category</strong></dt>
 <dd>
