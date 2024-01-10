@@ -3896,7 +3896,7 @@ IPTC Photo Metadata is a simple way to do this.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Image Creator</strong> is bound to the owner of the intellectual property of an image in many countries and there are first legal decisions that AI generated images are not considered as creative work generating an intellectual property.
+<p><strong>Creator</strong> is bound to the owner of the intellectual property of an image in many countries and there are first legal decisions that AI generated images are not considered as creative work generating an intellectual property.
 Therefore, <strong>our recommendation is to leave the Image Creator field empty</strong>.</p>
 </li>
 <li>
@@ -3904,14 +3904,10 @@ Therefore, <strong>our recommendation is to leave the Image Creator field empty<
 Contributors are people and things that contributed to the creation of the image, so this includes what an AI generator does.<br>
 The Contributor field is represented by a structure consisting of a name, optional identifier and a role attribute.<br>
 The "role" attribute is a way to outline the way that each entity contributed to the creation of the image.
-In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscodes/contentprodpartyrole/origcont" class="bare">http://cv.iptc.org/newscodes/contentprodpartyrole/origcont</a> should be used as it expresses “Content Originator = a party which originated the content of the item”.<br>
-<strong><em>(OR should we create a new entry in the contentprodpartyrole CV? The NAR WG suggested simply "generator")</em></strong></p>
+In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscodes/contentprodpartyrole/origcont" class="bare">http://cv.iptc.org/newscodes/contentprodpartyrole/origcont</a> should be used as it expresses “Content Originator = a party which originated the content of the item”.<br></p>
 </li>
 <li>
 <p>The Digital Source Type field should be set to the URI value <a href="http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia" class="bare">http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia</a> or <a href="http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic" class="bare">http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic</a>. This is covered already by the <a href="#digitalsourcetype">Digital Source Type guidance in this User Guide</a>.</p>
-</li>
-<li>
-<p>Currently there is no good place to put the prompt given to the Generative AI engine used to generate the image. If you would like the IPTC to add a field to allow this, please let us know.</p>
 </li>
 </ul>
 </div>
@@ -3946,13 +3942,22 @@ In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscode
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Image Creator</p></th>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>deliberately left blank</em></p>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Creator</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<em>deliberately left blank</em>
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Contibutor</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Contributor</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -3973,7 +3978,7 @@ In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscode
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1] Role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://cv.iptc.org/newscodes/contentprodpartyrole/descrWriter" class="bare">http://cv.iptc.org/newscodes/contentprodpartyrole/descrWriter</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://cv.iptc.org/newscodes/contentprodpartyrole/genAIpromptWriter" class="bare">http://cv.iptc.org/newscodes/contentprodpartyrole/genAIpromptWriter</a></p></td>
 </tr>
 </tbody>
 </table></div></td>

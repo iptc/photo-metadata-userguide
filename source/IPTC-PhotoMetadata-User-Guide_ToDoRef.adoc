@@ -1424,16 +1424,14 @@ IPTC Photo Metadata is a simple way to do this.
 
 In terms of specific IPTC Photo Metadata fields, here are our suggestions:
 
-* *Image Creator* is bound to the owner of the intellectual property of an image in many countries and there are first legal decisions that AI generated images are not considered as creative work generating an intellectual property.
+* *Creator* is bound to the owner of the intellectual property of an image in many countries and there are first legal decisions that AI generated images are not considered as creative work generating an intellectual property.
   Therefore, *our recommendation is to leave the Image Creator field empty*.
 * We recommend using the *Contributor* field, which was introduced to the IPTC Photo Metadata standard in version 2022.1. +
 Contributors are people and things that contributed to the creation of the image, so this includes what an AI generator does. +
 The Contributor field is represented by a structure consisting of a name, optional identifier and a role attribute. +
 The "role" attribute is a way to outline the way that each entity contributed to the creation of the image.
 In the Generative AI context, the URI value http://cv.iptc.org/newscodes/contentprodpartyrole/origcont should be used as it expresses “Content Originator = a party which originated the content of the item”. +
-*_(OR should we create a new entry in the contentprodpartyrole CV? The NAR WG suggested simply "generator")_*
 * The Digital Source Type field should be set to the URI value http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia or http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic. This is covered already by the <<digitalsourcetype,Digital Source Type guidance in this User Guide>>.
-* Currently there is no good place to put the prompt given to the Generative AI engine used to generate the image. If you would like the IPTC to add a field to allow this, please let us know.
 
 An example:
 
@@ -1444,13 +1442,13 @@ image:generative-ai-example.jpg[Cute robot sitting at a cast-iron table in a gar
 |Title (en) | GenAI Robot in garden example
 |Description (en) | Cute robot sitting at a cast-iron table in a garden drawing a picture in a notebook
 |Created date | 2023-05-09
-|Image Creator | _deliberately left blank_ 
-|Contibutor |
+|Creator | NOTE: _deliberately left blank_ 
+|Contributor |
 !===
 ![1] Name (en) ! Bing Image Creator
 ![1] Role      ! http://cv.iptc.org/newscodes/contentprodpartyrole/origcont
 ![2] Name (en) ! Brendan Quinn
-![1] Role      ! http://cv.iptc.org/newscodes/contentprodpartyrole/descrWriter
+![1] Role      ! http://cv.iptc.org/newscodes/contentprodpartyrole/genAIPromptWriter
 !===
 |Digital Source Type | http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
 |Credit Line (en) |Image created by Brendan Quinn using Bing Image Creator. This image file contains digitalsourcetype metadata which was added manually using exiftool.
