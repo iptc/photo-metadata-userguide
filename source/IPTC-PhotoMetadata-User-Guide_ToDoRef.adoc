@@ -1,4 +1,4 @@
-= image:iptc_sv_gradient_70x70.jpg[IPTC logo] Photo Metadata User Guide - ToDo Reference (2023)
+= image:iptc_sv_gradient_70x70.jpg[IPTC logo] Photo Metadata User Guide - ToDo Reference (2024)
 keywords: iptc, photo metadata, photo library, image metadata, photos, images, news, metadata, standard
 :doctype: book
 :imagesdir: ./images
@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: ToDoRef (2023)
+:version-label: ToDoRef (2024)
 :revnumber:
-:revremark: 2023-12-13
+:revremark: 2024-01-11
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -36,7 +36,7 @@ The items below are planned actions and links to the corresponding section of th
 * CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)
 * change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael, 2023-11-23]
 * ADD: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David]
-* Add DONE: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan]
+* adding DONE: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan - 2024-01-10]
 * ADD: <<Data Mining>> (new 2023.1) [David and Jeff] - in progress
 * change DONE: all links of the Field Reference Table should link to the field and not to the group [Michael, 2023-12-13]
 * change DONE: if a URL/URI is the data type of a listed field value: apply the URL as link to the name of the term and show it as Identifier [Michael, 2023-12-13]
@@ -1271,7 +1271,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) |Original digital capture sampled from real life
-|Term URI |http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture
+|Term URI |https://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture
 |Description (en) |The digital media is captured from a real-life source using a digital camera or digital recording device
 |Image example |Digital photo taken using a digital SLR or smartphone camera
 |Video example |Digital video taken using a digital film, video or smartphone camera
@@ -1282,7 +1282,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a negative on film
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm
 |Description (en) | The digital image was digitised from a negative on film on any other transparent medium
 |Image example | Digital photo scanned from a photographic negative
 |Video example | Film scanned from a moving image negative
@@ -1291,7 +1291,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a positive on film
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm
 |Description (en) | The digital image was digitised from a positive on a transparency on or any other transparent medium
 |Image example | Digital photo scanned from a photographic transparency
 |Video example | Film scanned from a moving image positive
@@ -1300,7 +1300,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a print on non-transparent medium
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/print
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/print
 |Description (en) | The digital image was digitised from an image printed on a non-transparent medium
 |Image example | Digital photo scanned from a photographic print
 |===
@@ -1308,7 +1308,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Original media with minor human edits
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/minorHumanEdits
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/minorHumanEdits
 |Description (en) | Minor augmentation or correction by a human, such as a digitally-retouched photo used in a magazine
 |Note |	Also covers digitally edited video, audio and text content
 |Image example | A digitally-retouched photo used in a magazine
@@ -1320,7 +1320,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Composite of captured elements
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/compositeCapture
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeCapture
 |Description (en) | Mix or composite of several elements that are all captures of real life
 |Image example | A composite image created by a digital artist in Photoshop based on several source images
 |Video example | Edited sequence or composite of video shots
@@ -1330,7 +1330,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Algorithmic enhancement
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/algorithmicallyEnhanced
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicallyEnhanced
 |Description (en) | Minor augmentation or correction by algorithm
 |Image example | A photo that has been digitally enhanced using a mechanism such as Google Photos' "denoise" feature
 |Video example | Re-timing or other algorithmic enhancement
@@ -1339,7 +1339,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Data-driven media
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia
 |Description (en) | Digital media representation of data via human programming or creativity
 |Image example a| * Data visualisation as a still image
 * A representation of a distant galaxy created by analysing the outputs of a deep-space telescope (as opposed to a regular camera)
@@ -1352,7 +1352,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digital art
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/digitalArt
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/digitalArt
 |Description (en) | Media created by a human using digital tools
 |Image example | A cartoon drawn by an artist into a digital tool using a digital pencil, a tablet and a drawing package such as Procreate or Affinity Designer (4)
 |Video example | A scene from a film/movie created using Computer Graphic Imagery (CGI)
@@ -1362,7 +1362,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Virtual recording
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/virtualRecording
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/virtualRecording
 |Description (en)  | Live recording of virtual event based on synthetic and optionally captured elements
 |Image example | Screenshot of a virtual event such as a virtual reality scene or a Zoom meeting
 |Video example a| * A recording of a computer-generated sequence, e.g. from a video game
@@ -1372,7 +1372,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Composite including synthetic elements
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic
 |Description (en) | Mix or composite of several elements, at least one of which is synthetic 
 |Image example | A composite image created by a digital artist in Photoshop based on several source images, at least one of which is synthetic
 |Video example a| * Movie production using a combination of live-action and CGI content, e.g. using Unreal engine to generate backgrounds
@@ -1383,7 +1383,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Trained algorithmic media
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
 |Description (en) | Digital media created algorithmically using a model derived from sampled content
 |Image example a| * Image based on deep learning from a series of reference examples (training data)
 * "Text to image" generation using a text prompt to feed an algorithm using a trained model to create a synthetic image. 
@@ -1396,7 +1396,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Pure algorithmic media
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/algorithmicMedia
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicMedia
 |Description (en) | Media created purely by an algorithm not based on any sampled training data, e.g. an image created by software using a mathematical formula
 |Image example | A purely computer-generated image such as a pattern of pixels generated mathematically e.g. a Mandelbrot set or fractal diagram
 |Video example | A purely computer-generated moving image such as a pattern of pixels generated mathematically
@@ -1405,56 +1405,10 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Created by software
-|Term URI | http://cv.iptc.org/newscodes/digitalsourcetype/softwareImage - RETIRED
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/softwareImage - RETIRED
 |Description (en) | The digital image was created by computer software
 |Note | RETIRED. Use trainedAlgorithmicMedia or algorithmicMedia instead.
 |===
-
-=== Applying Metadata to AI-generated Images
-
-Over the past few years, there has been an explosion of tools that can be used to create images of all kinds using 
-artificial intelligence (AI) and machine learning techniques such as Generative Adversarial Networks (GANs), Auto Regression models
-and Diffusion models. Together we refer to these as "AI-generated images".
-
-It may be important to distinguish AI-generated images from "regular" images: for example, to avoid re-training AI models
-on content that was already generated by a model, to understand which images can fall under copyright and which cannot
-(in some jurisdictions) and to understand which images may be used inappropriately suggesting that they are real photos.
-
-Indeed, some national governments are recommending that all AI-generated content be tagged as such. Using embedded
-IPTC Photo Metadata is a simple way to do this.
-
-In terms of specific IPTC Photo Metadata fields, here are our suggestions:
-
-* *Creator* is bound to the owner of the intellectual property of an image in many countries and there are first legal decisions that AI generated images are not considered as creative work generating an intellectual property.
-  Therefore, *our recommendation is to leave the Image Creator field empty*.
-* We recommend using the *Contributor* field, which was introduced to the IPTC Photo Metadata standard in version 2022.1. +
-Contributors are people and things that contributed to the creation of the image, so this includes what an AI generator does. +
-The Contributor field is represented by a structure consisting of a name, optional identifier and a role attribute. +
-The "role" attribute is a way to outline the way that each entity contributed to the creation of the image.
-In the Generative AI context, the URI value http://cv.iptc.org/newscodes/contentprodpartyrole/origcont should be used as it expresses “Content Originator = a party which originated the content of the item”. +
-* The Digital Source Type field should be set to the URI value http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia or http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic. This is covered already by the <<digitalsourcetype,Digital Source Type guidance in this User Guide>>.
-
-An example:
-
-image:generative-ai-example.jpg[Cute robot sitting at a cast-iron table in a garden drawing a picture in a notebook,width=218]
-
-[cols="1h,3a",options="header"]
-|===
-|Title (en) | GenAI Robot in garden example
-|Description (en) | Cute robot sitting at a cast-iron table in a garden drawing a picture in a notebook
-|Created date | 2023-05-09
-|Creator | NOTE: _deliberately left blank_ 
-|Contributor |
-!===
-![1] Name (en) ! Bing Image Creator
-![1] Role      ! http://cv.iptc.org/newscodes/contentprodpartyrole/origcont
-![2] Name (en) ! Brendan Quinn
-![1] Role      ! http://cv.iptc.org/newscodes/contentprodpartyrole/genAIPromptWriter
-!===
-|Digital Source Type | http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
-|Credit Line (en) |Image created by Brendan Quinn using Bing Image Creator. This image file contains digitalsourcetype metadata which was added manually using exiftool.
-|===
-
 
 === Guideline for mapping Category Codes to Subject NewsCodes
 
