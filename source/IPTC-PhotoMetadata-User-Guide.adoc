@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: DRAFT 2023-12
 :revnumber:
-:revremark: 2023-12-12
+:revremark: 2023-12-13
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -274,18 +274,18 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Locations,Location Shown in the Image>> ||Extension
 |<<#_max_avail_widthheight,Max Avail Height>> ||Extension
 |<<#_max_avail_widthheight,Max Avail Width>> ||Extension
-|<<Persons Depicted in the Image,Minor Model Age Disclosure>> ||Extension
-|<<Persons Depicted in the Image,Model Age>>||Extension
-|<<Persons Depicted in the Image,Model Release Id>>||Extension
-|<<Persons Depicted in the Image,Model Release Status>>||Extension
-|<<Persons Depicted in the Image,Name>> {Person detail} ||Extension
+|<<Minor Model Age Disclosure>> ||Extension
+|<<Model Age>>||Extension
+|<<#_model_release_identifiers,Model Release Id>>||Extension
+|<<Model Release Status>>||Extension
+|<<#_person_shown_in_the_image_with_details,Name>> {Person detail} ||Extension
 |<<Product Shown in the Image,Name>> {Product  detail} ||Extension
 |<<#_organisations_including_companies_featured_by_the_image,Name of Organisation Featured in the Image>>||Extension
 |*Object Name*|<<Title>>|
 |<<Image Registry Entry,Organisation Id>> {Registry Entry detail} ||Extension
 |<<Other Constraints>>||Extension
-|<<Persons Depicted in the Image,Person Shown in the Image>>||Extension
-|<<Persons Depicted in the Image,Person Shown in the Image with Details>>||Extension
+|<<Person Shown in the Image>>||Extension
+|<<#_person_shown_in_the_image_with_details,Person Shown in the Image with Details>>||Extension
 |<<#_creators_contact_info,Phone(s)>> {Creator's Contact detail} ||Core
 |<<Artwork or Object in the Image,Physical Description>> {Artwork or Object detail} ||Extension
 |<<#_creators_contact_info,Postal Code>>{Creator's Contact detail} ||Core
@@ -377,7 +377,7 @@ Optional: globally Unique identifier for a concept refining the ‘about' relati
 
 ==== Intellectual Genre
 
-Globally unique identifier for controlled terms to describe the genre of the photo. The IPTC Genre vocabulary may be used http://cv.iptc.org/newscodes/genre or other genre vocabularies more focused on photography.
+Globally unique identifier for controlled terms to describe the genre of the photo. The identifiers of the terms of the IPTC Genre vocabulary may be used http://cv.iptc.org/newscodes/genre or other genre vocabularies more focused on photography.
 
 ==== Genre (generic)
 
@@ -400,7 +400,7 @@ Optional: globally Unique identifier for a concept refining the kind of genre CV
 
 ==== IPTC Scene Code
 
-This field is used to describe the scene of a photo using one or more terms from the IPTC "Scene-NewsCodes". You should only enter values from the IPTC Scene controlled vocabulary (available from http://www.newscodes.org and http://cv.iptc.org/newscodes/scene). Each IPTC Scene term is represented as a 6 digit numerical string in an unordered list.
+This field is used to describe the scene of a photo using one or more terms from the IPTC "Scene-NewsCodes". You should only enter values from the IPTC Scene controlled vocabulary (available from http://cv.iptc.org/newscodes/scene). Each IPTC Scene term is represented as a 6 digit numerical string in an unordered list.
 
 ==== Image Rating
 
@@ -502,13 +502,16 @@ Use this field structure to record details about each relevant and recognisable 
 
 These details are useful for identifying and distinguishing this person from others in the image.
 
-* **Name** +
+Name::
 Use this field to note the name of a person or persons shown in the image. Typically, these would be recorded as they would be typed in a query, first name / last name (given name / surname).
-* **Identifier** +
+
+Identifier::
 Use this field to enter one or more Globally Unique Identifier(s) for the person, such as those from WikiData or Freebase. This should be entered in the form of a URI.
-* **Characteristics** +
+
+Characteristics::
 Use this field structure including CV Term Name, CV Term ID, CV ID and Refined ‘About' for properties or traits of the person by selecting a term from a Controlled Vocabulary (CV). 
-* **Description** +
+
+Description::
 A free-text description of any actions taken, as well as any gestures or emotional expressions shown, by the person shown in the image.
 
 ==== Additional Model Information 
@@ -526,16 +529,49 @@ The user should be aware of any legal implications of providing ages for young m
 Age of the youngest model pictured in the image, at the time that the image was made. 
 The user should be aware of any legal implications of providing ages for young models.
 
+The identifier of one of these possible terms can be applied as value to the field:
+
+* link:http://ns.useplus.org/ldf/vocab/AG-UNK[Age Unknown ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-UNK`
+* link:http://ns.useplus.org/ldf/vocab/AG-A25[Age 25 or Over ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A25`
+* link:http://ns.useplus.org/ldf/vocab/AG-A24[Age 24 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A24`
+* link:http://ns.useplus.org/ldf/vocab/AG-A23[Age 23 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A23`
+* link:http://ns.useplus.org/ldf/vocab/AG-A22[Age 22 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A22`
+* link:http://ns.useplus.org/ldf/vocab/AG-A21[Age 21 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A21`
+* link:http://ns.useplus.org/ldf/vocab/AG-A20[Age 20 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A20`
+* link:http://ns.useplus.org/ldf/vocab/AG-A19[Age 19 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A19`
+* link:http://ns.useplus.org/ldf/vocab/AG-A18[Age 18 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A18`
+* link:http://ns.useplus.org/ldf/vocab/AG-A17[Age 17 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A17`
+* link:http://ns.useplus.org/ldf/vocab/AG-A16[Age 16 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A16`
+* link:http://ns.useplus.org/ldf/vocab/AG-A15[Age 15 ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-A15`
+* link:http://ns.useplus.org/ldf/vocab/AG-U14[Age 14 or Under ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/AG-U14`
+
 ==== Model Release Status
 
 This field summarises the availability and scope of model releases authorising usage of the likenesses of persons appearing in the photograph.
 
-There are four possible values: 
+The identifier of one of these possible terms can be applied as value to the field:
 
-* None (no release is available), 
-* Not Applicable (there are no recognisable people in the image), 
-* Unlimited Model Releases (releases are available for all people in the image, AND the terms of each release authorise unlimited usage of the model(s) likenesses)
-* Limited or Incomplete Model Releases (there are releases for some of the people in the image, OR one or more of the releases include terms limiting usage of model(s) likenesses). 
+* link:http://ns.useplus.org/ldf/vocab/MR-NON[None ^] - no release is available +
+Identifier: `http://ns.useplus.org/ldf/vocab/MR-NON`
+* link:http://ns.useplus.org/ldf/vocab/MR-NAP[Not Applicable ^] - there are no recognisable people in the image +
+Identifier: `http://ns.useplus.org/ldf/vocab/MR-NAP`
+* link:http://ns.useplus.org/ldf/vocab/MR-UMR[Unlimited Model Releases ^] - releases are available for all people in the image, AND the terms of each release authorise unlimited usage of the model(s) likenesses +
+Identifier: `http://ns.useplus.org/ldf/vocab/MR-UMR`
+* link:http://ns.useplus.org/ldf/vocab/MR-LMR[Limited or Incomplete Model Releases ^]  - there are releases for some of the people in the image, OR one or more of the releases include terms limiting usage of model(s) likenesses +
+Identifier: `http://ns.useplus.org/ldf/vocab/MR-LMR`
 
 We recommend that the PLUS controlled value Unlimited Model Releases (MR-UMR) be used sparingly, and encourage you to check the wording of the model release thoroughly before choosing this value.
 
@@ -556,8 +592,9 @@ TIP: Read also about metadata for specific content on pages about
 artwork, objects).
 
 All location field structures use the following geographic hierarchy:
+
 Sublocation::
-This could be the name of a specific area within a city (Manhattan) or the name of a well-known location (Pyramids of Giza) or a monument or natural feature outside a city (Grand Canyon, Mont Blanc Peak) 
+This could be the name of a specific area within a city (Manhattan) or the name of a well-known location (Pyramids of Giza) or a monument or natural feature outside a city (Grand Canyon, Mont Blanc Peak) +
 The area covered by Sublocation may differ for the two types of location. For Location Created, the sublocation might be derived from the Exif GPS coordinates of the camera. In general, the Location Shown should specify the area of interest shown in the image, which is a broader area e.g. The Vosges Mountains.
 
 City::
@@ -771,19 +808,26 @@ You can choose a single value for this field only; or you use a value for this f
 
 NOTE: Please note that regional laws applying to an image may prohibit, constrain, or allow data mining for certain purposes (such as search indexing or research), and may overrule the value selected for this field. Similarly, the absence of a prohibition does not indicate that the asset owner grants permission for data mining or any other use of an image.
 
-One of these values can be applied to the Data Mining field:
+The identifier of one these terms can be applied as value to the Data Mining field:
 
-* link:http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED[Unspecified] - no prohibition defined
-* link:http://ns.useplus.org/ldf/vocab/DMI-ALLOWED[Allowed] - any kind of data mining
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING[Prohibited for AI/ML training]
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING[Prohibited for Generative AI/ML training]
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING[Prohibited except for search engine indexing] - it permits only data mining by search engines available to the public to identify the URL for an image and its associated data, and prohibits all other uses
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED[Prohibited] - any kind of data mining
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT[Prohibited, see Other Constraints] field - the <<Other Constraints>> field should have a value
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR[Prohibited, see Embedded Encoded Rights Expression] field - the <<Embedded Encoded Rights Expressions>> field should have a value
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR[Prohibited, see Linked Encoded Rights Expression] field - the <<Linked Encoded Rights Expressions,Linked Encoded Rights Expression>> field should have a value
-
-IMPORTANT: Each value above has a URL as link to a page specifying it. This URL MUST be used as value and not the free text name.
+* link:http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED[Unspecified ^] - no prohibition defined +
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED`
+* link:http://ns.useplus.org/ldf/vocab/DMI-ALLOWED[Allowed ^] - any kind of data mining +
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-ALLOWED`
+* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING[Prohibited for AI/ML training ^] +
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING`
+* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING[Prohibited for Generative AI/ML training ^] + 
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING`
+* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING[Prohibited except for search engine indexing^] - it permits only data mining by search engines available to the public to identify the URL for an image and its associated data, and prohibits all other uses + 
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING`
+* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED[Prohibited ^] - any kind of data mining + 
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED`
+* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT[Prohibited, see Other Constraints ^] field - the <<Other Constraints>> field should have a value + 
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT`
+* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR[Prohibited, see Embedded Encoded Rights Expression ^] field - the <<Embedded Encoded Rights Expressions>> field should have a value + 
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR`
+* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR[Prohibited, see Linked Encoded Rights Expression ^] field - the <<Linked Encoded Rights Expressions,Linked Encoded Rights Expression>> field should have a value + 
+Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR`
 
 
 ==== Other Constraints
@@ -794,19 +838,24 @@ This field can be used to indicate any additional constraints on the use of the 
 
 This field summarises the availability and scope of property releases for the photograph.
 
-There are four possible values: 
+The identifier of one these possible terms can be applied as value to the field:
 
-* None (no release is available)
-* Not Applicable (there are no items requiring a property release in the image)
-* Unlimited Property Releases (releases are available for all property shown in the image)
-* Limited or Incomplete Property Releases (there are releases for some property shown in the image).
+* link:http://ns.useplus.org/ldf/vocab/PR-NON[None ^] - no release is available +
+Identifier: `http://ns.useplus.org/ldf/vocab/PR-NON`
+* link:http://ns.useplus.org/ldf/vocab/PR-NAP[Not Applicable ^] - there are no items requiring a property release in the image +
+Identifier: `http://ns.useplus.org/ldf/vocab/PR-NAP`
+* link:http://ns.useplus.org/ldf/vocab/PR-UPR[Unlimited Property Releases ^] - releases are available for all property shown in the image +
+Identifier: `http://ns.useplus.org/ldf/vocab/PR-UPR`
+* link:http://ns.useplus.org/ldf/vocab/PR-LPR[Limited or Incomplete Property Releases ^] - there are releases for some property shown in the image but not for all +
+Identifier: `http://ns.useplus.org/ldf/vocab/PR-LPR`
+
 We recommend that the PLUS specified value Unlimited Property Releases (PR-UPR) be used with care, and encourage you to check the wording of the property release thoroughly before choosing this value.
 
 ==== Property Release Identifier(s)
 
 Use this field to indicate the ID for each Property Release document. Ensure all releases (both model and property) are assigned a unique number, and record that information in this field.
 
-TIP: Read about Model Releases on the page about persons in an image.
+TIP: Read about Model Releases in the section about persons in an image.
 
 ==== Web Statement of Rights
 
@@ -1141,28 +1190,20 @@ You should use a DAM and CMS that respects and conserves IPTC and XMP embedded m
 
 === [[digitalsourcetype]]Guidance for using Digital Source Type
 
-The DigitalSourceType field and its corresponding controlled vocabulary https://cv.iptc.org/newscodes/digitalsourcetype
-were originally added to the IPTC Photo Metadata Standard in 2008. The original goal was to represent the various
-sources of a digital image such as a scan from print, a film negative or from positive film (also known as slide,
-reversal or transparency film), or a direct capture from a digital camera.
+The DigitalSourceType field and its corresponding controlled vocabulary https://cv.iptc.org/newscodes/digitalsourcetype were originally added to the IPTC Photo Metadata Standard in 2008. The original goal was to represent the various sources of a digital image such as a direct capture from a digital camera, a scan from print, from a film negative or from positive film (also known as slide, reversal or transparency film).
 
-In the first version of the vocabulary, there was a single term, "Created by Software" (softwareImage) which covered
-all forms of image created using a computer.
+In the first version of the vocabulary, there was a single term, "Created by Software" (softwareImage) which covered all forms of image created using a computer.
 
-In 2022, with the proliferation of generative AI and "synthetic media" systems, the vocabulary was extended to
-include a more complete list of the different ways in which content might be created by or with the help of computer
-software.
+In 2022, with the proliferation of generative AI and "synthetic media" systems, the vocabulary was extended to include a more complete list of the different ways in which content might be created by or with the help of computer software.
 
-The vocabulary can also be used to describe other media we created the definitions so that they can equally apply to
-video, audio or text.
+The vocabulary can also be used to describe other media therefore IPTC created the definitions so that they can equally apply to video, audio or text.
 
-This table describes each of the terms and definitions, along with some examples of the kinds of content intended to
-be tagged with each category:
+This table describes each of the terms and definitions, along with some examples of the kinds of content intended to be tagged with each category. Be aware that the identifier of a term must be applied to the Digital Source Type field.
 
 [cols="1h,3",options="header"]
 |===
 |Name (en) |Original digital capture sampled from real life
-|Term URI |https://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture
+|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture`
 |Description (en) |The digital media is captured from a real-life source using a digital camera or digital recording device
 |Image example |Digital photo taken using a digital SLR or smartphone camera
 |Video example |Digital video taken using a digital film, video or smartphone camera
@@ -1173,7 +1214,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a negative on film
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm
+|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm`
 |Description (en) | The digital image was digitised from a negative on film on any other transparent medium
 |Image example | Digital photo scanned from a photographic negative
 |Video example | Film scanned from a moving image negative
@@ -1182,7 +1223,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a positive on film
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm
+|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm`
 |Description (en) | The digital image was digitised from a positive on a transparency on or any other transparent medium
 |Image example | Digital photo scanned from a photographic transparency
 |Video example | Film scanned from a moving image positive
@@ -1191,7 +1232,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a print on non-transparent medium
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/print
+|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/print`
 |Description (en) | The digital image was digitised from an image printed on a non-transparent medium
 |Image example | Digital photo scanned from a photographic print
 |===
@@ -1199,7 +1240,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Original media with minor human edits
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/minorHumanEdits
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/minorHumanEdits`
 |Description (en) | Minor augmentation or correction by a human, such as a digitally-retouched photo used in a magazine
 |Note |	Also covers digitally edited video, audio and text content
 |Image example | A digitally-retouched photo used in a magazine
@@ -1211,7 +1252,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Composite of captured elements
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeCapture
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/compositeCapture`
 |Description (en) | Mix or composite of several elements that are all captures of real life
 |Image example | A composite image created by a digital artist in Photoshop based on several source images
 |Video example | Edited sequence or composite of video shots
@@ -1221,7 +1262,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Algorithmic enhancement
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicallyEnhanced
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/algorithmicallyEnhanced`
 |Description (en) | Minor augmentation or correction by algorithm
 |Image example | A photo that has been digitally enhanced using a mechanism such as Google Photos' "denoise" feature
 |Video example | Re-timing or other algorithmic enhancement
@@ -1230,7 +1271,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Data-driven media
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia`
 |Description (en) | Digital media representation of data via human programming or creativity
 |Image example a| * Data visualisation as a still image
 * A representation of a distant galaxy created by analysing the outputs of a deep-space telescope (as opposed to a regular camera)
@@ -1243,7 +1284,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digital art
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/digitalArt
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/digitalArt`
 |Description (en) | Media created by a human using digital tools
 |Image example | A cartoon drawn by an artist into a digital tool using a digital pencil, a tablet and a drawing package such as Procreate or Affinity Designer (4)
 |Video example | A scene from a film/movie created using Computer Graphic Imagery (CGI)
@@ -1253,7 +1294,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Virtual recording
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/virtualRecording
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/virtualRecording`
 |Description (en)  | Live recording of virtual event based on synthetic and optionally captured elements
 |Image example | Screenshot of a virtual event such as a virtual reality scene or a Zoom meeting
 |Video example a| * A recording of a computer-generated sequence, e.g. from a video game
@@ -1263,7 +1304,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Composite including synthetic elements
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic`
 |Description (en) | Mix or composite of several elements, at least one of which is synthetic 
 |Image example | A composite image created by a digital artist in Photoshop based on several source images, at least one of which is synthetic
 |Video example a| * Movie production using a combination of live-action and CGI content, e.g. using Unreal engine to generate backgrounds
@@ -1274,7 +1315,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Trained algorithmic media
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia`
 |Description (en) | Digital media created algorithmically using a model derived from sampled content
 |Image example a| * Image based on deep learning from a series of reference examples (training data)
 * "Text to image" generation using a text prompt to feed an algorithm using a trained model to create a synthetic image. 
@@ -1287,7 +1328,7 @@ be tagged with each category:
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Pure algorithmic media
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicMedia
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/algorithmicMedia`
 |Description (en) | Media created purely by an algorithm not based on any sampled training data, e.g. an image created by software using a mathematical formula
 |Image example | A purely computer-generated image such as a pattern of pixels generated mathematically e.g. a Mandelbrot set or fractal diagram
 |Video example | A purely computer-generated moving image such as a pattern of pixels generated mathematically
@@ -1295,8 +1336,8 @@ be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
-|Name (en) | Created by software
-|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/softwareImage - RETIRED
+|Name (en) | Created by software (RETIRED)
+|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/softwareImage`
 |Description (en) | The digital image was created by computer software
 |Note | RETIRED. Use trainedAlgorithmicMedia or algorithmicMedia instead.
 |===
