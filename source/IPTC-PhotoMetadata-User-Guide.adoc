@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: DRAFT 2024-01
 :revnumber:
-:revremark: 2024-01-11
+:revremark: 2024-01-11b
 :toc: left
 :toclevels: 2
 :nofooter:
