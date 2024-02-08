@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: DRAFT 2024-01
+:version-label: DRAFT 2024-02
 :revnumber:
-:revremark: 2024-01-11b
+:revremark: 2024-02-07
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -234,7 +234,7 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Artwork or Object in the Image,Date Created>> {Artwork or Object detail}||Extension
 |<<Data Mining>>||Extension
 |<<Date Created>> ||Core
-|<<Description writer>> ||Core
+|<<Description Writer>> ||Core
 |<<#_descriptioncaption,Description>> (of the full image) ||Core
 |<<#_person_shown_in_the_image_with_details,Description>> {Person detail} ||Extension
 |<<Other Things Shown in the Image,Description>> {Product detail} ||Extension
@@ -931,7 +931,7 @@ This field records the date and optionally the time the image was created. This 
 
 More about dates and times and different software 
 
-==== Description writer
+==== Description Writer
 
 The name of the most recent person(s) involved in creating, editing or correcting the entries for the Description, Alt Text (Accessibility), or Extended Description (Accessibility) fields of the image. There may be more than one person writing descriptions for the image. In this case, make sure to specify the descriptions each writer worked on. For example, Description: Jane Doe; Alt Text and Extended Description: John Doe. 
 
@@ -1146,6 +1146,14 @@ NOTE: Exif currently does not hold time zone information in its time stamp. A ti
 Some values may appear multiple times within software panels or tabs. This data is stored in only one location in the image file, but appears in the tabs for different schemas which use it as a ‘shared field'. 
 
 For example, in Adobe products data entered in the IPTC Creator field also appears in the Author field in the Description Panel. If a change is made to the data in any tab or panel, that change is replicated in the other locations.
+
+=== Image Accessibility for Assistive Technology
+
+Disabled people, such as those who are blind or have low vision, use assistive technologies such as screen readers to navigate text and image content on the web. If a textual description is not provided for an image, assistive technologies will skip over the image as if it doesn’t exist on the page. Text alternatives are required to meet Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 for Non-Text Content.
+
+Adding descriptive text metadata to images enables software tools and technologies to populate alt text and extended description fields on websites and digital documents. Embedding accessible descriptions provides a method for efficiently passing information across products and platforms and improves the accuracy and availability of image descriptions on the web.
+
+*Alt Text (Accessibility)* and *Extended Description (Accessibility)* were added to the IPTC Photo Metadata Standard to make it easier to embed descriptive metadata that can be used to create more accessible websites or digital products. These are found in the <<Natural Language Free Text Descriptions>> section above. 
 
 === IPTC Photo Metadata and Google Images
 
@@ -1511,7 +1519,7 @@ Example photo provided by and © David Riecks
 |Creator's Jobtitle|Photographer
 |Credit Line|©1985 David Riecks: www.riecks.com
 |Date Created|1985-11-25
-|Description writer|David Riecks
+|Description Writer|David Riecks
 |Description|Southern Himalayan Mountains, from Snow Peak, Nainital, Uttarakhand, India longitude: 79.444542 latitude: 29.39805
 |Alt Text (Accessibility)| Landscape view of the snow-capped Southern Himalayan mountain range with jagged peaks towering above rolling foothills in the foreground.
 |Extended Description (Accessibility) | (empty, not required)
@@ -1622,7 +1630,7 @@ Example photo provided by ©David Riecks
 |Creator's Jobtitle|Staff photographer
 |Credit Line|John Doe / Big Newspaper
 |Date Created|2007-04-19
-|Description writer|Susan Brown
+|Description Writer|Susan Brown
 |Description|After digging the furrows another ten yards with the tractor, Jim Moore hops off to hand-set more leeks and onions.
 |Alt Text (Accessibility)|Ground-level shot of a farmer bending forward to hand-set a tiny onion sprout. An older red tractor is seen in the row of crops in the background. 
 |Extended Description (Accessibility) |The farmer is wearing denim overalls, a white t-shirt, and faded blue baseball cap. We look up along the row of crops towards a red tractor and cloud-filled sky beyond. 
@@ -1748,7 +1756,7 @@ Example photo provided by ©David Riecks
 |Creator's Jobtitle|Mugwum contract photographer
 |Credit Line|Mugwum Press
 |Date Created|2009-06-24
-|Description writer|Jacques Brown
+|Description Writer|Jacques Brown
 |Description|This statue of the 16th President of the United States depicts a 19 foot high seated Abraham Lincoln in contemplation inside the Lincoln Memorial. It was carved of Georgia white marble by the Piccirilli Brothers under the supervision of the sculptor, Daniel Chester French and took four years to create, and completed in 1920.
 |Alt Text (Accessibility)|Closeup of the Lincoln Memorial statue with Abraham Lincoln’s face and hand in view. Lincoln looks off with a steady expression, his hand curled into a loose fist resting on the arm of a large classical chair.
 |Extended Description (Accessibility) |Lincoln is depicted with deep-set eyes, a strong browline, prominent cheekbones, short wavy hair, and a close beard. Two creases extend down at an angle from his nose to his lower cheekbones. His fixed gaze is directed slightly upward, mouth set in a straight line. His wrist is resting on the edge of the chair, held out straight so we see the bony knuckles of his hand. 
