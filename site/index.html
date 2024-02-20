@@ -489,7 +489,7 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <li><a href="#_fundamental_guidelines_for_the_preservation_of_embedded_metadata">Fundamental Guidelines for the Preservation of Embedded Metadata</a></li>
 <li><a href="#_dates_and_times_and_different_software">Dates and times and different software</a></li>
 <li><a href="#_metadata_values_shown_multiple_times">Metadata values shown multiple times</a></li>
-<li><a href="#_image_accessibility_for_assistive_technology">Image Accessibility for Assistive Technology</a></li>
+<li><a href="#_making_images_accessible_for_people_with_special_needs">Making images accessible for people with special needs</a></li>
 <li><a href="#_iptc_photo_metadata_and_google_images">IPTC Photo Metadata and Google Images</a></li>
 <li><a href="#_applying_metadata_to_ai_generated_images">Applying Metadata to AI-generated Images</a></li>
 <li><a href="#_guidance_for_using_digital_source_type">Guidance for using Digital Source Type</a></li>
@@ -585,10 +585,10 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <p>The IPTC - <a href="https://www.iptc.org/">www.iptc.org</a> - is a body of content providers and system vendors from the news industry and has defined standards for metadata about news since 1979. Since the mid 1990&#8217;s IPTC metadata are have been quite popular for photos as they were adopted by Adobe Photoshop at this time. The IPTC Photo Metadata Standard defining the Core and Extension metadata schemas is the second generation of IPTC photo metadata.</p>
 </div>
 <div class="paragraph">
-<p>IPTC&#8217;s older standard for metadata, the Information Interchange Model (IIM), was issued in 1991 and defined a set of metadata properties and a data format to embed the metadata values into image files. In the early nineties a subset of this IIM was adopted as the well-known “IPTC Fields” by Adobe Photoshop and can be embedded into JPEG, TIFF and PSD files since then.</p>
+<p>IPTC&#8217;s older standard for metadata, the Information Interchange Model (IIM), was issued in 1991 and defined a set of metadata properties and a data format to embed the metadata values into image files. In the early nineties a subset of this IIM was adopted as the well-known "IPTC Fields" by Adobe Photoshop and can be embedded into JPEG, TIFF and PSD files since then.</p>
 </div>
 <div class="paragraph">
-<p>In the early 2000s, a new technology for embedding metadata into image files was invented. It is called XMP, was developed by Adobe and is now an ISO standard. This technology required defining new technical specifications for the well-known “IPTC Fields” of the IIM standard and this was done by the IPTC Core schema which was initially released in 2005 and has evolved to version 1.4 since then. A key feature in the transition to IPTC Core in XMP was that the definition of the purpose and the specified use of an IIM field should remain the same, with only the underlying technical details changed. As the IPTC Core is in fact a mirror of the IIM fields it will no longer be extended.</p>
+<p>In the early 2000s, a new technology for embedding metadata into image files was invented. It is called XMP, was developed by Adobe and is now an ISO standard. This technology required defining new technical specifications for the well-known "IPTC Fields" of the IIM standard and this was done by the IPTC Core schema which was initially released in 2005 and has evolved to version 1.4 since then. A key feature in the transition to IPTC Core in XMP was that the definition of the purpose and the specified use of an IIM field should remain the same, with only the underlying technical details changed. As the IPTC Core is in fact a mirror of the IIM fields it will no longer be extended.</p>
 </div>
 <div class="paragraph">
 <p>Discussion of IPTC Core raised the need for additional metadata properties not covered by the IIM standard. IPTC created the IPTC Extension schema in 2008. In almost all cases new fields were added to the IPTC Extension, the only exception are the Accessibility fields which were added to the Core as they complement the Core field Description.</p>
@@ -610,7 +610,7 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <p>To help users, the IPTC collects information from software vendors on their support for IPTC Photo Metadata. Find out more at <a href="https://www.iptc.org/photometadata" class="bare">https://www.iptc.org/photometadata</a>.</p>
 </div>
 <div class="paragraph">
-<p>Be aware that IPTC Core and IPTC Extension fields can be saved as XMP “sidecar files” for camera Raw files as some of these file formats do not support embedded metadata.</p>
+<p>Be aware that IPTC Core and IPTC Extension fields can be saved as XMP "sidecar files" for camera Raw files as some of these file formats do not support embedded metadata.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1513,7 +1513,7 @@ artwork, objects).
 <p>Keywords are descriptive words added to an image to enable search and retrieval. They describe what is visible in the image and concepts associated with the image. Keywords are expressed as a list of terms. Keywords can be single or compound terms.</p>
 </div>
 <div class="paragraph">
-<p>Values from the controlled vocabulary IPTC Subject Codes should be placed into the “Subject Code” field.</p>
+<p>Values from the controlled vocabulary IPTC Subject Codes should be placed into the "Subject Code" field.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1531,7 +1531,7 @@ Keywords may have to be separated by commas or other separators depending on the
 <div class="sect3">
 <h4 id="_iptc_subject_code_legacy"><a class="anchor" href="#_iptc_subject_code_legacy"></a><a class="link" href="#_iptc_subject_code_legacy">IPTC Subject Code (Legacy)</a></h4>
 <div class="paragraph">
-<p>This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC “Subject NewsCodes” taxonomy (available from <a href="http://cv.iptc.org/newscodes/subjectcode" class="bare">http://cv.iptc.org/newscodes/subjectcode</a>). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field.<br>
+<p>This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC "Subject NewsCodes" taxonomy (available from <a href="http://cv.iptc.org/newscodes/subjectcode" class="bare">http://cv.iptc.org/newscodes/subjectcode</a>). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field.<br>
 As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: <a href="http://cv.iptc.org/newscodes/mediatopic" class="bare">http://cv.iptc.org/newscodes/mediatopic</a>. For the Media Topics the CV Term About Image field must be used - see it just below.</p>
 </div>
 </div>
@@ -1684,10 +1684,10 @@ This field is limited by the IIM format to about 256 characters. In XMP there is
 <div class="sect3">
 <h4 id="_descriptioncaption"><a class="anchor" href="#_descriptioncaption"></a><a class="link" href="#_descriptioncaption">Description/Caption</a></h4>
 <div class="paragraph">
-<p>The Description field, often referred to as a ‘caption' is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people’s names, their role in the action, the location. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.</p>
+<p>The Description field, often referred to as a ‘caption', is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people&#8217;s names, their roles in the action, and location information. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.</p>
 </div>
 <div class="paragraph">
-<p>The Description field should not be confused with the field for Alt Text (Accessibility), see below. The Description is often presented as a visible caption below the image and provides the facts about an image. Alt Text may be hidden from view within the HTML coding of a website; this field is intended to be read out loud by text-to-speech and assistive technologies.</p>
+<p>The Description field should not be confused with the field for <a href="#_alt_text_accessibility">Alt Text (Accessibility)</a>. The Description is often presented as a visible caption below the image and provides the facts about an image. Alt Text may be hidden from view within the HTML coding of a website; this field is intended to be read out loud by text-to-speech and assistive technologies.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1708,15 +1708,32 @@ This field is limited by the IIM format to about 2000 characters. In XMP there i
 <p>This field is used to provide a brief textual description of the purpose and meaning of an image that can be accessed by assistive technology or displayed when the image is disabled in the browser. The purpose of Alt Text is to provide a text alternative that serves the equivalent purpose.</p>
 </div>
 <div class="paragraph">
-<p>While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative that serves the equivalent purpose, use Alt Text (Accessibility) to provide a summary and Extended Description (Accessibility) (see below) to provide additional details about the image.</p>
+<p>While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative that serves the equivalent purpose, use Alt Text (Accessibility) to provide a summary and <a href="#_extended_description_accessibility">Extended Description (Accessibility)</a> to provide additional details about the image.</p>
 </div>
 <div class="paragraph">
-<p>This field should not be confused with the IPTC field Headline, which is a brief synopsis or summary of the contents of the image.<br>
-The Alt Text is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used the values in the Headline or Description fields to populate the alt text for websites and digital products. IPTC created this dedicated Alt Text (Accessibility) field which should be used instead.</p>
+<p>This field should not be confused with the IPTC field <a href="#_headline">Headline</a>, which is a brief synopsis or summary of the contents of the image.</p>
 </div>
 <div class="paragraph">
-<p>Top 5 Tips for Writing Alt Text:</p>
+<p>Alt Text is required for conformance with the <a href="https://www.w3.org/TR/WCAG22/#text-alternatives">W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives</a>.</p>
 </div>
+<div class="paragraph">
+<p>In the past some may have used the values in the Headline or Description fields to populate the alt text for websites and digital products. IPTC created this dedicated Alt Text (Accessibility) field which should be used instead.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+In XMP there is effectively no character limit. However, some editing interfaces may indicate when a specific number of characters (about 250) is exceeded.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Top 5 Tips for Writing Alt Text</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1726,7 +1743,7 @@ The Alt Text is required for conformance with the W3C Web Content Accessibility 
 <p><strong>Keep it short:</strong> Be as brief as you can. Know when you need to write more for complex images.</p>
 </li>
 <li>
-<p><strong>Limit keywords:</strong> Alt Text is definitely not for boosting SEO. Beware of SEO-focused alt text “shortcuts.”</p>
+<p><strong>Limit keywords:</strong> Alt Text is definitely not for boosting SEO. Beware of SEO-focused alt text "shortcuts."</p>
 </li>
 <li>
 <p><strong>Don’t repeat information:</strong> Don’t copy/paste or auto-populate from adjacent text on the page.</p>
@@ -1736,26 +1753,22 @@ The Alt Text is required for conformance with the W3C Web Content Accessibility 
 </li>
 </ol>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-In XMP there is effectively no character limit. However, some editing interfaces may indicate when a specific number - of about 250 - of charactersis exceeded.
-</td>
-</tr>
-</table>
+</div>
+</div>
+<div class="paragraph">
+<p>More information on accessibility can be found in the <a href="#_making_images_accessible_for_people_with_special_needs">Making images accessible for people with special needs</a> section in this guide.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_extended_description_accessibility"><a class="anchor" href="#_extended_description_accessibility"></a><a class="link" href="#_extended_description_accessibility">Extended Description (Accessibility)</a></h4>
 <div class="paragraph">
-<p>The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the Alt Text (Accessibility) field. Extended Description (Accessibility)  is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose.</p>
+<p>The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the <a href="#_alt_text_accessibility">Alt Text (Accessibility)</a> field. Extended Description (Accessibility)  is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose.</p>
 </div>
 <div class="paragraph">
-<p>This property should not be confused with the IPTC property Description/Caption. Extended Description (Accessibility) can be combined with Alt Text (Accessibility) if and when a brief description does not provide a text equivalent to the image. It should not repeat the information in the Alt Text (Accessibility) property. This property is required for conformance with the W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives.  In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products. IPTC created this dedicated Extended Description (Accessibility) field and this should be used instead.</p>
+<p>This property should not be confused with the IPTC property <a href="#_descriptioncaption">Description/Caption</a>. Extended Description (Accessibility) can be combined with Alt Text (Accessibility) if and when a brief description does not provide a text equivalent to the image. It should not repeat the information in the Alt Text (Accessibility) property. This property is required for conformance with the <a href="https://www.w3.org/TR/WCAG22/#text-alternatives">W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives</a>.</p>
+</div>
+<div class="paragraph">
+<p>In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products. IPTC created this dedicated Extended Description (Accessibility) field and this should be used instead.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1768,6 +1781,9 @@ Be aware that this IPTC field does not support formatted text or HTML markup.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>More information on accessibility can be found in the <a href="#_making_images_accessible_for_people_with_special_needs">Making images accessible for people with special needs</a> section in this guide.</p>
 </div>
 </div>
 </div>
@@ -1865,7 +1881,7 @@ artwork, objects).
 <div class="sect3">
 <h4 id="_additional_model_information"><a class="anchor" href="#_additional_model_information"></a><a class="link" href="#_additional_model_information">Additional Model Information</a></h4>
 <div class="paragraph">
-<p>The Additional Model Information field can be used to record information about the ethnicity and other facets of the person(s) (“model(s)”) appearing in the image. Use the Model Age field to note the age of model(s).</p>
+<p>The Additional Model Information field can be used to record information about the ethnicity and other facets of the person(s) ("model(s)") appearing in the image. Use the Model Age field to note the age of model(s).</p>
 </div>
 </div>
 <div class="sect3">
@@ -2365,7 +2381,7 @@ e.g. +1 (212) 1234578</p>
 <p>For legal advice on asserting copyright, you should consult a lawyer.</p>
 </div>
 <div class="paragraph">
-<p>Notes on usage rights (how the image may be used) should be provided in the “Rights Usage Terms” field.</p>
+<p>Notes on usage rights (how the image may be used) should be provided in the "Rights Usage Terms" field.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2869,7 +2885,7 @@ This field is limited by the IIM format to about 32 characters. In XMP there is 
 <p>If you create photo composites, the IPTC Image Region can be used to identify each of the different entities making up the composite and tie the provider’s name or copyright notice back to each.</p>
 </div>
 <div class="paragraph">
-<p>Suggestions for how the image could be cropped to accommodate different layouts can now be embedded into the image itself. For example, you could mark a horizontal rectangle within a vertical image and indicate that the role for this marked area is a <a href="http://cv.iptc.org/newscodes/imageregionrole/landscapeCropping">“landscape format cropping”</a> for that image.</p>
+<p>Suggestions for how the image could be cropped to accommodate different layouts can now be embedded into the image itself. For example, you could mark a horizontal rectangle within a vertical image and indicate that the role for this marked area is a <a href="http://cv.iptc.org/newscodes/imageregionrole/landscapeCropping">"landscape format cropping"</a> for that image.</p>
 </div>
 <div class="paragraph">
 <p>It should be possible to automatically map the face-tagging features in some cameras to the IPTC Image Regions so you would only have to add the name of the person to the regions. In addition, auto-tagging or image recognition systems could create image regions and auto-fill the embedded Image Region metadata fields.</p>
@@ -3189,21 +3205,24 @@ Exif currently does not hold time zone information in its time stamp. A time zon
 </div>
 </div>
 <div class="sect2">
-<h3 id="_image_accessibility_for_assistive_technology"><a class="anchor" href="#_image_accessibility_for_assistive_technology"></a><a class="link" href="#_image_accessibility_for_assistive_technology">Image Accessibility for Assistive Technology</a></h3>
+<h3 id="_making_images_accessible_for_people_with_special_needs"><a class="anchor" href="#_making_images_accessible_for_people_with_special_needs"></a><a class="link" href="#_making_images_accessible_for_people_with_special_needs">Making images accessible for people with special needs</a></h3>
 <div class="paragraph">
-<p>Disabled people, such as those who are blind or have low vision, use assistive technologies such as screen readers to navigate text and image content on the web. If a textual description is not provided for an image, assistive technologies will skip over the image as if it doesn’t exist on the page. Text alternatives are required to meet Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 for Non-Text Content.</p>
+<p>People with special visual needs, such as those who are blind or have low vision, use assistive technologies such as screen readers to navigate text and image content on the web. If a textual description is not provided for an image, assistive technologies will skip over the image as if it doesn’t exist on the page.</p>
+</div>
+<div class="paragraph">
+<p>Text alternatives are required to meet <a href="https://www.w3.org/TR/WCAG22/#text-alternatives">W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives</a>.</p>
 </div>
 <div class="paragraph">
 <p>Adding descriptive text metadata to images enables software tools and technologies to populate alt text and extended description fields on websites and digital documents. Embedding accessible descriptions provides a method for efficiently passing information across products and platforms and improves the accuracy and availability of image descriptions on the web.</p>
 </div>
 <div class="paragraph">
-<p><strong>Alt Text (Accessibility)</strong> and <strong>Extended Description (Accessibility)</strong> were added to the IPTC Photo Metadata Standard to make it easier to embed descriptive metadata that can be used to create more accessible websites or digital products. These are found in the <a href="#_natural_language_free_text_descriptions">Natural Language Free Text Descriptions</a> section above.</p>
+<p><a href="#_alt_text_accessibility">Alt Text (Accessibility)</a> and <a href="#_extended_description_accessibility">Extended Description (Accessibility)</a> were added to the IPTC Photo Metadata Standard to make it easier to embed descriptive metadata that can be used to create more accessible websites or digital products. These are found in the <a href="#_natural_language_free_text_descriptions">Natural Language Free Text Descriptions</a> section above.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_iptc_photo_metadata_and_google_images"><a class="anchor" href="#_iptc_photo_metadata_and_google_images"></a><a class="link" href="#_iptc_photo_metadata_and_google_images">IPTC Photo Metadata and Google Images</a></h3>
 <div class="paragraph">
-<p>Google has introduced a new feature of their “image search” mode in 2018. When an image is shown, one can click on “Image Credits” and a popup will show the image&#8217;s creator, credit line and a copyright notice. It works by reading the corresponding embedded IPTC photo metadata fields from the image file. The name of the creator, the copyright notices and the credit line is shown.</p>
+<p>Google has introduced a new feature of their "image search" mode in 2018. When an image is shown, one can click on "Image Credits" and a popup will show the image&#8217;s creator, credit line and a copyright notice. It works by reading the corresponding embedded IPTC photo metadata fields from the image file. The name of the creator, the copyright notices and the credit line is shown.</p>
 </div>
 <div class="paragraph">
 <p>IPTC is taking the opportunity to show the best way that each metadata field can be filled in based on the definitions in the standard.</p>
@@ -3217,20 +3236,20 @@ Exif currently does not hold time zone information in its time stamp. A time zon
 <dl>
 <dt class="hdlist1">Creator</dt>
 <dd>
-<p>For displaying the creator of the image, the Creator field is read and shown with the label Creator. Google first reads the ISO XMP dc:creator field, and if that is empty, then the IPTC IIM 2:80 Creator field. Your editing tool probably just gives you a single field labelled “creator” so just use that and you won&#8217;t have to worry.</p>
+<p>For displaying the creator of the image, the Creator field is read and shown with the label Creator. Google first reads the ISO XMP dc:creator field, and if that is empty, then the IPTC IIM 2:80 Creator field. Your editing tool probably just gives you a single field labelled "creator" so just use that and you won&#8217;t have to worry.</p>
 <div class="paragraph">
-<p>By its definition this field contains “the name of the photographer, but in cases where the photographer should not be identified the name of a company or organisation may be appropriate.”</p>
+<p>By its definition this field contains "the name of the photographer, but in cases where the photographer should not be identified the name of a company or organisation may be appropriate."</p>
 </div>
 </dd>
 <dt class="hdlist1">Copyright Notice</dt>
 <dd>
-<p>Google displays the Copyright Notice field (XMP dc:rights or IIM 2:116 Copyright Notice). So while you&#8217;re tidying up your image metadata it makes sense to get this right too. The definition for this field is: “Contains any necessary copyright notice for claiming the intellectual property for artwork or an object in the image and should identify the current owner of the copyright of this work with associated intellectual property rights.” The format can differ according to the relevant copyright legislation of different countries. Again, Google first reads the ISO XMP dc:rights field, and if that is empty, then the IPTC IIM 2.116 Copyright notice field.</p>
+<p>Google displays the Copyright Notice field (XMP dc:rights or IIM 2:116 Copyright Notice). So while you&#8217;re tidying up your image metadata it makes sense to get this right too. The definition for this field is: "Contains any necessary copyright notice for claiming the intellectual property for artwork or an object in the image and should identify the current owner of the copyright of this work with associated intellectual property rights." The format can differ according to the relevant copyright legislation of different countries. Again, Google first reads the ISO XMP dc:rights field, and if that is empty, then the IPTC IIM 2.116 Copyright notice field.</p>
 </dd>
 <dt class="hdlist1">Credit Line</dt>
 <dd>
-<p>The Credit Line field (XMP photoshop:Credit or IIM 2:110 Credit) is used as “the credit to person(s) and/or organisation(s) required by the supplier of the image to be used when published.” Generally this would be a line of text that the supplier expects users of the image (such as Google Images) to display to users alongside the image. Again, Google first reads the ISO XMP photoshop:credit field, and if that is empty, then the IPTC IIM 2.110 Credit field.</p>
+<p>The Credit Line field (XMP photoshop:Credit or IIM 2:110 Credit) is used as "the credit to person(s) and/or organisation(s) required by the supplier of the image to be used when published." Generally this would be a line of text that the supplier expects users of the image (such as Google Images) to display to users alongside the image. Again, Google first reads the ISO XMP photoshop:credit field, and if that is empty, then the IPTC IIM 2.110 Credit field.</p>
 <div class="paragraph">
-<p>Most tools label this field as “Credit Line” in the editing interface, but some tools call it simply “Credit”.</p>
+<p>Most tools label this field as "Credit Line" in the editing interface, but some tools call it simply "Credit".</p>
 </div>
 </dd>
 </dl>
@@ -3258,7 +3277,7 @@ Exif currently does not hold time zone information in its time stamp. A time zon
 </ul>
 </div>
 <div class="paragraph">
-<p>Each of these tools will allow you to edit fields a slightly different way. Usually there is some kind of “properties panel” or “metadata window” that lets you view and edit all embedded metadata fields.</p>
+<p>Each of these tools will allow you to edit fields a slightly different way. Usually there is some kind of "properties panel" or "metadata window" that lets you view and edit all embedded metadata fields.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3301,7 +3320,7 @@ Therefore, <strong>our recommendation is to leave the Image Creator field empty<
 Contributors are people and things that contributed to the creation of the image, so this includes what an AI generator does.<br>
 The Contributor field is represented by a structure consisting of a name, optional identifier and a role attribute.<br>
 The "role" attribute is a way to outline the way that each entity contributed to the creation of the image.
-In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscodes/contentprodpartyrole/origcont" class="bare">http://cv.iptc.org/newscodes/contentprodpartyrole/origcont</a> should be used as it expresses “Content Originator = a party which originated the content of the item”.<br></p>
+In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscodes/contentprodpartyrole/origcont" class="bare">http://cv.iptc.org/newscodes/contentprodpartyrole/origcont</a> should be used as it expresses "Content Originator = a party which originated the content of the item".<br></p>
 </li>
 <li>
 <p>The <strong>Digital Source Type</strong> field should be set to the URI value <a href="http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia" class="bare">http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia</a> or <a href="http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic" class="bare">http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic</a>. This is covered already by the <a href="#digitalsourcetype">Digital Source Type guidance in this User Guide</a>.</p>
@@ -3856,7 +3875,7 @@ In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscode
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Audio example</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A “speech-to-speech” generated audio clip created using a combination of a real actor and an AI model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A "speech-to-speech" generated audio clip created using a combination of a real actor and an AI model.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Text example</p></th>
@@ -3924,7 +3943,7 @@ In the Generative AI context, the URI value <a href="http://cv.iptc.org/newscode
 <div class="sect2">
 <h3 id="_guideline_for_mapping_category_codes_to_subject_newscodes"><a class="anchor" href="#_guideline_for_mapping_category_codes_to_subject_newscodes"></a><a class="link" href="#_guideline_for_mapping_category_codes_to_subject_newscodes">Guideline for mapping Category Codes to Subject NewsCodes</a></h3>
 <div class="paragraph">
-<p>Early versions of IIM included the Datasets 2:15 “Category” and 2:20 “Supplemental Category”. But these two fields were replaced in IIM version 4 (released in 1999) by the Dataset 2:12 “Subject Reference” which must be populated by values from the IPTC Subject NewsCodes controlled vocabulary. In version 4 of the IIM specification document the Datasets Category and Supplemental Category were indicated as “deprecated” which meant that after the time of this release these two Datasets should not be populated with values any longer.</p>
+<p>Early versions of IIM included the Datasets 2:15 "Category" and 2:20 "Supplemental Category". But these two fields were replaced in IIM version 4 (released in 1999) by the Dataset 2:12 "Subject Reference" which must be populated by values from the IPTC Subject NewsCodes controlled vocabulary. In version 4 of the IIM specification document the Datasets Category and Supplemental Category were indicated as "deprecated" which meant that after the time of this release these two Datasets should not be populated with values any longer.</p>
 </div>
 <div class="paragraph">
 <p>To support the move from the three letter codes used with the Category Dataset to the Subject NewsCodes this table provides a reference for mapping.</p>
@@ -4065,12 +4084,12 @@ The study, reporting and prediction of meteorological phenomena.</p></td>
 <p>Create a thumbnail of the final image and draw lines along the edges between the different photos it was made of. Then apply a number to each region representing a photo.</p>
 </li>
 <li>
-<p>Assign numbers to the images making the composite photo: start at the left upper corner of the composite picture, go from left to right and from top to bottom. As soon as you encounter pixels from “another” image assign the next number from a sequence starting with 1. If the same source image is used for multiple regions of the composite image then apply the same number to all of them.</p>
+<p>Assign numbers to the images making the composite photo: start at the left upper corner of the composite picture, go from left to right and from top to bottom. As soon as you encounter pixels from "another" image assign the next number from a sequence starting with 1. If the same source image is used for multiple regions of the composite image then apply the same number to all of them.</p>
 </li>
 <li>
-<p>Make this thumbnail available on the web. Add the URL of this thumbnail to the Instructions field: the added string should be “composite reference <a href="http://&#8230;&#8203;.”" class="bare">http://&#8230;&#8203;.”</a>.</p>
+<p>Make this thumbnail available on the web. Add the URL of this thumbnail to the Instructions field: the added string should be "composite reference <a href="http://&#8230;&#8203;."" class="bare">http://&#8230;&#8203;."</a>.</p>
 <div class="paragraph">
-<p>The rule for finding this link is: parse the Instructions field, any URL right after the words “composite reference” is the link to this thumbnail.</p>
+<p>The rule for finding this link is: parse the Instructions field, any URL right after the words "composite reference" is the link to this thumbnail.</p>
 </div>
 </li>
 <li>
