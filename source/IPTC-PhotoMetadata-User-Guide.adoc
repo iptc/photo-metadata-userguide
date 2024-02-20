@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: DRAFT 2024-01
+:version-label: DRAFT 2024-02
 :revnumber:
-:revremark: 2024-01-11b
+:revremark: 2024-02
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -765,6 +765,25 @@ Email(s) (CCI)::
 The primary contact's business or work email address, such as name@domain.com. Multiple email addresses can be given, separated by a comma.  
 Website(s) (CCI)::
 The URL or web address for the primary contact's business. Multiple addresses can be given, separated by a comma.
+
+==== Contributor
+
+Some images have multiple people (or systems) contributing to their creation. For example a fashion shoot may have a stylist, wardrobe manager, hair and make-up artists and more. A photo in a cookbook may have a food stylist. These people did not take the photo, but they contributed to its creation.
+
+To allow this information to be added to images, the IPTC added the Contributor field to the Photo Metadata Standard in 2022, based on the equivalent field in https://iptc.org/standards/video-metadata-hub/[IPTC Video Metadata Hub].
+
+Field values are a repeatable set of "Entity or Concept with Role" structures, which includes:
+
+Identifier::
+One or more identifiers as URIs.
+
+Name::
+Full name of the entity/concept (this is a Lang Alt field which means that it may have several language variants)
+
+Role::
+Text identifier(s) of the role the entity has in the context of the metadata property. Roles can be text strings or URIs representing values from a controlled vocabulary such as the IPTC NewsCodes CV https://cv.iptc.org/newscodes/contentprodpartyrole[Content Production Party Role].
+
+NOTE: We recommend using the <<Product,Product Shown in the Image>> property, optionally as part of an <<Image Regions,Image Region>>, to list details of product(s) such as handbags or pairs of shoes featured in an image.
 
 ==== Copyright Notice
 
