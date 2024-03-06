@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: DRAFT 2024-02
+:version-label: DRAFT 2023-12...
 :revnumber:
-:revremark: 2024-02-07
+:revremark: 2024-03-06
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -180,7 +180,7 @@ Business address:
 
 This section provides a reference of field labels and names in alphabetical order for quick location of specific fields and their guidelines.
 
-Each *Label (IPTC Name)* is linked to the User Guide section which describes this field. Click on the name and follow.
+Each *Label (IPTC Name)* is linked to the User Guide section which describes this field. Click on the name and follow. { ... detail} may follow indicating this field covers a detail of the ... field in a structure.
 
 Labels in *bold* are not defined by the IPTC Photo Metadata Standard but used by popular software. The *Same as IPTC Name* column shows the name of the corresponding IPTC field.
 
@@ -202,11 +202,12 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Artwork or Object in the Image,Circa Date Created>> {Artwork or Object detail}||Extension
 |<<Locations,City>> (legacy)||Core
 |<<Locations,City>> {Location Created detail}||Extension
-|<<Locations,City>> {Location Shown}||Extension
+|<<Locations,City>> {Location Shown detail}||Extension
 |<<#_creators_contact_info,City>> {Creator's Contact detail}||Core
 |<<#_organisations_including_companies_featured_by_the_image,Code of Organisation Featured in the Image>>||Extension
 |<<Artwork or Object in the Image,Content Description>> {Artwork or Object detail}||Extension
-|<<Artwork or Object in the Image,Contribution Description>>{Artwork or Object detail}||Extension
+|<<Artwork or Object in the Image,Contribution Description>> {Artwork or Object detail}||Extension
+|<<Contributor>>||Extension
 |<<Copyright Notice>>||Core
 |<<Artwork or Object in the Image,Copyright Notice>> {Artwork or Object detail}||Extension
 |<<Copyright Owner>>||Extension
@@ -435,7 +436,7 @@ WARNING: This field is limited by the IIM format to about 256 characters. In XMP
 
 The Description field, often referred to as a ‘caption', is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people's names, their roles in the action, and location information. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.
 
-The Description field should not be confused with the field for <<Alt Text (Accessibility)>>. The Description is often presented as a visible caption below the image and provides the facts about an image. Alt Text may be hidden from view within the HTML coding of a website; this field is intended to be read out loud by text-to-speech and assistive technologies. 
+The Description field should not be confused with the field for <<Alt Text (Accessibility)>>, see below. 
 
 WARNING: This field is limited by the IIM format to about 2000 characters. In XMP there is effectively no character limit.
 
@@ -443,15 +444,16 @@ WARNING: This field is limited by the IIM format to about 2000 characters. In XM
 
 This field is used to provide a brief textual description of the purpose and meaning of an image that can be accessed by assistive technology or displayed when the image is disabled in the browser. The purpose of Alt Text is to provide a text alternative that serves the equivalent purpose. 
 
-While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative that serves the equivalent purpose, use Alt Text (Accessibility) to provide a summary and <<Extended Description (Accessibility)>> to provide additional details about the image. 
+While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative, use this field to provide a summary and <<Extended Description (Accessibility)>> to provide additional details about the image. 
 
-This field should not be confused with the IPTC field <<Headline>>, which is a brief synopsis or summary of the contents of the image.
+WARNING: Some editing interfaces may indicate when a specific number of characters (about 250) is exceeded. 
+
+Alt Text may be hidden from view within the HTML coding of a website; this field is intended to be read out loud by text-to-speech and assistive technologies while the <<Description/Caption>> is often presented as a visible caption below the image and provides the facts about an image. 
 
 Alt Text is required for conformance with the https://www.w3.org/TR/WCAG22/#text-alternatives[W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives].
 
-In the past some may have used the values in the Headline or Description fields to populate the alt text for websites and digital products. IPTC created this dedicated Alt Text (Accessibility) field which should be used instead.
+This field should not be confused with the IPTC field <<Headline>>, which is a brief synopsis or summary of the contents of the image.
 
-WARNING: In XMP there is effectively no character limit. However, some editing interfaces may indicate when a specific number of characters (about 250) is exceeded. 
 
 .Top 5 Tips for Writing Alt Text
 ****
@@ -466,11 +468,9 @@ More information on accessibility can be found in the <<Making images accessible
 
 ==== Extended Description (Accessibility)
 
-The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the <<Alt Text (Accessibility)>> field. Extended Description (Accessibility)  is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose. 
+The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the <<Alt Text (Accessibility)>> field. Extended Description (Accessibility) is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose. It should not repeat the information in the Alt Text (Accessibility) property.
 
-This property should not be confused with the IPTC property <<Description/Caption>>. Extended Description (Accessibility) can be combined with Alt Text (Accessibility) if and when a brief description does not provide a text equivalent to the image. It should not repeat the information in the Alt Text (Accessibility) property. This property is required for conformance with the https://www.w3.org/TR/WCAG22/#text-alternatives[W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives].
-
-In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products. IPTC created this dedicated Extended Description (Accessibility) field and this should be used instead. 
+This property should not be confused with the IPTC property <<Description/Caption>>. 
 
 WARNING: Be aware that this IPTC field does not support formatted text or HTML markup.  
 
@@ -777,18 +777,9 @@ The URL or web address for the primary contact's business. Multiple addresses ca
 
 Some images have multiple people (or systems) contributing to their creation. For example a fashion shoot may have a stylist, wardrobe manager, hair and make-up artists and more. A photo in a cookbook may have a food stylist. These people did not take the photo, but they contributed to its creation.
 
-To allow this information to be added to images, the IPTC added the Contributor field to the Photo Metadata Standard in 2022, based on the equivalent field in https://iptc.org/standards/video-metadata-hub/[IPTC Video Metadata Hub].
-
-Field values are a repeatable set of "Entity or Concept with Role" structures, which includes:
-
-Identifier::
-One or more identifiers as URIs.
-
-Name::
-Full name of the entity/concept (this is a Lang Alt field which means that it may have several language variants)
-
-Role::
-Text identifier(s) of the role the entity has in the context of the metadata property. Roles can be text strings or URIs representing values from a controlled vocabulary such as the IPTC NewsCodes CV https://cv.iptc.org/newscodes/contentprodpartyrole[Content Production Party Role].
+Indicate a contributor using name and identifier. +
+In addition the kind of contribution can be expressed by a value from a vocabulary of roles of persons contributiong to an image - it should be based on industry wide practices. + 
+IPTC provides such a vocabulary at https://cv.iptc.org/newscodes/contentprodpartyrole/
 
 NOTE: We recommend using the <<Product,Product Shown in the Image>> property, optionally as part of an <<Image Regions,Image Region>>, to list details of product(s) such as handbags or pairs of shoes featured in an image.
 
@@ -1182,6 +1173,8 @@ Text alternatives are required to meet https://www.w3.org/TR/WCAG22/#text-altern
 Adding descriptive text metadata to images enables software tools and technologies to populate alt text and extended description fields on websites and digital documents. Embedding accessible descriptions provides a method for efficiently passing information across products and platforms and improves the accuracy and availability of image descriptions on the web.
 
 <<Alt Text (Accessibility)>> and <<Extended Description (Accessibility)>> were added to the IPTC Photo Metadata Standard to make it easier to embed descriptive metadata that can be used to create more accessible websites or digital products. These are found in the <<Natural Language Free Text Descriptions>> section above. 
+
+In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products, Alt Text (Accessibility) and/or Extended Description (Accessibility) should be used instead.
 
 === IPTC Photo Metadata and Google Images
 
