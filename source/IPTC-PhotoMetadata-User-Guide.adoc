@@ -773,6 +773,25 @@ The primary contact's business or work email address, such as name@domain.com. M
 Website(s) (CCI)::
 The URL or web address for the primary contact's business. Multiple addresses can be given, separated by a comma.
 
+==== Contributor
+
+Some images have multiple people (or systems) contributing to their creation. For example a fashion shoot may have a stylist, wardrobe manager, hair and make-up artists and more. A photo in a cookbook may have a food stylist. These people did not take the photo, but they contributed to its creation.
+
+To allow this information to be added to images, the IPTC added the Contributor field to the Photo Metadata Standard in 2022, based on the equivalent field in https://iptc.org/standards/video-metadata-hub/[IPTC Video Metadata Hub].
+
+Field values are a repeatable set of "Entity or Concept with Role" structures, which includes:
+
+Identifier::
+One or more identifiers as URIs.
+
+Name::
+Full name of the entity/concept (this is a Lang Alt field which means that it may have several language variants)
+
+Role::
+Text identifier(s) of the role the entity has in the context of the metadata property. Roles can be text strings or URIs representing values from a controlled vocabulary such as the IPTC NewsCodes CV https://cv.iptc.org/newscodes/contentprodpartyrole[Content Production Party Role].
+
+NOTE: We recommend using the <<Product,Product Shown in the Image>> property, optionally as part of an <<Image Regions,Image Region>>, to list details of product(s) such as handbags or pairs of shoes featured in an image.
+
 ==== Copyright Notice
 
 The Copyright Notice contains information required to assert copyright in the image and should contain the name of the current copyright holder, whether an individual or a company. The format will differ according to the relevant copyright legislation. It may include the copyright symbol ©, the year of publication, and other commonly used terms such as ‘All Rights Reserved.' If an image is Public Domain, it can be indicated here. 
