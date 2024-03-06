@@ -719,9 +719,31 @@ Do not confuse this field value with the Identifier field of the Licensor of the
 
 This section is about how to record rights information for an image. 
 
-TIP: Read also the section about <<Licensing Use of the Image,licensing the use of the image>>.
+TIP: Read also the section about <<Licensing Use of the Image>>.
 
-NOTE: Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected a) by laws and other regulations of the region in which the image is used, and b) by contracts applying to the image.
+==== Metadata and the Law
+
+Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected 
+
+* by laws and other regulations of the region in which the image is used, and/or 
+* by contracts applying to the image.
+
+These fields can be affected:
+
+* <<Copyright Notice>>
+* <<Credit Line>>
+* <<Rights Usage Terms>>
+* <<Copyright Owner>>
+* <<Data Mining>>
+* <<Other Constraints>>
+* <<Embedded Encoded Rights Expressions>>
+* <<Linked Encoded Rights Expressions>>
+* <<Model Release Status>>
+* <<Property Release Status>>
+* <<Web Statement of Rights>>
+* <<Artwork or Object in the Image>>: Copyright Notice, Current Copyright Owner
+
+==== Creator - overview
 
 The creator of the image as owner of rights can be identified by two fields:
 <<#_creator_free_text,Creator>> a free text field for the name of the Creator and 
@@ -795,9 +817,13 @@ WARNING: This field is limited by the IIM format to about 128 characters. In XMP
 
 IMPORTANT: This field is shown in the Image Credits of a photo in the results of a Google image search.
 
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
+
 ==== Copyright Owner
 
 Indicate the owner or owners of the copyright in the image, using name and identifier. Note that Copyright Owner, Image Creator, Image Source and Licensor may be the same or different entities.
+
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
 
 ==== Credit Line
 
@@ -810,6 +836,8 @@ WARNING: This field is limited by the IIM format to about 32 characters. In XMP 
 
 IMPORTANT: This field is shown as Image Credits of a photo in the results of a Google image search.
 
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
+
 ==== Source (Supply Chain)
 
 The Source field is used to name parties with a role in the supply chain, such as agencies, originating organisations, or photographers. The Source field is useful for syndication where the original supplier agency or photographer  is different from the end supplier. 
@@ -820,36 +848,43 @@ WARNING: This field is limited by the IIM format to about 32 characters. In XMP 
 
 ==== Data Mining
 
-This field can be used to communicate permissions and prohibitions on the use of your images for data mining for the purpose of AI/ML training, generative AI/ML traning and more. It uses a standardised list of values, jointly developed by IPTC and the PLUS Coalition, see it below. +
-You can choose a single value for this field only; or you use a value for this field in combination with another field like the <<Other Constraints>>, or the <<Linked Encoded Rights Expressions,Linked  Encoded Rights Expression>> field or <<Embedded Encoded Rights Expressions>> field. See the notes on this use below. 
+Use this field to communicate whether data mining is prohibited or allowed either in general, for AI or Machine Learning purposes or for generative AI/ML purposes for your image. You can select one value from the standardised controlled list to express data mining permissions, constraints and prohibitions. 
 
-NOTE: Please note that regional laws applying to an image may prohibit, constrain, or allow data mining for certain purposes (such as search indexing or research), and may overrule the value selected for this field. Similarly, the absence of a prohibition does not indicate that the asset owner grants permission for data mining or any other use of an image.
+NOTE: Values for this field — such as those related to search indexing or research — may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
 
-The identifier of one these terms can be applied as value to the Data Mining field:
+This field’s value must come from the PLUS Data Mining vocabulary, which is shown here:
 
-* link:http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED[Unspecified ^] - no prohibition defined +
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED`
-* link:http://ns.useplus.org/ldf/vocab/DMI-ALLOWED[Allowed ^] - any kind of data mining +
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-ALLOWED`
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING[Prohibited for AI/ML training ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING`
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING[Prohibited for Generative AI/ML training ^] + 
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING`
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING[Prohibited except for search engine indexing^] - it permits only data mining by search engines available to the public to identify the URL for an image and its associated data, and prohibits all other uses + 
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING`
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED[Prohibited ^] - any kind of data mining + 
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED`
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT[Prohibited, see Other Constraints ^] field - the <<Other Constraints>> field should have a value + 
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT`
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR[Prohibited, see Embedded Encoded Rights Expression ^] field - the <<Embedded Encoded Rights Expressions>> field should have a value + 
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR`
-* link:http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR[Prohibited, see Linked Encoded Rights Expression ^] field - the <<Linked Encoded Rights Expressions,Linked Encoded Rights Expression>> field should have a value + 
-Identifier: `http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR`
+* Name: Unspecified – no prohibition defined +
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED
+* Name: Allowed +
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-ALLOWED
+* Name: Prohibited for AI/ML training +
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING
+* Name: Prohibited for Generative AI/ML training +
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING
+* Name: Prohibited except for search engine indexing +
+**Note**: This prohibition only permits data mining by search engines available to the public to identify the URL for an asset and its associated data (for the purpose of assisting the public in navigating to the URL for the asset), and prohibits all other uses, such as AI/ML training. +
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING
+* Name: Prohibited +
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED
+* Name: Prohibited, see <Other Constraints> property. +
+**Note**: The <<Other Constraints>> field must be populated if this value is set. +
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT
+* Name: Prohibited, see Embedded Encoded Rights Expression field +
+Identifier:  http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR
+* Name: Prohibited, see Linked Encoded Rights Expression field
+Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR
+
+The <<Other Constraints>> field can be used to express rights constraints in human-readable form. The IPTC properties "Embedded Encoded Rights Expression" and "Linked Encoded Rights Expression" can be used to express rights in a machine-readable format.
 
 
 ==== Other Constraints
 
-This field can be used to indicate any additional constraints on the use of the image by natural free text. These constraints may be used to limit the scope of usage allowed.
+This field can specify, in a human-readable form, what other constraints may need to be followed. For example this property could be used to allow Data Mining under special constraints, such as “Generative AI training is only allowed for academic purposes.”
+
+This property must be populated if the <<Data Mining>> field uses the identifier http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT .
+
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
 
 ==== Property Release Status
 
@@ -868,6 +903,8 @@ Identifier: `http://ns.useplus.org/ldf/vocab/PR-LPR`
 
 We recommend that the PLUS specified value Unlimited Property Releases (PR-UPR) be used with care, and encourage you to check the wording of the property release thoroughly before choosing this value.
 
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
+
 ==== Property Release Identifier(s)
 
 Use this field to indicate the ID for each Property Release document. Ensure all releases (both model and property) are assigned a unique number, and record that information in this field.
@@ -878,19 +915,23 @@ TIP: Read about Model Releases in the section about persons in an image.
 
 The Web Statement of Rights can be used to link the viewer to a web page (by a URL) which provides a statement of the copyright ownership and usage rights of the image. In the Adobe ‘File Info' panel this field is called the ‘Copyright Info URL.'
 
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
+
 === Licensing Use of the Image
 
 This section provides fields for information required when licensing an image. 
 
 TIP: Read also the section about <<Rights Information,rights information>>.
 
-NOTE: Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected a) by laws and other regulations of the region in which the image is used, and b) by contracts applying to the image.
+NOTE: Please read <<Metadata and the Law>>.
 
 ==== Rights Usage Terms
 
 This field is for free-text instructions on how the image may be legally used. E.g. ‘Permission is required from (Supplier or Creator) to publish this image' or ‘Licensed to (Customer) for use in (publication) until (date)'. 
 
 For more detailed licensing terms, you may use the PLUS ‘Media Selector', or another standardised vocabulary. This field may also be used to indicate a Creative Commons Licence assigned to the image.
+
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
 
 ==== Image Supplier
 
@@ -929,6 +970,8 @@ Contains the encoding type for the rights expression using an IANA Media Type
 Rights Expression Language ID::
 Contains the identifier for the Rights Expression Language used.
 
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
+
 ==== Linked Encoded Rights Expressions
 
 This structure holds details of encoded rights expressions referenced by a link.
@@ -939,6 +982,8 @@ Encoding Type::
 Contains the encoding type of the rights expression using an IANA Media Type. 
 Rights Expression Language ID::
 Contains the identifier of the Rights Expression Language used.
+
+NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
 
 === Administration and Commissioning Details
 

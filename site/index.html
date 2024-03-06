@@ -2246,23 +2246,72 @@ Do not confuse this field value with the Identifier field of the Licensor of the
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Read also the section about <a href="#_licensing_use_of_the_image">licensing the use of the image</a>.
+Read also the section about <a href="#_licensing_use_of_the_image">Licensing Use of the Image</a>.
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected a) by laws and other regulations of the region in which the image is used, and b) by contracts applying to the image.
-</td>
-</tr>
-</table>
+<div class="sect3">
+<h4 id="_metadata_and_the_law"><a class="anchor" href="#_metadata_and_the_law"></a><a class="link" href="#_metadata_and_the_law">Metadata and the Law</a></h4>
+<div class="paragraph">
+<p>Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>by laws and other regulations of the region in which the image is used, and/or</p>
+</li>
+<li>
+<p>by contracts applying to the image.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These fields can be affected:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_copyright_notice">Copyright Notice</a></p>
+</li>
+<li>
+<p><a href="#_credit_line">Credit Line</a></p>
+</li>
+<li>
+<p><a href="#_rights_usage_terms">Rights Usage Terms</a></p>
+</li>
+<li>
+<p><a href="#_copyright_owner">Copyright Owner</a></p>
+</li>
+<li>
+<p><a href="#_data_mining">Data Mining</a></p>
+</li>
+<li>
+<p><a href="#_other_constraints">Other Constraints</a></p>
+</li>
+<li>
+<p><a href="#_embedded_encoded_rights_expressions">Embedded Encoded Rights Expressions</a></p>
+</li>
+<li>
+<p><a href="#_linked_encoded_rights_expressions">Linked Encoded Rights Expressions</a></p>
+</li>
+<li>
+<p><a href="#_model_release_status">Model Release Status</a></p>
+</li>
+<li>
+<p><a href="#_property_release_status">Property Release Status</a></p>
+</li>
+<li>
+<p><a href="#_web_statement_of_rights">Web Statement of Rights</a></p>
+</li>
+<li>
+<p><a href="#_artwork_or_object_in_the_image">Artwork or Object in the Image</a>: Copyright Notice, Current Copyright Owner</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_creator_overview"><a class="anchor" href="#_creator_overview"></a><a class="link" href="#_creator_overview">Creator - overview</a></h4>
 <div class="paragraph">
 <p>The creator of the image as owner of rights can be identified by two fields:
 <a href="#_creator_free_text">Creator</a> a free text field for the name of the Creator and
@@ -2276,6 +2325,7 @@ Be aware that values assigned to rights-related metadata fields - including fiel
 </div>
 <div class="paragraph">
 <p>The Image Creator, Copyright Owner, Image Supplier and Licensor may be the same or different entities.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_creator_free_text"><a class="anchor" href="#_creator_free_text"></a><a class="link" href="#_creator_free_text">Creator (free text)</a></h4>
@@ -2432,11 +2482,35 @@ This field is shown in the Image Credits of a photo in the results of a Google i
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_copyright_owner"><a class="anchor" href="#_copyright_owner"></a><a class="link" href="#_copyright_owner">Copyright Owner</a></h4>
 <div class="paragraph">
 <p>Indicate the owner or owners of the copyright in the image, using name and identifier. Note that Copyright Owner, Image Creator, Image Source and Licensor may be the same or different entities.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -2481,6 +2555,18 @@ This field is shown as Image Credits of a photo in the results of a Google image
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_source_supply_chain"><a class="anchor" href="#_source_supply_chain"></a><a class="link" href="#_source_supply_chain">Source (Supply Chain)</a></h4>
@@ -2515,8 +2601,7 @@ This field is limited by the IIM format to about 32 characters. In XMP there is 
 <div class="sect3">
 <h4 id="_data_mining"><a class="anchor" href="#_data_mining"></a><a class="link" href="#_data_mining">Data Mining</a></h4>
 <div class="paragraph">
-<p>This field can be used to communicate permissions and prohibitions on the use of your images for data mining for the purpose of AI/ML training, generative AI/ML traning and more. It uses a standardised list of values, jointly developed by IPTC and the PLUS Coalition, see it below.<br>
-You can choose a single value for this field only; or you use a value for this field in combination with another field like the <a href="#_other_constraints">Other Constraints</a>, or the <a href="#_linked_encoded_rights_expressions">Linked  Encoded Rights Expression</a> field or <a href="#_embedded_encoded_rights_expressions">Embedded Encoded Rights Expressions</a> field. See the notes on this use below.</p>
+<p>Use this field to communicate whether data mining is prohibited or allowed either in general, for AI or Machine Learning purposes or for generative AI/ML purposes for your image. You can select one value from the standardised controlled list to express data mining permissions, constraints and prohibitions.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2525,59 +2610,79 @@ You can choose a single value for this field only; or you use a value for this f
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Please note that regional laws applying to an image may prohibit, constrain, or allow data mining for certain purposes (such as search indexing or research), and may overrule the value selected for this field. Similarly, the absence of a prohibition does not indicate that the asset owner grants permission for data mining or any other use of an image.
+Values for this field — such as those related to search indexing or research — may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The identifier of one these terms can be applied as value to the Data Mining field:</p>
+<p>This field’s value must come from the PLUS Data Mining vocabulary, which is shown here:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED" target="_blank" rel="noopener">Unspecified </a> - no prohibition defined<br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED" class="bare">http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED</a></code></p>
+<p>Name: Unspecified – no prohibition defined<br>
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED" class="bare">http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-ALLOWED" target="_blank" rel="noopener">Allowed </a> - any kind of data mining<br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-ALLOWED" class="bare">http://ns.useplus.org/ldf/vocab/DMI-ALLOWED</a></code></p>
+<p>Name: Allowed<br>
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-ALLOWED" class="bare">http://ns.useplus.org/ldf/vocab/DMI-ALLOWED</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING" target="_blank" rel="noopener">Prohibited for AI/ML training </a><br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING</a></code></p>
+<p>Name: Prohibited for AI/ML training<br>
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING" target="_blank" rel="noopener">Prohibited for Generative AI/ML training </a><br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING</a></code></p>
+<p>Name: Prohibited for Generative AI/ML training<br>
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING" target="_blank" rel="noopener">Prohibited except for search engine indexing</a> - it permits only data mining by search engines available to the public to identify the URL for an image and its associated data, and prohibits all other uses<br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING</a></code></p>
+<p>Name: Prohibited except for search engine indexing<br>
+<strong>Note</strong>: This prohibition only permits data mining by search engines available to the public to identify the URL for an asset and its associated data (for the purpose of assisting the public in navigating to the URL for the asset), and prohibits all other uses, such as AI/ML training.<br>
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED" target="_blank" rel="noopener">Prohibited </a> - any kind of data mining<br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED</a></code></p>
+<p>Name: Prohibited<br>
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT" target="_blank" rel="noopener">Prohibited, see Other Constraints </a> field - the <a href="#_other_constraints">Other Constraints</a> field should have a value<br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT</a></code></p>
+<p>Name: Prohibited, see &lt;Other Constraints&gt; property.<br>
+<strong>Note</strong>: The <a href="#_other_constraints">Other Constraints</a> field must be populated if this value is set.<br>
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR" target="_blank" rel="noopener">Prohibited, see Embedded Encoded Rights Expression </a> field - the <a href="#_embedded_encoded_rights_expressions">Embedded Encoded Rights Expressions</a> field should have a value<br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR</a></code></p>
+<p>Name: Prohibited, see Embedded Encoded Rights Expression field<br>
+Identifier:  <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR</a></p>
 </li>
 <li>
-<p><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR" target="_blank" rel="noopener">Prohibited, see Linked Encoded Rights Expression </a> field - the <a href="#_linked_encoded_rights_expressions">Linked Encoded Rights Expression</a> field should have a value<br>
-Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR</a></code></p>
+<p>Name: Prohibited, see Linked Encoded Rights Expression field
+Identifier: <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR</a></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The <a href="#_other_constraints">Other Constraints</a> field can be used to express rights constraints in human-readable form. The IPTC properties "Embedded Encoded Rights Expression" and "Linked Encoded Rights Expression" can be used to express rights in a machine-readable format.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_other_constraints"><a class="anchor" href="#_other_constraints"></a><a class="link" href="#_other_constraints">Other Constraints</a></h4>
 <div class="paragraph">
-<p>This field can be used to indicate any additional constraints on the use of the image by natural free text. These constraints may be used to limit the scope of usage allowed.</p>
+<p>This field can specify, in a human-readable form, what other constraints may need to be followed. For example this property could be used to allow Data Mining under special constraints, such as “Generative AI training is only allowed for academic purposes.”</p>
+</div>
+<div class="paragraph">
+<p>This property must be populated if the <a href="#_data_mining">Data Mining</a> field uses the identifier <a href="http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT" class="bare">http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT</a> .</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -2611,6 +2716,18 @@ Identifier: <code><a href="http://ns.useplus.org/ldf/vocab/PR-LPR" class="bare">
 <div class="paragraph">
 <p>We recommend that the PLUS specified value Unlimited Property Releases (PR-UPR) be used with care, and encourage you to check the wording of the property release thoroughly before choosing this value.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_property_release_identifiers"><a class="anchor" href="#_property_release_identifiers"></a><a class="link" href="#_property_release_identifiers">Property Release Identifier(s)</a></h4>
@@ -2634,6 +2751,18 @@ Read about Model Releases in the section about persons in an image.
 <h4 id="_web_statement_of_rights"><a class="anchor" href="#_web_statement_of_rights"></a><a class="link" href="#_web_statement_of_rights">Web Statement of Rights</a></h4>
 <div class="paragraph">
 <p>The Web Statement of Rights can be used to link the viewer to a web page (by a URL) which provides a statement of the copyright ownership and usage rights of the image. In the Adobe ‘File Info' panel this field is called the ‘Copyright Info URL.'</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2661,7 +2790,7 @@ Read also the section about <a href="#_rights_information">rights information</a
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected a) by laws and other regulations of the region in which the image is used, and b) by contracts applying to the image.
+Please read <a href="#_metadata_and_the_law">Metadata and the Law</a>.
 </td>
 </tr>
 </table>
@@ -2673,6 +2802,18 @@ Be aware that values assigned to rights-related metadata fields - including fiel
 </div>
 <div class="paragraph">
 <p>For more detailed licensing terms, you may use the PLUS ‘Media Selector', or another standardised vocabulary. This field may also be used to indicate a Creative Commons Licence assigned to the image.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -2745,6 +2886,18 @@ Be aware that values assigned to rights-related metadata fields - including fiel
 </dd>
 </dl>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_linked_encoded_rights_expressions"><a class="anchor" href="#_linked_encoded_rights_expressions"></a><a class="link" href="#_linked_encoded_rights_expressions">Linked Encoded Rights Expressions</a></h4>
@@ -2766,6 +2919,18 @@ Be aware that values assigned to rights-related metadata fields - including fiel
 <p>Contains the identifier of the Rights Expression Language used.</p>
 </dd>
 </dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Values for this field may be overruled by agreement, law or policy. See <a href="#_metadata_and_the_law">Metadata and the Law</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

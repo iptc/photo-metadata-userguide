@@ -37,7 +37,7 @@ The items below are planned actions and links to the corresponding section of th
 * change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael, 2023-11-23]
 * addition DONE: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David/Brendan]
 * adding DONE: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan - 2024-01-10]
-* ADD: <<Data Mining>> (new 2023.1) [David and Jeff] - in progress
+* adding DONE: <<Data Mining>> (new 2023.1) [David and Jeff]
 * change DONE: all links of the Field Reference Table should link to the field and not to the group [Michael, 2023-12-13]
 * change DONE: if a URL/URI is the data type of a listed field value: apply the URL as link to the name of the term and show it as Identifier [Michael, 2023-12-13]
 * change DONE: The <<Guidance for using Digital Source Type>> has https URLs as identifiers of the vocabularey terms - should be http [Michael, 2023-12-13]
