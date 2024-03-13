@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: ToDoRef (2024)
 :revnumber:
-:revremark: 2024-03-06
+:revremark: 2024-03-13
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -28,19 +28,20 @@ Simply said this document is a reference of what needs to be done for a next ver
 
 The items below are planned actions and links to the corresponding section of this document:
 
-* addition DONE: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline]
+* addition DONE: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline, 2024-02-xx]
 * change DONE <<Event>>: add Event Identifier (new 2021.1) [Michael, 2023-11-29]
 * change DONE <<Source>>: field name got (Supply Chain) appended (2022.1) [Michael, 2023-11-29]
 * change DONE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1) [Michael, 2023-11-29]
 * change DONE <<Product>>: the structure got Identifier as new property (new 2022.1) [Michael, 2023-11-29]
-* CHECK: version 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document)
+* checking DONE: versions 2021.1 and 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document) [Michael & David, 2024-03-13]
 * change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael, 2023-11-23]
-* addition DONE: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David/Brendan]
+* addition DONE: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David/Brendan, 2024-03-06]
 * adding DONE: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan - 2024-01-10]
-* adding DONE: <<Data Mining>> (new 2023.1) [David and Jeff]
+* adding DONE: <<Data Mining>> (new 2023.1) [David and Jeff, 2024-03-06]
 * change DONE: all links of the Field Reference Table should link to the field and not to the group [Michael, 2023-12-13]
 * change DONE: if a URL/URI is the data type of a listed field value: apply the URL as link to the name of the term and show it as Identifier [Michael, 2023-12-13]
 * change DONE: The <<Guidance for using Digital Source Type>> has https URLs as identifiers of the vocabularey terms - should be http [Michael, 2023-12-13]
+* update <<Metadata Usage Examples>>: adopt spme of the recently added properties to the examples [David]
 
 WARNING: If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
 
@@ -542,7 +543,7 @@ The area covered by Sublocation may differ for the two types of location. For Lo
 City::
 The name of the city or town or nearest human settlement such as village.  If there is no data for ‘city', leave the field blank and enter details in sublocation and other fields in the hierarchy.
 
-State/Province ::
+State/Province::
 The name of the State or Province or other sub-region of a country. Use of the full name, rather than the abbreviation, is advisable for international audiences.
 
 Country::

@@ -413,5 +413,5 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 /* IPTC Settings for NewsML-G2 Implementation Guidelines*/
 body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel1 li a {font-weight: bold;}
 body.book.toc2.toc-left #header #toc.toc2 ul.sectlevel2 li a {font-weight: normal;}
-/* v 02bis, 2023-11 MS */
+/* v 03, 2023-11 MS: emphasise headlines with a link */
 h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }

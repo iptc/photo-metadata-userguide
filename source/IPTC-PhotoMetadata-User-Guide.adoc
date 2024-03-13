@@ -4,7 +4,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :imagesdir: ./images
 :includedir: ./_includes
 :stylesdir: stylesheets/
-:stylesheet: asciidoctor-iptc-stds-02bis.css
+:stylesheet: asciidoctor-iptc-stds-03.css
 :source-highlighter: coderay
 :source-language: asciidoc
 :icons: font
@@ -12,7 +12,7 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :email: office@iptc.org
 :version-label: DRAFT 2023-12...
 :revnumber:
-:revremark: 2024-03-06
+:revremark: 2024-03-13
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -261,7 +261,7 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |<<Image Supplier>> ||Extension
 |<<#_suppliers_image_id,Image Supplier Image ID>> ||Extension
 |<<Instructions>> ||Core
-|<<Intellectual Genre>> ||Core
+|<<Intellectual Genre (legacy)>> ||Core
 |<<Image Registry Entry,Item Id>> {Registry Entry detail} ||Extension
 |*Job*|<<Job Identifier,Job Id>> |
 |<<Job Identifier,Job Id>>||Core
@@ -355,7 +355,7 @@ WARNING: Keywords may have to be separated by commas or other separators dependi
 ==== IPTC Subject Code (Legacy)
 
 This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC "Subject NewsCodes" taxonomy (available from http://cv.iptc.org/newscodes/subjectcode). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field. +
-As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: http://cv.iptc.org/newscodes/mediatopic. For the Media Topics the CV Term About Image field must be used - see it just below.
+As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: http://cv.iptc.org/newscodes/mediatopic. For Media Topics the CV Term About Image field must be used - see it just below.
 
 ==== CV-Term About the Image
 
@@ -376,13 +376,15 @@ Unique identifier for the Controlled Vocabulary (often a URL).
 Refined "About"::
 Optional: globally Unique identifier for a concept refining the ‘about' relationship between the image and the CV term. Example: the concept could stand for emotions shown by persons in the image. 
 
-==== Intellectual Genre
+==== Intellectual Genre (legacy)
 
-Globally unique identifier for controlled terms to describe the genre of the photo. The identifiers of the terms of the IPTC Genre vocabulary may be used http://cv.iptc.org/newscodes/genre or other genre vocabularies more focused on photography.
+A term to describe the nature of the image in terms of its intellectual or journalistic characteristics. The value should be a globally unique identifier of a term of a controlled vocabulary. The identifiers of the terms of the IPTC Genre vocabulary may be used http://cv.iptc.org/newscodes/genre or other genre vocabularies more focused on photography.
+
+NOTE: The intellectual Genre can be expressed in a more controlled way using the "Genre" property, see below. IPTC recommends using it.
 
 ==== Genre (generic)
 
-This field structure is a generic way to describe the genre of the photo with a value from any Controlled Vocabulary. (The Intellectual Genre actively supports only the use of an IPTC vocabulary.)
+This field structure is a generic way to describe the genre of the photo with a value from any Controlled Vocabulary.
 
 Multiple genre terms may be used; each term must be taken from an identified Controlled Vocabulary.
 
@@ -584,7 +586,9 @@ We recommend that the PLUS controlled value Unlimited Model Releases (MR-UMR) be
 
 ==== Model Release Identifier(s)
 
-Use this field for the ID of each available Model Release document. Be sure to give a unique number or name to all releases (both model and property), and record that information in this field. If you don't already include an ID name/number on your releases, consider adding one as this will make it easier to cross reference.
+Use this field to indicate the ID of each available Model Release document. Be sure to give a unique number or name to all releases, and record that information in this field. If you don't already include an ID name/number on your releases, consider adding one as this will make it easier to cross reference.
+
+TIP: Read about Property Releases in the section about Rights Information.
 
 === Locations
 
@@ -607,7 +611,7 @@ The area covered by Sublocation may differ for the two types of location. For Lo
 City::
 The name of the city or town or nearest human settlement such as village.  If there is no data for ‘city', leave the field blank and enter details in sublocation and other fields in the hierarchy.
 
-State/Province ::
+State/Province::
 The name of the State or Province or other sub-region of a country. Use of the full name, rather than the abbreviation, is advisable for international audiences.
 
 Country::
@@ -620,7 +624,26 @@ The codes are available from: https://www.iso.org/obp/ui/. If both the Country a
 World Region::
 The name of the region of the world.
 
-WARNING: The location fields are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: The location fields above are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+
+The **IPTC Extension schema structure** used for Location Created and Location Show has these **additional fields**:
+
+GPS-Latitude and GPS-Longitude:: These fields take the latitude and the longitude of the location. How to write down the values depends on the user interface of your software. The generic rules are: 
+* a numeric value for the degrees, for the minutes and for the seconds can be used. The seconds may a decimal value. 
+* OR a decimal value can be used: the integer part represents the degrees, the fractional part the minutes and seconds.
+* East or west of the 0-degree meridian: 
+** Variant 1: east: a positive longitude value; west: a negative longitude value
+** Variant 2: A single character field with values like E(ast) and W(est)
+* North or south of the equator:
+** Variant 1: north: a positive latitude value, south: a negative latitude value
+** Variant 2: As single character field with values like N(orth) and S(outh)
+
+GPS-Altitude:: The altitude of the location above or below sea level using the unit metres, expressed as decimal value. An altitude below sea level is expressed by a negative value by the user interface of a majority of software, a single character field may be used as alternative.
+ 
+Name:: Full name of the location. Using it helps if the location as a well known name like "Buckingham Palast", "Grand Canyon" or "Suez Canal".
+
+Identifier:: Globally unique identifier of this location. Can be taken e.g. from Wikidata: http://www.wikidata.org/entity/Q899 identifies the Suez Canal.
+
 
 ==== Location (Original/Legacy)
 
@@ -667,7 +690,7 @@ In 2023 the field **Event Indentifier** was introduced to add a unique identifie
 
 ==== Product
 
-The Product Shown field structure is used to describe one to many products depicted by the image. The **name** of the product and a textual **description** can be applied to the corresponding fields. To identify the product a single 14 digit **GTIN** (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used too. For identifiers beyond GTIN the field **Identifier** can be used, multiple may be applied.
+The Product Shown field structure is used to describe one to many products depicted by the image. The **name** of the product and a textual **description** can be applied to the corresponding fields. To identify the product a single 14 digit **GTIN** (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used too. For identifiers beyond GTIN the field **Identifier** can be used, multiple may be applied - it should be a globally unique identifier as used by semantic technology.
 
 ==== Artwork or Object in the Image
 
@@ -907,7 +930,7 @@ NOTE: Values for this field may be overruled by agreement, law or policy. See <<
 
 ==== Property Release Identifier(s)
 
-Use this field to indicate the ID for each Property Release document. Ensure all releases (both model and property) are assigned a unique number, and record that information in this field.
+Use this field to indicate the ID of each available Property Release document. Be sure to give a unique number or name to all releases, and record that information in this field. If you don't already include an ID name/number on your releases, consider adding one as this will make it easier to cross reference.
 
 TIP: Read about Model Releases in the section about persons in an image.
 
@@ -989,9 +1012,7 @@ NOTE: Values for this field may be overruled by agreement, law or policy. See <<
 
 ==== Date Created
 
-This field records the date and optionally the time the image was created. This can be derived from the Exif DateTimeOriginal if that is supported by the software.  
-
-More about dates and times and different software 
+This field records the date and optionally the time the image was created. This can be derived from the Exif DateTimeOriginal if that is supported by the software. If you change a shown Date Created value this can also change this corresponding Exif tag - depending on your software.
 
 ==== Description Writer
 
@@ -1001,9 +1022,7 @@ WARNING: This field is limited by the IIM format to about 32 characters. In XMP 
 
 ==== Title
 
-A short human readable reference for the image. It can be a text reference or a numeric reference, and serves primarily as an identifier. It has been used by photographers for their image filename, though since about 2008 IPTC now provides specific fields for image IDs like Digital Image GUID or Registry Entry (those wishing to, can use the Registry Entry. The Title field should not be confused with the Headline field which is a short descriptive field about the content of an image.
-
-A short human readable reference for the image. It can be a text reference or a numeric reference, and serves primarily as an identifier. The Title field has often been used by photographers for the image filename, but IPTC now provides specific fields for image IDs including the Supplier's Image ID, The Digital Image GUID,  and the Registry Entry fields.  The Title field should not be confused with the Headline field which is a short descriptive field about the content of an image, or with the AO Title field which contains the title of the artwork or object in the the image.
+A short human readable reference for the image. It can be a text reference or a numeric reference, and serves primarily as an identifier. The Title field has often been used by photographers for the image filename, but now IPTC provides specific fields for image IDs including the Supplier's Image ID, The Digital Image GUID,  and the Registry Entry fields.  The Title field should not be confused with the Headline field which is a short descriptive field about the content of an image, or with the AO Title field which contains the title of the artwork or object in the the image.
 
 WARNING: This field is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 
@@ -1016,7 +1035,7 @@ WARNING: This field is limited by the IIM format to about 32 characters. In XMP 
 
 ==== Instructions
 
-A free text field for instructions to the receiver from the creator or supplier of the image. Instructions can may include details of embargoes, restrictions, or any other rights or technical information needed for the end use. Be aware that there are more specific rights expressions fields (see Rights Information and Licensing sections) which can be used.
+A free text field for instructions to the receiver from the creator or supplier of the image. Instructions may include details of embargoes, restrictions, or any other rights or technical information needed for the end use. Be aware that there are more specific rights expressions fields (see Rights Information and Licensing sections) which can be used.
 
 ==== Image Registry Entry
 
@@ -1027,7 +1046,7 @@ Globally unique identifier for the registry issuing the ID for the image. The id
 Registry Item Identifier::
 A unique identifier created and held within the registry identified above. 
 Role::
-An identifier of the reason and/or purpose for this Registry Entry. The identifier must be a URL (URI). Examples: major registry of this photo, alternative registry of this photo, national registry of photos, etc.
+An identifier of the reason and/or purpose for this Registry Entry. The identifier must be a URL (URI). Examples: "major registry of this photo", "alternative registry of this photo", "national registry of photos", etc.
 
 ==== Max Avail Width/Height
 
