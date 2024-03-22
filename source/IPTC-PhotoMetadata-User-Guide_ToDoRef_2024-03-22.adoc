@@ -1,17 +1,17 @@
-= image:iptc_sv_gradient_70x70.jpg[link="https://iptc.org/standards/photo-metadata/"] link:https://iptc.org/standards/photo-metadata/[IPTC Photo Metadata] User Guide
+= image:iptc_sv_gradient_70x70.jpg[IPTC logo] Photo Metadata User Guide - ToDo Reference (2024)
 keywords: iptc, photo metadata, photo library, image metadata, photos, images, news, metadata, standard
 :doctype: book
 :imagesdir: ./images
 :includedir: ./_includes
 :stylesdir: stylesheets/
-:stylesheet: asciidoctor-iptc-stds-03.css
+:stylesheet: asciidoctor-iptc-stds-02.css
 :source-highlighter: coderay
 :source-language: asciidoc
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: March 2024
-:revnumber: 0
+:version-label: ToDoRef (2024)
+:revnumber:
 :revremark: 2024-03-22
 :toc: left
 :toclevels: 2
@@ -19,6 +19,34 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :sectnumlevels: 4
 :sectanchors:
 :sectlinks:
+
+== About this ToDo Reference document
+
+NOTE: This document builds on the latest public version (of 23 March 2023). +
+It #highlights in yellow# text needing a change or update and adds IMPORTANT notes about something missing. The next step is to apply changes, updates and additional content - this is done in a different document! +
+Simply said this document is a reference of what needs to be done for a next version of the User Guide.
+
+The items below are planned actions and links to the corresponding section of this document:
+
+* addition DONE: <<Accessibility Descriptions>> including Alt Text and Extended Description (new 2021.1) [David and Caroline, 2024-02-xx]
+* change DONE <<Event>>: add Event Identifier (new 2021.1) [Michael, 2023-11-29]
+* change DONE <<Source>>: field name got (Supply Chain) appended (2022.1) [Michael, 2023-11-29]
+* change DONE <<IPTC Subject Code>>: was set to _legacy_ state (2022.1) [Michael, 2023-11-29]
+* change DONE <<Product>>: the structure got Identifier as new property (new 2022.1) [Michael, 2023-11-29]
+* checking DONE: versions 2021.1 and 2022.1 changed some Help Texts and User Notes. Check if the new language and the User Guide is in sync (see Help Text and User Notes cells highlighted in green in the working document) [Michael & David, 2024-03-13]
+* change DONE <<Guide for mapping Exif SubjectArea to IPTC Image Region>>: remove mapping guide, explain why (see Image Mapping Guidelines of 2023) [Michael, 2023-11-23]
+* addition DONE: <<Contributor>> (new 2022.1) - consider if Rights Information is the best section for it [David/Brendan, 2024-03-06]
+* adding DONE: a guideline about how to apply metadata to AI-generated images (outline: use Digital Source Type and Contributor - and more) [Brendan - 2024-01-10]
+* adding DONE: <<Data Mining>> (new 2023.1) [David and Jeff, 2024-03-06]
+* change DONE: all links of the Field Reference Table should link to the field and not to the group [Michael, 2023-12-13]
+* change DONE: if a URL/URI is the data type of a listed field value: apply the URL as link to the name of the term and show it as Identifier [Michael, 2023-12-13]
+* change DONE: The <<Guidance for using Digital Source Type>> has https URLs as identifiers of the vocabularey terms - should be http [Michael, 2023-12-13]
+* updating DONE <<Metadata Usage Examples>>: adopt some of the recently added properties to the examples [David]
+* checking DONE: of the document-internal links at least in the Field Reference Table. Checking other links is welcome. [David, Michael and https://www.deadlinkchecker.com/ ]
+
+WARNING: If a property/field is added it must be added to the Field Reference Table too. If the headline of a section about a property/field is changed the link to the headline in the Field Reference Table must be changed too.
+
+**Find DONE actions** in this https://www.iptc.org/std-dev/photometadata/documentation/userguide/[draft document]. 
 
 == Introduction
 
@@ -35,7 +63,7 @@ The User Guide groups fields according to their category of use:
 
 The <<field-reference-table,Field Reference Table>> lists all IPTC fields with their field labels for easy reference.
 
-The <<_what_is_a_help,What Is A...>> section explains terms used by the IPTC Standards.
+The <<what-is-a,What Is A...>> section explains terms used by the IPTC Standards.
 
 There is a <<Help on Specific Topics,help section on specific topics>> such as mapping Category Codes to Subject Codes.
 
@@ -51,13 +79,13 @@ Therefore, photo metadata is critical to photo and related business. IPTC has sp
 
 === How IPTC Photo Metadata Evolved Over Time
 
-The IPTC - https://www.iptc.org/[www.iptc.org] - is a body of content providers and system vendors from the news industry and has defined standards for metadata about news since 1979. Since the mid 1990's IPTC metadata have been quite popular for photos as they were adopted by Adobe Photoshop at this time. The IPTC Photo Metadata Standard defining the Core and Extension metadata schemas is the second generation of IPTC photo metadata. 
+The IPTC - https://www.iptc.org/[www.iptc.org] - is a body of content providers and system vendors from the news industry and has defined standards for metadata about news since 1979. Since the mid 1990's IPTC metadata are have been quite popular for photos as they were adopted by Adobe Photoshop at this time. The IPTC Photo Metadata Standard defining the Core and Extension metadata schemas is the second generation of IPTC photo metadata. 
 
-IPTC's older standard for metadata, the Information Interchange Model (IIM), was issued in 1991 and defined a set of metadata properties and a data format to embed the metadata values into image files. In the early nineties a subset of this IIM was adopted as the well-known "IPTC Fields" by Adobe Photoshop and can be embedded into JPEG, TIFF and PSD files since then.
+IPTC's older standard for metadata, the Information Interchange Model (IIM), was issued in 1991 and defined a set of metadata properties and a data format to embed the metadata values into image files. In the early nineties a subset of this IIM was adopted as the well-known “IPTC Fields” by Adobe Photoshop and can be embedded into JPEG, TIFF and PSD files since then.
 
-In the early 2000s, a new technology for embedding metadata into image files was invented. It is called XMP, was developed by Adobe and is now an ISO standard. This technology required defining new technical specifications for the well-known "IPTC Fields" of the IIM standard and this was done by the IPTC Core schema which was initially released in 2005 and has evolved to version 1.4 since then. A key feature in the transition to IPTC Core in XMP was that the definition of the purpose and the specified use of an IIM field should remain the same, with only the underlying technical details changed. As the IPTC Core is in fact a mirror of the IIM fields it will no longer be extended.
+In the early 2000s, a new technology for embedding metadata into image files was invented. It is called XMP, was developed by Adobe and is now an ISO standard. This technology required defining new technical specifications for the well-known “IPTC Fields” of the IIM standard and this was done by the IPTC Core schema which was initially released in 2005 and has evolved to version 1.2 since then. A key feature in the transition to IPTC Core in XMP was that the definition of the purpose and the specified use of an IIM field should remain the same, with only the underlying technical details changed. As the IPTC Core is in fact a mirror of the IIM fields it will no longer be extended.
 
-Discussion of IPTC Core raised the need for additional metadata properties not covered by the IIM standard. IPTC created the IPTC Extension schema in 2008. In almost all cases new fields were added to the IPTC Extension, the only exception are the Accessibility fields which were added to the Core as they complement the Core field Description.
+Discussion of IPTC Core raised the need for additional metadata properties not covered by the IIM standard. IPTC created the IPTC Extension schema in 2008. IPTC Extension has been updated twice and is since November 2014 at version 1.2. Any future additions to the IPTC Photo Metadata will be part of the IPTC Extension schema.
 
 After development over two decades IPTC Photo Metadata can be embedded in the following ways:
 
@@ -66,14 +94,9 @@ After development over two decades IPTC Photo Metadata can be embedded in the fo
 
 To help users, the IPTC collects information from software vendors on their support for IPTC Photo Metadata. Find out more at https://www.iptc.org/photometadata. 
 
-Be aware that IPTC Core and IPTC Extension fields can be saved as XMP "sidecar files" for camera Raw files as some of these file formats do not support embedded metadata.
+Be aware that IPTC Core and IPTC Extension fields can be saved as XMP “sidecar files” for camera Raw files and those file formats which do not support embedded metadata.
 
 === Photo Metadata - Under the Hood
-
-This section explains the technical background of embedding photo metadata in an image file. (Click Details below to see it.)
-
-[%collapsible]
-====
 
 Photo metadata has to be processed by software under the hood of panels on your computer screen. See below how this is done.
  
@@ -81,11 +104,11 @@ image:PhotoMetadata_UnderTheHood.jpg[Photo Metadata Under the Hood,width=934,hei
 
 The diagram shows the flow of metadata values from an input panel on your computer screen into an image file and the way back from an image file to their display on the panel.
 
-**What you see on your computer screen**
+==== What you see on your computer screen
 
 On the left, the diagram shows a metadata input panel for IPTC fields in your software, only a few fields are shown here.
 
-**Inside imaging software on your computer**
+==== Inside imaging software on your computer
 
 In the centre, the diagram shows how your software handles the metadata. The software creates a temporary internal structure to support the data in both IIM (in blue) and XMP (in red) formats.
 
@@ -93,7 +116,7 @@ You can see from the orange arrows that some field values are transferred to bot
 
 As some fields are replicated in IIM and XMP, the software has to keep these values in synch (dotted lines). This is less an issue for data transferred from the input panel than for data read from an image file.
 
-**Inside your JPEG image file**
+==== Inside your JPEG image file
 
 On the right you see the structure of an image file with sections for metadata (headers) and a section for image data (the pixels). The diagram shows that the IIM and XMP data structures are stored in two different headers. In a JPEG file the headers are of type APP1 and APP13 and they may have additional internal identifiers for the metadata formats.
 
@@ -104,13 +127,11 @@ The data structures are embedded into the headers using different technical form
 
 The green arrows show how data from the internal software structure is embedded in the headers of the image file. If this file is copied to another computer, then exactly this set of embedded bytes takes the metadata to the new location.
 
-**Metadata from the image file to your screen panel**
+==== Metadata from the image file to your screen panel
 
 Data embedded in the image file can be read by software, so the process also works from right to left on the diagram, as shown by the bi-directional arrows. The software reads from the metadata headers and stores the information in its internal structures. The software has to verify that the IIM and XMP values are the same; if they are not, there are rules about which value should take precedence. At the end of this process IIM and XMP values are the same.
 
 The values are then displayed on the panel on your computer screen and are ready for editing. Pressing Save, sends the data back to the image file for embedding as before.
-
-====
 
 == About the IPTC Photo Metadata User Guide
 
@@ -118,11 +139,11 @@ The values are then displayed on the panel on your computer screen and are ready
 
 This document is based on the IPTC Photo Metadata Standard specification document released in December 2019 including
 
-* IPTC Core schema, version 1.4 of 19 October 2022
-* IPTC Extension schema, version 1.8 as of 4 October 2023
+* IPTC Core schema, version 1.2 of 18 June 2014
+* IPTC Extension schema, version 1.5 as of 16 October 2019
 
-All formal details of the standard can be obtained from  
-https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata[the specification document].
+The full IPTC specification document can be obtained from  
+https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata[https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata]
 
 The referenced PLUS standard specification is available at http://ns.useplus.org/LDF/ldf-XMPReference 
 
@@ -130,7 +151,7 @@ For more information about the standards, please visit https://iptc.org/photomet
 
 === Copyright
 
-Copyright © 2024 IPTC, International Press Telecommunications Council. Rights Reserved.
+Copyright © 2020 IPTC, International Press Telecommunications Council. Rights Reserved.
 
 The IPTC Photo Metadata User Guide document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 
@@ -142,7 +163,7 @@ Materials used in this guide are either in the public domain or are available wi
 
 This document is the result of a team effort by members of the Photo Metadata Working Group of the International Press Telecommunications Council (IPTC), with input and assistance from other contributors.
 
-The User Guide up to this version was edited by (in alphabetical order): Linda Burman (Individual IPTC member), Caroline Desrosiers (https://scribely.com),  Annette Feldman (https://ap.org/[AP]), Brendan Quinn (https://iptc.org/[IPTC]), David Riecks (http://www.controlledvocabulary.com/[www.controlledvocabulary.com]/PLUS), Sarah Saunders (was http://www.cepic.org/[CEPIC]), Jeff Sedlik (http://www.useplus.org/[PLUS]), Michael Steidl (Honorary IPTC member).
+The User Guide up to this version was edited by (in alphabetical order): Linda Burman (Individual IPTC member), Annette Feldman (http://www.ap.org/[AP]), Brendan Quinn (https://iptc.org/[IPTC]), David Riecks (http://www.controlledvocabulary.com/[www.controlledvocabulary.com]/PLUS), Sarah Saunders (was http://www.cepic.org/[CEPIC]), Jeff Sedlik (http://www.useplus.org/[PLUS]), Michael Steidl (Honorary IPTC member).
 
 === How to contact IPTC
 
@@ -156,9 +177,7 @@ Follow IPTC on Twitter: http://www.twitter.com/IPTC/[@IPTC]
 
 === About IPTC
 
-Our mission is to simplify the distribution of information. We develop and promote efficient technical standards to improve the management and exchange of information between content providers, intermediaries and consumers. We thereby enable easy, cost-effective and rapid innovation and product development. +
-We are committed to open standards and make all of our standards freely available to our members and the wider community. +
-Founded in 1965 and based in London, the IPTC brings together the world's leading news agencies, publishers and industry vendors.
+The IPTC, based in London, brings together the world's leading news agencies, publishers and industry vendors. It develops and promotes efficient technical standards to improve the management and exchange of information between content providers, intermediaries and consumers. The standards enable easy, cost-effective and rapid innovation and include the Photo Metadata standard, the Video Metadata Hub, the news exchange formats NewsML-G2, ninjs, SportsML-G2 and NITF, rNews for marking up online news, the rights expression language RightsML, and NewsCodes taxonomies for categorising news.
 
 IPTC is a not-for-profit membership organisation registered in England - https://iptc.org/participate/membership/[find more about membership]. 
 
@@ -174,9 +193,9 @@ Business address:
 
 This section provides a reference of field labels and names in alphabetical order for quick location of specific fields and their guidelines.
 
-Each *Label (IPTC Name)* is linked to the User Guide section which describes this field. Click on the name and follow. { ... detail} may follow indicating this field covers a detail of the ... field in a structure.
+Each *Label (IPTC Name)* is linked to the User Guide section which describes this field. Click on the name and follow.
 
-Labels in *bold* are not defined by the IPTC Photo Metadata Standard but used by popular software. The *Same as IPTC Name* column shows the name of the corresponding IPTC field.
+Labels in *bold* are not defined by the IPTC Photo Metadata Standard. The *Same as IPTC Name* column shows the name of the corresponding IPTC field.
 
 The column *Schema* indicates which IPTC schema the field belongs to.
 
@@ -184,135 +203,126 @@ The column *Schema* indicates which IPTC schema the field belongs to.
 |===
 |Label (IPTC Name)|Same as IPTC Name|Schema
 |<<Additional Model Information>>||Extension
-|<<#_creators_contact_info,Address>> {Creator's Contact detail}||Core
-|<<Artwork or Object in the Image>>||Extension
-|<<Alt Text (Accessibility)>> ||Core
-|*Author*|<<_creator_free_text,Creator>>|
-|*Author's Title*|<<#_creators_job_title,Creator's Job Title>>|
-|*Byline*|<<_creator_free_text,Creator>>|
-|*Byline's Title*|<<#_creators_job_title,Creator's Job Title>>|
-|*Caption*|<<_descriptioncaption,Description>>|
-|<<_person_shown_in_the_image_with_details, Characteristics>> {Person detail}||Extension
-|<<Artwork or Object in the Image,Circa Date Created>> {Artwork or Object detail}||Extension
+|<<Creator’s Contact Info,Address>> {Contact Detail}||Core
+|<<Other Things Shown in the Image,Artwork or Object in the Image>>||Extension
+|*Author*|<<Rights Information,Creator>>|
+|*Author's Title*|<<Rights Information,Creator's Job Title>>|
+|*Byline*|<<Rights Information,Creator>>|
+|*Byline's Title*|<<Rights Information,Creator's Job Title>>|
+|<<Persons Depicted in the Image,Characteristics>> {Person detail}||Extension
+|<<Other Things Shown in the Image,Circa Date Created>> {Artwork or Object detail}||Extension
 |<<Locations,City>> (legacy)||Core
 |<<Locations,City>> {Location Created detail}||Extension
-|<<Locations,City>> {Location Shown detail}||Extension
-|<<_creators_contact_info,City>> {Creator's Contact detail}||Core
-|<<_organisations_including_companies_featured_by_the_image,Code of Organisation Featured in the Image>>||Extension
-|<<Artwork or Object in the Image,Content Description>> {Artwork or Object detail}||Extension
-|<<Artwork or Object in the Image,Contribution Description>> {Artwork or Object detail}||Extension
-|<<Contributor>>||Extension
-|<<Copyright Notice>>||Core
-|<<Artwork or Object in the Image,Copyright Notice>> {Artwork or Object detail}||Extension
-|<<Copyright Owner>>||Extension
-|<<_creators_contact_info,Country>> {Creator's Contact detail}||Core
+|<<Locations,City>> {Location Shown}||Extension
+|<<Rights Information,City>> {Contact detail}||Core
+|<<Other Things Shown in the Image,Code of Organisation Featured in the Image>>||Extension
+|<<Other Things Shown in the Image,Content Description>> {Artwork or Object detail}||Extension
+|<<Other Things Shown in the Image,Contribution Description>>{Artwork or Object detail}||Extension
+|<<Rights Information,Copyright Notice>>||Core
+|<<Other Things Shown in the Image,Copyright Notice>> {Artwork or Object detail}||Extension
+|<<Rights Information,Copyright Owner>>||Extension
+|<<Creator’s Contact Info,Country>> {Contact detail}||Core
 |<<Locations,Country Code>> (legacy)||Core
 |<<Locations,Country ISO-Code>> {Location Created detail}||Extension
 |<<Locations,Country ISO-Code>> {Location Shown detail}|| Extension
 |<<Locations,Country Name>> {Location Created detail}|| Extension
 |<<Locations,Country Name>> {Location Shown detail}|| Extension
 |<<Locations,Country>> (legacy)||Core
-|<<_creator_free_text,Creator>>||Core
-|<<_creators_contact_info,Creator's Contact Info>>||Core
-|<<_creators_job_title,Creator's Job Title>>||Core
-|<<Artwork or Object in the Image,Creator>> {Artwork or Object detail}||Extension
-|<<Artwork or Object in the Image,Creator ID>> {Artwork or Object detail}||Extension
-|<<Credit Line>>||Core
-|<<Artwork or Object in the Image,Current Copyright Owner ID>> {Artwork or Object detail}||Extension
-|<<Artwork or Object in the Image,Current Copyright Owner Name>> {Artwork or Object detail}||Extension
-|<<Artwork or Object in the Image,Current Licensor ID>> {Artwork or Object detail}||Extension
-|<<Artwork or Object in the Image,Current Licensor Name>> {Artwork or Object detail}||Extension
-|<<CV-Term About the Image>>||Extension
-|<<CV-Term About the Image,CV-Term CV ID>> {CV-Term detail}||Extension
-|<<CV-Term About the Image,CV-Term ID>> {CV-Term detail}||Extension
-|<<CV-Term About the Image,CV-Term name>> {CV-Term detail}||Extension
-|<<Artwork or Object in the Image,Date Created>> {Artwork or Object detail}||Extension
-|<<Data Mining>>||Extension
-|<<Date Created>> ||Core
-|<<Description Writer>> ||Core
-|<<_descriptioncaption,Description>> (of the full image) ||Core
-|<<_person_shown_in_the_image_with_details,Description>> {Person detail} ||Extension
-|<<Product Shown in the Image,Description>> {Product detail}||Extension
-|<<Digital Image GUID>> ||Extension
-|<<Digital Source Type>> ||Extension
-|<<_creators_contact_info,Email(s)>> {Creator's Contact detail} ||Core
-|<<Embedded Encoded Rights Expressions>> {EERE} ||Extension
-|<<Embedded Encoded Rights Expressions,Encoded Rights Expressions>> {EERE detail} ||Extension
-|<<Embedded Encoded Rights Expressions,Encoding type>> {EERE detail} ||Extension
-|<<Linked Encoded Rights Expressions,Encoding type>> {LERE detail} ||Extension
-|<<Event>> ||Extension
-|Event Identifier in <<Event>> ||Extension
-|<<Extended Description (Accessibility)>> ||Core
-|<<Product Shown in the Image,GTIN>> {Product detail} ||Extension
-|<<Genre (generic)>> ||Extension
-|<<Headline>> ||Core
-|<<_person_shown_in_the_image_with_details,Identifier>> {Person detail} ||Extension
-|<<Product Shown in the Image,Identifier>> {Product detail}||Extension
-|<<_image_creator_structure,Image Creator>> ||Extension
-|<<Image Rating>> ||Extension
+|<<Rights Information,Creator>>||Core
+|<<Rights Information,Creator's Contact Info>>||Core
+|<<Rights Information,Creator's Job Title>>||Core
+|<<Other Things Shown in the Image,Creator>> {Artwork or Object detail}||Extension
+|<<Other Things Shown in the Image,Creator ID>> {Artwork or Object detail}||Extension
+|<<Rights Information,Credit Line>>||Core
+|<<Other Things Shown in the Image,Current Copyright Owner ID>> {Artwork or Object detail}||Extension
+|<<Other Things Shown in the Image,Current Copyright Owner Name>> {Artwork or Object detail}||Extension
+|<<Other Things Shown in the Image,Current Licensor ID>> {Artwork or Object detail}||Extension
+|<<Other Things Shown in the Image,Current Licensor Name>> {Artwork or Object detail}||Extension
+|<<General Image Content,CV-Term About Image>>||Extension
+|<<General Image Content,CV-Term CV ID>> {CV-Term detail}||Extension
+|<<General Image Content,CV-Term ID>> {CV-Term detail}||Extension
+|<<General Image Content,CV-Term name>> {CV-Term detail}||Extension
+|<<Other Things Shown in the Image,Date Created>> {Artwork or Object detail}||Extension
+|<<Administration and Commissioning Details,Date Created>> ||Core
+|<<Persons Depicted in the Image,Description>> {Person detail} ||Extension
+|<<Other Things Shown in the Image,Description>> {Product detail} ||Extension
+|<<General Image Content,Description Writer>> ||Core
+|<<General Image Content,Description>> ||Core
+|<<Administration and Commissioning Details,Digital Image GUID>> ||Extension
+|<<Administration and Commissioning Details,Digital Source Type>> ||Extension
+|<<Rights Information,Email address(es)>> {Contact detail} ||Core
+|<<Licensing Use of the Image,Embedded Encoded Rights Expression>> {EERE} ||Extension
+|<<Licensing Use of the Image,Encoded Rights Expression>> {EERE detail} ||Extension
+|<<Licensing Use of the Image,Encoding type>> {EERE detail} ||Extension
+|<<Licensing Use of the Image,Encoding type>> {LERE detail} ||Extension
+|<<Other Things Shown in the Image,Event>> ||Extension
+|<<Other Things Shown in the Image,GTIN>> {Product detail} ||Extension
+|<<General Image Content,Genre (generic)>> ||Extension
+|<<General Image Content,Headline>> ||Core
+|<<Persons Depicted in the Image,Identifier>> {Person detail} ||Extension
+|<<Rights Information,Image Creator>> ||Extension
+|<<General Image Content,Image Rating>> ||Extension
 |<<Image Regions,Image Region>> ||Extension
-|<<Image Registry Entry>> ||Extension
-|<<Image Supplier>> ||Extension
-|<<_suppliers_image_id,Image Supplier Image ID>> ||Extension
-|<<Instructions>> ||Core
-|<<Intellectual Genre (legacy)>> ||Core
-|<<Image Registry Entry,Item Id>> {Registry Entry detail} ||Extension
-|*Job*|<<Job Identifier,Job Id>> |
-|<<Job Identifier,Job Id>>||Core
-|<<Keywords,Keywords>> ||Core
-|<<Licensor>> ||Extension
-|<<Linked Encoded Rights Expressions,Link to Encoded Rights Expression>> {LERE detail} ||Extension
-|<<Linked Encoded Rights Expressions,Linked  Encoded Rights Expression>> {LERE} ||Extension
+|<<Administration and Commissioning Details,Image Registry Entry>> ||Extension
+|<<Licensing Use of the Image,Image Supplier>> ||Extension
+|<<Licensing Use of the Image,Image Supplier Image ID>> ||Extension
+|<<Administration and Commissioning Details,Instructions>> ||Core
+|<<General Image Content,Intellectual Genre>> ||Core
+|<<Administration and Commissioning Details,Item Id>> (Registry Entry) ||Extension
+|*Job*|<<Administration and Commissioning Details,Job Id>> |
+|<<Administration and Commissioning Details,Job Id>>||Core
+|<<Keyword>> ||Core
+|<<Licensing Use of the Image,Licensor>> ||Extension
+|<<Licensing Use of the Image,Link to Encoded Rights Expression>> {LERE detail} ||Extension
+|<<Licensing Use of the Image,Linked  Encoded Rights Expression>> {LERE} ||Extension
 |<<Locations,Location Created>> ||Extension
 |<<Locations,Location Identifier>> {Location Created detail} ||Extension
 |<<Locations,Location Identifier>> {Location Shown detail} ||
 |<<Locations,Location Shown in the Image>> ||Extension
-|<<_max_avail_widthheight,Max Avail Height>> ||Extension
-|<<_max_avail_widthheight,Max Avail Width>> ||Extension
-|<<Minor Model Age Disclosure>> ||Extension
-|<<Model Age>>||Extension
-|<<_model_release_identifiers,Model Release Id>>||Extension
-|<<Model Release Status>>||Extension
-|<<_person_shown_in_the_image_with_details,Name>> {Person detail} ||Extension
-|<<Product Shown in the Image,Name>> {Product  detail} ||Extension
-|<<_organisations_including_companies_featured_by_the_image,Name of Organisation Featured in the Image>>||Extension
-|*Object Name*|<<Title>>|
-|<<Image Registry Entry,Organisation Id>> {Registry Entry detail} ||Extension
-|<<Other Constraints>>||Extension
-|<<Person Shown in the Image>>||Extension
-|<<_person_shown_in_the_image_with_details,Person Shown in the Image with Details>>||Extension
-|<<_creators_contact_info,Phone(s)>> {Creator's Contact detail} ||Core
-|<<Artwork or Object in the Image,Physical Description>> {Artwork or Object detail} ||Extension
-|<<_creators_contact_info,Postal Code>>{Creator's Contact detail} ||Core
-|<<Product Shown in the Image>>||Extension
-|<<_property_release_identifiers,Property Release Id>>||Extension
-|<<Property Release Status>>||Extension
-|*Provider*|<<Credit Line>>|
+|<<Administration and Commissioning Details,Max Avail Height>> ||Extension
+|<<Administration and Commissioning Details,Max Avail Width>> ||Extension
+|<<Persons Depicted in the Image,Minor Model Age Disclosure>> ||Extension
+|<<Persons Depicted in the Image,Model Age>>||Extension
+|<<Persons Depicted in the Image,Model Release Id>>||Extension
+|<<Persons Depicted in the Image,Model Release Status>>||Extension
+|<<Persons Depicted in the Image,Name>> {Person detail} ||Extension
+|<<Other Things Shown in the Image,Name>> {Product  detail} ||Extension
+|<<Other Things Shown in the Image,Name of Organisation Featured in the Image>>||Extension
+|*Object Name*|<<Administration and Commissioning Details,Title>>|
+|<<Administration and Commissioning Details,Organisation Id>> {Registry Entry Detail} ||Extension
+|<<Persons Depicted in the Image,Person Shown in the Image>>||Extension
+|<<Persons Depicted in the Image,Person Shown in the Image with Details>>||Extension
+|<<Rights Information,Phone number(s)>> {Contact detail} ||Core
+|<<Other Things Shown in the Image,Physical Description>> {Artwork or Object detail} ||Extension
+|<<Rights Information,Postal Code>>{Contact detail} ||Core
+|<<Other Things Shown in the Image,Product Shown in the Image>>||Extension
+|<<Rights Information,Property Release Id>>||Extension
+|<<Rights Information,Property Release Status>>||Extension
+|*Provider*|<<Rights Information,Credit Line>>|
 |<<Locations,Province or State>> (legacy)||Core
 |<<Locations,Province or State>> {Location Created detail}||Extension
 |<<Locations,Province or State>> {Location Shown detail}||Extension
-|<<CV-Term About the Image,Refined 'about'>> {CV-Term detail}	||Extension
-|<<Embedded Encoded Rights Expressions,Rights Expression Language ID>> {EERE detail}||Extension
-|<<Linked Encoded Rights Expressions,Rights Expression Language ID>> {LERE detail}||Extension
-|<<Rights Usage Terms>>||Core
-|<<Image Registry Entry,Role>> {Registry Entry detail}||Extension
-|<<IPTC Scene Code,Scene Code>>||Core
-|<<Source (Supply Chain)>>||Core
-|<<Artwork or Object in the Image,Source>> {Artwork or Object detail}||Extension
-|<<Artwork or Object in the Image,Source Inventory Number>> {Artwork or Object detail}	||Extension
-|<<Artwork or Object in the Image,Source Inventory URL>> {Artwork or Object detail}	||Extension
-|*Special Instructions*|<<Instructions>>|
-|<<Locations,State/Province>> {Location detail} ||Core
-|<<Artwork or Object in the Image,Style Period>> {Artwork or Object detail} ||Extension
-|<<IPTC Subject Code (Legacy)>> ||Core
+|<<General Image Content,Refined 'about' Relationship of the CV-Term>> {CV-Term detail}	||Extension
+|<<Licensing Use of the Image,Rights Expression Language ID>> {EERE detail}||Extension
+|<<Licensing Use of the Image,Rights Expression Language ID>> {LERE detail}||Extension
+|<<Licensing Use of the Image,Rights Usage Terms>>||Core
+|<<General Image Content,Scene Code>>||Core
+|<<Rights Information,Source>>||Core
+|<<Other Things Shown in the Image,Source>> {Artwork or Object detail}||Extension
+|<<Other Things Shown in the Image,Source Inventory Number>> {Artwork or Object detail}	||Extension
+|<<Other Things Shown in the Image,Source Inventory URL>> {Artwork or Object detail}	||Extension
+|*Special Instructions*|<<Administration and Commissioning Details,Instructions>>|
+|<<Locations,State/Province>> {Contact detail} ||Core
+|<<Other Things Shown in the Image,Style Period>> {Artwork or Object detail} ||Extension
+|<<General Image Content,Subject Code>> ||Core
 |<<Locations,Sublocation>> (legacy) || Core
 |<<Locations,Sublocation>> {Location Created detail} ||Extension
 |<<Locations,Sublocation>> {Location Shown detail} ||Extension
-|<<Title>> ||Core
-|<<Artwork or Object in the Image,Title>> {Artwork or Object detail} ||Extension
-|*Transmission Reference*|<<Job Identifier>>|
-|<<Web Statement of Rights>>||Extension
-|<<_creators_contact_info,Website(s)>> {Creator's Contact detail} ||Core
+|<<Administration and Commissioning Details,Title>> ||Core
+|<<Other Things Shown in the Image,Title>> {Artwork or Object detail} ||Extension
+|*Transmission Reference*|<<Administration and Commissioning Details,Job Id>>|
+|<<Rights Information,Web Statement of Rights>>||Extension
+|<<Locations,Web URL(s)>> {Contact detail} ||Core
 |<<Locations,World Region>> {Location Created detail}||Extension
 |<<Locations,World Region>> {Location Shown detail}||Extension
 |===
@@ -336,20 +346,19 @@ TIP: Read also about metadata for specific content on pages about
 <<Other things shown in the Image,other things>> (organisations, events, products,
 artwork, objects).
 
-==== Keywords
+==== Keyword
 
 Enter keywords to describe the visible and abstract content of the photograph.  Keywords are in free text form, and may be single or compound terms.
 
 Keywords are descriptive words added to an image to enable search and retrieval. They describe what is visible in the image and concepts associated with the image. Keywords are expressed as a list of terms. Keywords can be single or compound terms.
 
-Values from the controlled vocabulary IPTC Subject Codes should be placed into the "Subject Code" field.
+Values from the controlled vocabulary IPTC Subject Codes should be placed into the “Subject Code” field.
 
 WARNING: Keywords may have to be separated by commas or other separators depending on the software. The field for each keyword is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 
-==== IPTC Subject Code (Legacy)
+==== IPTC Subject Code
 
-This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC "Subject NewsCodes" taxonomy (available from http://cv.iptc.org/newscodes/subjectcode). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field. +
-As this vocabulary is not maintained by IPTC since 2010 the use of this field is a legacy. For the classification of images use the IPTC Media Topics vocabulary now, see: http://cv.iptc.org/newscodes/mediatopic. For Media Topics the CV Term About Image field must be used - see it just below.
+This field can be used to specify and categorise the content of a photograph by using one or more subjects as listed in the IPTC “Subject NewsCodes” taxonomy (available from http://cv.iptc.org/newscodes/subjectcode). Each subject term is represented as a code of 8 digits in an unordered list. Only subjects from this controlled vocabulary should be used in this field, free text keywords should be entered into the Keyword field.
 
 ==== CV-Term About the Image
 
@@ -370,15 +379,13 @@ Unique identifier for the Controlled Vocabulary (often a URL).
 Refined "About"::
 Optional: globally Unique identifier for a concept refining the ‘about' relationship between the image and the CV term. Example: the concept could stand for emotions shown by persons in the image. 
 
-==== Intellectual Genre (legacy)
+==== Intellectual Genre
 
-A term to describe the nature of the image in terms of its intellectual or journalistic characteristics. The value should be a globally unique identifier of a term of a controlled vocabulary. The identifiers of the terms of the IPTC Genre vocabulary may be used http://cv.iptc.org/newscodes/genre or other genre vocabularies more focused on photography.
-
-NOTE: The intellectual Genre can be expressed in a more controlled way using the "Genre" property, see below. IPTC recommends using it.
+Globally unique identifier for controlled terms to describe the genre of the photo. The IPTC Genre vocabulary may be used http://cv.iptc.org/newscodes/genre or other genre vocabularies more focused on photography.
 
 ==== Genre (generic)
 
-This field structure is a generic way to describe the genre of the photo with a value from any Controlled Vocabulary.
+This field structure is a generic way to describe the genre of the photo with a value from any Controlled Vocabulary. (The Intellectual Genre actively supports only the use of an IPTC vocabulary.)
 
 Multiple genre terms may be used; each term must be taken from an identified Controlled Vocabulary.
 
@@ -397,7 +404,7 @@ Optional: globally Unique identifier for a concept refining the kind of genre CV
 
 ==== IPTC Scene Code
 
-This field is used to describe the scene of a photo using one or more terms from the IPTC "Scene-NewsCodes". You should only enter values from the IPTC Scene controlled vocabulary (available from http://cv.iptc.org/newscodes/scene). Each IPTC Scene term is represented as a 6 digit numerical string in an unordered list.
+This field is used to describe the scene of a photo using one or more terms from the IPTC "Scene-NewsCodes". You should only enter values from the IPTC Scene controlled vocabulary (available from http://www.newscodes.org and http://cv.iptc.org/newscodes/scene). Each IPTC Scene term is represented as a 6 digit numerical string in an unordered list.
 
 ==== Image Rating
 
@@ -430,47 +437,14 @@ WARNING: This field is limited by the IIM format to about 256 characters. In XMP
 
 ==== Description/Caption
 
-The Description field, often referred to as a ‘caption', is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people's names, their roles in the action, and location information. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.
-
-The Description field should not be confused with the field for <<Alt Text (Accessibility)>>, see below. 
+The Description field, often referred to as a ‘caption' is used to describe the who, what (and possibly where and when) and why of what is happening in the photograph. It can include people's names, their role in the action, the location. Geographic location details should also be entered in the Location fields. The amount of detail included will depend on the image and whether the image is documentary or conceptual. Typically, editorial images come with complete caption text, while advertising images may not.
 
 WARNING: This field is limited by the IIM format to about 2000 characters. In XMP there is effectively no character limit.
 
-==== Alt Text (Accessibility)
+==== Accessibility Descriptions
 
-This field is used to provide a brief textual description of the purpose and meaning of an image that can be accessed by assistive technology or displayed when the image is disabled in the browser. The purpose of Alt Text is to provide a text alternative that serves the equivalent purpose. 
+Some text about Alt Text and Extended Description.
 
-While there is effectively no character limitation for Alt Text, the best practice is to keep the description short (a couple of sentences) so that assistive technology users can quickly navigate images on a page. If more detail is required to provide a text alternative, use this field to provide a summary and <<Extended Description (Accessibility)>> to provide additional details about the image. 
-
-WARNING: Some editing interfaces may indicate when a specific number of characters (about 250) is exceeded. 
-
-Alt Text may be hidden from view within the HTML coding of a website; this field is intended to be read out loud by text-to-speech and assistive technologies while the <<Description/Caption>> is often presented as a visible caption below the image and provides the facts about an image. 
-
-Alt Text is required for conformance with the https://www.w3.org/TR/WCAG22/#text-alternatives[W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives].
-
-This field should not be confused with the IPTC field <<Headline>>, which is a brief synopsis or summary of the contents of the image.
-
-
-.Top 5 Tips for Writing Alt Text
-****
-. **Be specific:** Effectively convey the visual message by describing all meaningful and relevant details.
-. **Keep it short:** Be as brief as you can. Know when you need to write more for complex images.
-. **Limit keywords:** Alt Text is definitely not for boosting SEO. Beware of SEO-focused alt text "shortcuts."
-. **Don’t repeat information:** Don’t copy/paste or auto-populate from adjacent text on the page.
-. **Incorporate context:** Alt Text must make sense and flow with the surrounding page content.
-****
-
-More information on accessibility can be found in the <<Making images accessible for people with special needs>> section in this guide.
-
-==== Extended Description (Accessibility)
-
-The Extended Description (Accessibility) field can be used to provide a more detailed textual description of the purpose and meaning of an image that elaborates on the information provided by the <<Alt Text (Accessibility)>> field. Extended Description (Accessibility) is not required if the Alt Text (Accessibility) field provides a text alternative that serves the equivalent purpose. It should not repeat the information in the Alt Text (Accessibility) property.
-
-This property should not be confused with the IPTC property <<Description/Caption>>. 
-
-WARNING: Be aware that this IPTC field does not support formatted text or HTML markup.  
-
-More information on accessibility can be found in the <<Making images accessible for people with special needs>> section in this guide.
 
 === Persons Depicted in the Image
 
@@ -483,11 +457,11 @@ Persons in the image may also be entered in the caption and keyword fields.
 
 There are other fields associated with persons depicted in the image:
 
-* <<Additional Model Information,Additional Model Information>>
-* <<Model Age,Model Age>>
-* <<Minor Model Age Disclosure,Minor Model Age Disclosure>>
-* <<Model Release Status,Model Release Status>>
-* <<#_model_release_identifiers,Model Release Identifiers>>
+* Additional model info
+* Model Age
+* Minor model age disclosure
+* Model Release Status
+* Model Release Identifiers
 
 TIP: Read also about metadata for specific content on pages about
 <<General Image Content,general image content>>,
@@ -505,21 +479,22 @@ Use this field structure to record details about each relevant and recognisable 
 
 These details are useful for identifying and distinguishing this person from others in the image.
 
-Name::
+* Name
++
 Use this field to note the name of a person or persons shown in the image. Typically, these would be recorded as they would be typed in a query, first name / last name (given name / surname).
-
-Identifier::
+* Identifier
++
 Use this field to enter one or more Globally Unique Identifier(s) for the person, such as those from WikiData or Freebase. This should be entered in the form of a URI.
-
-Characteristics::
+* Characteristics
++
 Use this field structure including CV Term Name, CV Term ID, CV ID and Refined ‘About' for properties or traits of the person by selecting a term from a Controlled Vocabulary (CV). 
-
-Description::
+* Description
++
 A free-text description of any actions taken, as well as any gestures or emotional expressions shown, by the person shown in the image.
 
 ==== Additional Model Information 
 
-The Additional Model Information field can be used to record information about the ethnicity and other facets of the person(s) ("model(s)") appearing in the image. Use the Model Age field to note the age of model(s).
+The Additional Model Information field can be used to record information about the ethnicity and other facets of the person(s) (“model(s)”) appearing in the image. Use the Model Age field to note the age of model(s).
 
 ==== Model Age
 
@@ -532,57 +507,22 @@ The user should be aware of any legal implications of providing ages for young m
 Age of the youngest model pictured in the image, at the time that the image was made. 
 The user should be aware of any legal implications of providing ages for young models.
 
-The identifier of one of these possible terms can be applied as value to the field:
-
-* link:http://ns.useplus.org/ldf/vocab/AG-UNK[Age Unknown ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-UNK`
-* link:http://ns.useplus.org/ldf/vocab/AG-A25[Age 25 or Over ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A25`
-* link:http://ns.useplus.org/ldf/vocab/AG-A24[Age 24 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A24`
-* link:http://ns.useplus.org/ldf/vocab/AG-A23[Age 23 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A23`
-* link:http://ns.useplus.org/ldf/vocab/AG-A22[Age 22 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A22`
-* link:http://ns.useplus.org/ldf/vocab/AG-A21[Age 21 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A21`
-* link:http://ns.useplus.org/ldf/vocab/AG-A20[Age 20 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A20`
-* link:http://ns.useplus.org/ldf/vocab/AG-A19[Age 19 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A19`
-* link:http://ns.useplus.org/ldf/vocab/AG-A18[Age 18 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A18`
-* link:http://ns.useplus.org/ldf/vocab/AG-A17[Age 17 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A17`
-* link:http://ns.useplus.org/ldf/vocab/AG-A16[Age 16 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A16`
-* link:http://ns.useplus.org/ldf/vocab/AG-A15[Age 15 ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-A15`
-* link:http://ns.useplus.org/ldf/vocab/AG-U14[Age 14 or Under ^] +
-Identifier: `http://ns.useplus.org/ldf/vocab/AG-U14`
-
 ==== Model Release Status
 
 This field summarises the availability and scope of model releases authorising usage of the likenesses of persons appearing in the photograph.
 
-The identifier of one of these possible terms can be applied as value to the field:
+There are four possible values: 
 
-* link:http://ns.useplus.org/ldf/vocab/MR-NON[None ^] - no release is available +
-Identifier: `http://ns.useplus.org/ldf/vocab/MR-NON`
-* link:http://ns.useplus.org/ldf/vocab/MR-NAP[Not Applicable ^] - there are no recognisable people in the image +
-Identifier: `http://ns.useplus.org/ldf/vocab/MR-NAP`
-* link:http://ns.useplus.org/ldf/vocab/MR-UMR[Unlimited Model Releases ^] - releases are available for all people in the image, AND the terms of each release authorise unlimited usage of the model(s) likenesses +
-Identifier: `http://ns.useplus.org/ldf/vocab/MR-UMR`
-* link:http://ns.useplus.org/ldf/vocab/MR-LMR[Limited or Incomplete Model Releases ^]  - there are releases for some of the people in the image, OR one or more of the releases include terms limiting usage of model(s) likenesses +
-Identifier: `http://ns.useplus.org/ldf/vocab/MR-LMR`
+* None (no release is available), 
+* Not Applicable (there are no recognisable people in the image), 
+* Unlimited Model Releases (releases are available for all people in the image, AND the terms of each release authorise unlimited usage of the model(s) likenesses)
+* Limited or Incomplete Model Releases (there are releases for some of the people in the image, OR one or more of the releases include terms limiting usage of model(s) likenesses). 
 
 We recommend that the PLUS controlled value Unlimited Model Releases (MR-UMR) be used sparingly, and encourage you to check the wording of the model release thoroughly before choosing this value.
 
 ==== Model Release Identifier(s)
 
-Use this field to indicate the ID of each available Model Release document. Be sure to give a unique number or name to all releases, and record that information in this field. If you don't already include an ID name/number on your releases, consider adding one as this will make it easier to cross reference.
-
-TIP: Read about Property Releases in the section about Rights Information.
+Use this field for the ID of each available Model Release document. Be sure to give a unique number or name to all releases (both model and property), and record that information in this field. If you don't already include an ID name/number on your releases, consider adding one as this will make it easier to cross reference.
 
 === Locations
 
@@ -597,9 +537,8 @@ TIP: Read also about metadata for specific content on pages about
 artwork, objects).
 
 All location field structures use the following geographic hierarchy:
-
 Sublocation::
-This could be the name of a specific area within a city (Manhattan) or the name of a well-known location (Pyramids of Giza) or a monument or natural feature outside a city (Grand Canyon, Mont Blanc Peak) +
+This could be the name of a specific area within a city (Manhattan) or the name of a well-known location (Pyramids of Giza) or a monument or natural feature outside a city (Grand Canyon, Mont Blanc Peak) 
 The area covered by Sublocation may differ for the two types of location. For Location Created, the sublocation might be derived from the Exif GPS coordinates of the camera. In general, the Location Shown should specify the area of interest shown in the image, which is a broader area e.g. The Vosges Mountains.
 
 City::
@@ -618,26 +557,7 @@ The codes are available from: https://www.iso.org/obp/ui/. If both the Country a
 World Region::
 The name of the region of the world.
 
-WARNING: The location fields above are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
-
-The **IPTC Extension schema structure** used for Location Created and Location Show has these **additional fields**:
-
-GPS-Latitude and GPS-Longitude:: These fields take the latitude and the longitude of the location. How to write down the values depends on the user interface of your software. The generic rules are: 
-* a numeric value for the degrees, for the minutes and for the seconds can be used. The seconds may a decimal value. 
-* OR a decimal value can be used: the integer part represents the degrees, the fractional part the minutes and seconds.
-* East or west of the 0-degree meridian: 
-** Variant 1: east: a positive longitude value; west: a negative longitude value
-** Variant 2: A single character field with values like E(ast) and W(est)
-* North or south of the equator:
-** Variant 1: north: a positive latitude value, south: a negative latitude value
-** Variant 2: As single character field with values like N(orth) and S(outh)
-
-GPS-Altitude:: The altitude of the location above or below sea level using the unit metres, expressed as decimal value. An altitude below sea level is expressed by a negative value by the user interface of a majority of software, a single character field may be used as alternative.
- 
-Name:: Full name of the location. Using it helps if the location as a well known name like "Buckingham Palast", "Grand Canyon" or "Suez Canal".
-
-Identifier:: Globally unique identifier of this location. Can be taken e.g. from Wikidata: http://www.wikidata.org/entity/Q899 identifies the Suez Canal.
-
+WARNING: the location fields are limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Location (Original/Legacy)
 
@@ -679,12 +599,13 @@ A code from a known controlled vocabulary for identifying the organisation or co
 
 ==== Event
 
-The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony. +
-In 2023 the field **Event Indentifier** was introduced to add a unique identifier to the event. Example: the URL of a page about the event can be used as identifier.
+The Event field describes a specific named event associated with the image, e.g. Archimedes press conference, The Great Steamboat Race, Maui Classical Music Festival. Sub events of larger events can be included as in: XXXI Olympic Summer Games (Rio): opening ceremony.
 
-==== Product Shown in the Image
+#TODO: add the Event Identifier#
 
-The Product Shown field structure is used to describe one to many products depicted by the image. The **name** of the product and a textual **description** can be applied to the corresponding fields. To identify the product a single 14 digit **GTIN** (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used too. For identifiers beyond GTIN the field **Identifier** can be used, multiple may be applied - it should be a globally unique identifier as used by semantic technology.
+==== Product
+
+#The Product Shown field structure is used to describe one to many products depicted by the image. The name of the product and a textual description can be applied to the corresponding fields. To identify the product a 14 digit GTIN (Global Trade Item Number) of the product should be applied to the GTIN field, GTIN-8 to GTIN-14 codes can be used.# 
 
 ==== Artwork or Object in the Image
 
@@ -736,35 +657,13 @@ Do not confuse this field value with the Identifier field of the Licensor of the
 
 This section is about how to record rights information for an image. 
 
-TIP: Read also the section about <<Licensing Use of the Image>>.
+TIP: Read also the page about licensing the use of the image.
 
-==== Metadata and the Law
-
-Be aware that values assigned to rights-related metadata fields - including fields about licensing – of an image may be affected 
-
-* by laws and other regulations of the region in which the image is used, and/or 
-* by contracts applying to the image.
-
-These fields can be affected:
-
-* <<Copyright Notice>>
-* <<Credit Line>>
-* <<Rights Usage Terms>>
-* <<Copyright Owner>>
-* <<Data Mining>>
-* <<Other Constraints>>
-* <<Embedded Encoded Rights Expressions>>
-* <<Linked Encoded Rights Expressions>>
-* <<Model Release Status>>
-* <<Property Release Status>>
-* <<Web Statement of Rights>>
-* <<Artwork or Object in the Image>>: Copyright Notice, Current Copyright Owner
-
-==== Creator - overview
-
-The creator of the image as owner of rights can be identified by two fields:
-<<#_creator_free_text,Creator>> a free text field for the name of the Creator and 
-<<#_image_creator_structure,Image Creator>> a field structure including the name of the Creator and an identifier for the Creator.
+The creator of the image as owner of rights can be identified by two properties:
+Creator::
+a free text field for the name of the Creator
+Image Creator::
+a field structure including the name of the Creator and an identifier for the Creator.
 
 IPTC recommends using the older Creator name only field for all images. The newer field structure (Name and ID) should be used in addition to this, when a Creator identifier is available.  
 
@@ -782,13 +681,13 @@ WARNING: This field is shown in the Image Credits of a photo in the results of a
 
 ==== Image Creator (structure)
 
-This field can be used to indicate the creator or creators of the image by name and identifier.
+This property can be used to indicate the creator or creators of the image by name and identifier.
 
 ==== Creator's Job Title
 
 The job title of the person who created the photograph. For examples this might include titles such as: Staff Photographer, Independent Commercial Photographer, or staff writer. Since this is a qualifier for the Creator field, the Creator field must also be filled out. 
 
-WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Creator's Contact Info
 
@@ -814,13 +713,7 @@ The URL or web address for the primary contact's business. Multiple addresses ca
 
 ==== Contributor
 
-Some images have multiple people (or systems) contributing to their creation. For example a fashion shoot may have a stylist, wardrobe manager, hair and make-up artists and more. A photo in a cookbook may have a food stylist. These people did not take the photo, but they contributed to its creation.
-
-Indicate a contributor using name and identifier. +
-In addition the kind of contribution can be expressed by a value from a vocabulary of roles of persons contributiong to an image - it should be based on industry wide practices. + 
-IPTC provides such a vocabulary at https://cv.iptc.org/newscodes/contentprodpartyrole/
-
-NOTE: We recommend using the <<Product,Product Shown in the Image>> property, optionally as part of an <<Image Regions,Image Region>>, to list details of product(s) such as handbags or pairs of shoes featured in an image.
+Some text about this property/field.
 
 ==== Copyright Notice
 
@@ -828,19 +721,15 @@ The Copyright Notice contains information required to assert copyright in the im
 
 For legal advice on asserting copyright, you should consult a lawyer.
 
-Notes on usage rights (how the image may be used) should be provided in the "Rights Usage Terms" field.
+Notes on usage rights (how the image may be used) should be provided in the “Rights Usage Terms” field.
 
-WARNING: This field is limited by the IIM format to about 128 characters. In XMP there is effectively no character limit.
+WARNING: this field is limited by the IIM format to about 128 characters. In XMP there is effectively no character limit.
 
-IMPORTANT: This field is shown in the Image Credits of a photo in the results of a Google image search.
-
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
+IMPORTANT: this field is shown in the Image Credits of a photo in the results of a Google image search.
 
 ==== Copyright Owner
 
 Indicate the owner or owners of the copyright in the image, using name and identifier. Note that Copyright Owner, Image Creator, Image Source and Licensor may be the same or different entities.
-
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
 
 ==== Credit Line
 
@@ -849,106 +738,56 @@ The Credit Line may contain information also listed in other fields such as Crea
 
 NOTE: In IPTC Core version 1.0 this field was named 'Provider'.
 
-WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
-IMPORTANT: This field is shown as Image Credits of a photo in the results of a Google image search.
+IMPORTANT: this field is shown in the Image Credits of a photo in the results of a Google image search.
 
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
-
-==== Source (Supply Chain)
+==== Source
 
 The Source field is used to name parties with a role in the supply chain, such as agencies, originating organisations, or photographers. The Source field is useful for syndication where the original supplier agency or photographer  is different from the end supplier. 
 
-NOTE: Before the IPTC Photo Metadata Standard 2014 the semantics of this field were restricted to the original copyright owner of the image.)
+NOTE: before the IPTC Photo Metadata Standard 2014 the semantics of this field were restricted to the original copyright owner of the image.)
 
-WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
-
-==== Data Mining
-
-Use this field to communicate whether data mining is prohibited or allowed either in general, for AI or Machine Learning purposes or for generative AI/ML purposes for your image. You can select one value from the standardised controlled list to express data mining permissions, constraints and prohibitions. 
-
-NOTE: Values for this field — such as those related to search indexing or research — may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
-
-This field’s value must come from the PLUS Data Mining vocabulary, which is shown here:
-
-* Name: Unspecified – no prohibition defined +
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-UNSPECIFIED
-* Name: Allowed +
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-ALLOWED
-* Name: Prohibited for AI/ML training +
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-AIMLTRAINING
-* Name: Prohibited for Generative AI/ML training +
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-GENAIMLTRAINING
-* Name: Prohibited except for search engine indexing +
-**Note**: This prohibition only permits data mining by search engines available to the public to identify the URL for an asset and its associated data (for the purpose of assisting the public in navigating to the URL for the asset), and prohibits all other uses, such as AI/ML training. +
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING
-* Name: Prohibited +
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED
-* Name: Prohibited, see <Other Constraints> property. +
-**Note**: The <<Other Constraints>> field must be populated if this value is set. +
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT
-* Name: Prohibited, see Embedded Encoded Rights Expression field +
-Identifier:  http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR
-* Name: Prohibited, see Linked Encoded Rights Expression field
-Identifier: http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEELINKEDRIGHTSEXPR
-
-The <<Other Constraints>> field can be used to express rights constraints in human-readable form. The IPTC properties "Embedded Encoded Rights Expression" and "Linked Encoded Rights Expression" can be used to express rights in a machine-readable format.
-
-
-==== Other Constraints
-
-This field can specify, in a human-readable form, what other constraints may need to be followed. For example this property could be used to allow Data Mining under special constraints, such as “Generative AI training is only allowed for academic purposes.”
-
-This property must be populated if the <<Data Mining>> field uses the identifier http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT .
-
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
-
-==== Property Release Status
-
-This field summarises the availability and scope of property releases for the photograph.
-
-The identifier of one these possible terms can be applied as value to the field:
-
-* link:http://ns.useplus.org/ldf/vocab/PR-NON[None ^] - no release is available +
-Identifier: `http://ns.useplus.org/ldf/vocab/PR-NON`
-* link:http://ns.useplus.org/ldf/vocab/PR-NAP[Not Applicable ^] - there are no items requiring a property release in the image +
-Identifier: `http://ns.useplus.org/ldf/vocab/PR-NAP`
-* link:http://ns.useplus.org/ldf/vocab/PR-UPR[Unlimited Property Releases ^] - releases are available for all property shown in the image +
-Identifier: `http://ns.useplus.org/ldf/vocab/PR-UPR`
-* link:http://ns.useplus.org/ldf/vocab/PR-LPR[Limited or Incomplete Property Releases ^] - there are releases for some property shown in the image but not for all +
-Identifier: `http://ns.useplus.org/ldf/vocab/PR-LPR`
-
-We recommend that the PLUS specified value Unlimited Property Releases (PR-UPR) be used with care, and encourage you to check the wording of the property release thoroughly before choosing this value.
-
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
-
-==== Property Release Identifier(s)
-
-Use this field to indicate the ID of each available Property Release document. Be sure to give a unique number or name to all releases, and record that information in this field. If you don't already include an ID name/number on your releases, consider adding one as this will make it easier to cross reference.
-
-TIP: Read about Model Releases in the section about persons in an image.
+WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Web Statement of Rights
 
 The Web Statement of Rights can be used to link the viewer to a web page (by a URL) which provides a statement of the copyright ownership and usage rights of the image. In the Adobe ‘File Info' panel this field is called the ‘Copyright Info URL.'
 
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
+==== Data Mining
+
+IMPORTANT: a section about the Data Mining property (new 2023) needs to be added here.
+
+==== Property Release Status
+
+This field summarises the availability and scope of property releases for the photograph.
+
+There are four possible values: 
+
+* None (no release is available)
+* Not Applicable (there are no items requiring a property release in the image)
+* Unlimited Property Releases (releases are available for all property shown in the image)
+* Limited or Incomplete Property Releases (there are releases for some property shown in the image).
+We recommend that the PLUS specified value Unlimited Property Releases (PR-UPR) be used with care, and encourage you to check the wording of the property release thoroughly before choosing this value.
+
+==== Property Release Identifier(s)
+
+Use this field to indicate the ID for each Property Release document. Ensure all releases (both model and property) are assigned a unique number, and record that information in this field.
+
+TIP: Read about Model Releases on the page about persons in an image.
+
 
 === Licensing Use of the Image
 
 This section provides fields for information required when licensing an image. 
 
-TIP: Read also the section about <<Rights Information,rights information>>.
-
-NOTE: Please read <<Metadata and the Law>>.
+TIP: Read also the page about rights information.
 
 ==== Rights Usage Terms
 
 This field is for free-text instructions on how the image may be legally used. E.g. ‘Permission is required from (Supplier or Creator) to publish this image' or ‘Licensed to (Customer) for use in (publication) until (date)'. 
 
 For more detailed licensing terms, you may use the PLUS ‘Media Selector', or another standardised vocabulary. This field may also be used to indicate a Creative Commons Licence assigned to the image.
-
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
 
 ==== Image Supplier
 
@@ -987,8 +826,6 @@ Contains the encoding type for the rights expression using an IANA Media Type
 Rights Expression Language ID::
 Contains the identifier for the Rights Expression Language used.
 
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
-
 ==== Linked Encoded Rights Expressions
 
 This structure holds details of encoded rights expressions referenced by a link.
@@ -1000,36 +837,38 @@ Contains the encoding type of the rights expression using an IANA Media Type.
 Rights Expression Language ID::
 Contains the identifier of the Rights Expression Language used.
 
-NOTE: Values for this field may be overruled by agreement, law or policy. See <<Metadata and the Law>>.
-
 === Administration and Commissioning Details
 
 ==== Date Created
 
-This field records the date and optionally the time the image was created. This can be derived from the Exif DateTimeOriginal if that is supported by the software. If you change a shown Date Created value this can also change this corresponding Exif tag - depending on your software.
+This field records the date and optionally the time the image was created. This can be derived from the Exif DateTimeOriginal if that is supported by the software.  
 
-==== Description Writer
+More about dates and times and different software 
 
-The name of the most recent person(s) involved in creating, editing or correcting the entries for the Description, Alt Text (Accessibility), or Extended Description (Accessibility) fields of the image. There may be more than one person writing descriptions for the image. In this case, make sure to specify the descriptions each writer worked on. For example, Description: Jane Doe; Alt Text and Extended Description: John Doe. 
+==== Description writer
 
-WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+The name of the person creating or editing the description of the image.
+
+WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Title
 
-A short human readable reference for the image. It can be a text reference or a numeric reference, and serves primarily as an identifier. The Title field has often been used by photographers for the image filename, but now IPTC provides specific fields for image IDs including the Supplier's Image ID, The Digital Image GUID,  and the Registry Entry fields.  The Title field should not be confused with the Headline field which is a short descriptive field about the content of an image, or with the AO Title field which contains the title of the artwork or object in the the image.
+A short human readable reference for the image. It can be a text reference or a numeric reference, and serves primarily as an identifier. It has been used by photographers for their image filename, though since about 2008 IPTC now provides specific fields for image IDs like Digital Image GUID or Registry Entry (those wishing to, can use the Registry Entry. The Title field should not be confused with the Headline field which is a short descriptive field about the content of an image.
 
-WARNING: This field is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
+A short human readable reference for the image. It can be a text reference or a numeric reference, and serves primarily as an identifier. The Title field has often been used by photographers for the image filename, but IPTC now provides specific fields for image IDs including the Supplier's Image ID, The Digital Image GUID,  and the Registry Entry fields.  The Title field should not be confused with the Headline field which is a short descriptive field about the content of an image, or with the AO Title field which contains the title of the artwork or object in the the image.
+
+WARNING: this field is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 
 ==== Job Identifier
 A number or textual identifier for the job for which the image was supplied. This field can allow job information to be tracked through the workflow.
 
 NOTE: This field is named ‘Transmission Reference' in the IIM but its use has changed as reflected by this name after the adoption by Adobe Photoshop.
 
-WARNING: This field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
+WARNING: this field is limited by the IIM format to about 32 characters. In XMP there is effectively no character limit.
 
 ==== Instructions
 
-A free text field for instructions to the receiver from the creator or supplier of the image. Instructions may include details of embargoes, restrictions, or any other rights or technical information needed for the end use. Be aware that there are more specific rights expressions fields (see Rights Information and Licensing sections) which can be used.
+A free text field for instructions to the receiver from the creator or supplier of the image. Instructions can may include details of embargoes, restrictions, or any other rights or technical information needed for the end use. Be aware that there are more specific rights expressions fields (see Rights Information and Licensing sections) which can be used.
 
 ==== Image Registry Entry
 
@@ -1040,7 +879,7 @@ Globally unique identifier for the registry issuing the ID for the image. The id
 Registry Item Identifier::
 A unique identifier created and held within the registry identified above. 
 Role::
-An identifier of the reason and/or purpose for this Registry Entry. The identifier must be a URL (URI). Examples: "major registry of this photo", "alternative registry of this photo", "national registry of photos", etc.
+An identifier of the reason and/or purpose for this Registry Entry. The identifier must be a URL (URI). Examples: major registry of this photo, alternative registry of this photo, national registry of photos, etc.
 
 ==== Max Avail Width/Height
 
@@ -1060,11 +899,11 @@ A globally unique identifier (GUID) for the digital image. The identifier, may b
 
 You can use the IPTC Image Region to record details for designated areas within a still photo using rectangles, circles and polygons. You can give each image region a name and an identifier (if desired) and note what type of role (see link:http://cv.iptc.org/newscodes/imageregionrole/[IPTC's CV]) the region plays and the type of content (see link:http://cv.iptc.org/newscodes/imageregiontype/[IPTC's CV]) within that region. (The use of both IPTC CVs is recommended but not mandatory.)
 
-There are many times when you need to identify people within an image. This can be difficult especially when all the people don’t line up in nice ‘left-to-right’ rows. The Image Region feature gives you a way to: isolate each person’s face or body in an image (using a rectangle, circle or polygon), give it an identifier and name, indicate that the marked area is a link:http://cv.iptc.org/newscodes/imageregionrole/subjectArea[subject area] and indicate that the type of content is a link:http://cv.iptc.org/newscodes/imageregiontype/human[human]. Finally add the IPTC field link:https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#person-shown-in-the-image[Person Shown in Image] to the Image Region with the name of the framed person.
+There are many times when you need to identify people within an image. This can be difficult especially when all the people don’t line up in nice ‘left-to-right’ rows. The Image Region feature gives you a way to: isolate each person’s face or body in an image (using a rectangle, circle or polygon), give it an identifier and name, indicate that the marked area is a link:http://cv.iptc.org/newscodes/imageregionrole/subjectArea[subject area] and indicate that the type of content is a link:http://cv.iptc.org/newscodes/imageregiontype/human[human]. Finally add the IPTC property link:https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#person-shown-in-the-image[Person Shown in Image] to the Image Region with the name of the framed person.
 
 If you create photo composites, the IPTC Image Region can be used to identify each of the different entities making up the composite and tie the provider’s name or copyright notice back to each.
 
-Suggestions for how the image could be cropped to accommodate different layouts can now be embedded into the image itself. For example, you could mark a horizontal rectangle within a vertical image and indicate that the role for this marked area is a link:http://cv.iptc.org/newscodes/imageregionrole/landscapeCropping["landscape format cropping"] for that image. 
+Suggestions for how the image could be cropped to accommodate different layouts can now be embedded into the image itself. For example, you could mark a horizontal rectangle within a vertical image and indicate that the role for this marked area is a link:http://cv.iptc.org/newscodes/imageregionrole/landscapeCropping[“landscape format cropping”] for that image. 
 
 It should be possible to automatically map the face-tagging features in some cameras to the IPTC Image Regions so you would only have to add the name of the person to the regions. In addition, auto-tagging or image recognition systems could create image regions and auto-fill the embedded Image Region metadata fields.
 
@@ -1078,7 +917,7 @@ Metadata for one to many image regions can be embedded in the image files. In ti
 
 WARNING: The IPTC Image Region specification allows these various facets of the metadata to be embedded right after having set the boundaries and included details. However, during the lifecycle of an image its size and format may be changed and this requires that the software used to monitor image changes properly understands and updates these Image Region values each time changes are made. For example if you have a horizontal image with four people shown, and set Image Regions around the face of each person; then software used later to crop the image to a square needs to know which people have been removed by cropping and to adjust the coordinates of Image Regions of the persons remaining in the image as well as update/modify the metadata values and embed the values appropriately. If such adjustments are not made the boundaries of Image Regions may appear in the wrong positions and could even be invalid as coordinates may exceed the current width or height of an image.
 
-If images are cropped or resized and if the coordinates of the boundary of an Image Region are not adjusted it is very likely that they no longer frame the intended region. Therefore, if an Image Region asserts to be about a male person and the boundary touches or encompasses a female person one can assume that the image region is no longer valid. 
+If images are cropped or resized and if the coordinates of the boundary of an Image Region are not adjusted it is very likely that they no longer frame the intended region. Therefore, if an Image Region asserts to be about a male person and the boundary touches or encompasses a female person one can assume that the image region is no longer valid. The CIPA Standard DC-008 Exif metadata tag ‘SubjectArea’ can be mapped to an IPTC Image Region (see the Note about that), in this case the data of the Exif SubjectArea must also be adjusted.
 
 As IPTC Image Regions employ and rely upon coordinates expressed by relative size values or pixel count, Image Region metadata is vulnerable to corruption (rendering the metadata inaccurate) should any of the following changes occur:
 
@@ -1101,9 +940,157 @@ The IPTC invites and encourages developers to create solutions designed to allow
 
 In particular, to mitigate legal liability, IPTC recommends that users exercise extreme caution if/when using the IPTC Image Regions to express rights-related information pertaining to any element/s of a photograph (such as copyright, property rights or model release information).  
 
-==== Note about the Exif SubjectArea and the IPTC Image Region
+==== Guide for mapping Exif SubjectArea to IPTC Image Region
 
-From 2020 to the end of 2023 this section had a guideline for mapping data between the IPTC Image Region and the Exif SubjectArea. Unfortunately this mapping was built on the assumption Exif’s SubjectArea may be used for metadata about what this area shows, e.g. the name of a person or an object. This assumption was wrong and therefore the guideline about this mapping was removed in 2023. Please do not map between the IPTC Image Region and the Exif SubjectArea.
+#Headline and language below must be changed#
+
+===== *Introduction*
+
+The CIPA Standard DC-008 Exif and the IPTC Photo Metadata Standard are widely used specification for metadata embedded into image files. Exif sets a focus on facts about and technical details of a picture taken by a camera while IPTC sets a focus on descriptive, administrative and rights related metadata of an image edited in a next step of the workflow. 
+Even with these different scopes of metadata four metadata fields of both standards have highly similar semantics since many years:
+
+- The date and time when the picture was taken
+- The name of the person taking the photo
+- A description of what the photo shows
+- A statement about copyright
+- A mapping of these Exif metadata and IPTC metadata fields is implemented by software vendors since about 20 years.
+
+The IPTC Photo Metadata Standard 2019.1 introduces the Image Region property with a use case similar to the Exif property SubjectArea field. This paper explains how to map data from an Exif Subject Area to the IPTC Image Region.
+
+===== *About this section*
+
+This section about mapping Exif SubjectArea to IPTC Image Region was created by link:https://iptc.org[IPTC] and its content was reviewed by link:http://www.cipa.jp/guide/aboutcipa_e.html[CIPA].
+
+It refers to the copyrighted standard documents of CIPA and IPTC:
+
+* Exif standard: see http://www.cipa.jp/std/std-sec_e.html - used version: 2.32 in the document DC-008-2019-E=Exif.pdf in English.
+* IPTC Photo Metadata Standard 2019.1: see https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata 
+
+===== *Mapping Guideline*
+
+*Exif SubjectArea specification*
+
+(_This is an overview of the Exif specification, please read the specification document about the SubjectArea field in full._)
+
+The specification defines these details of a SubjectArea (37396, 0x9214) field/tag among others:
+
+* Semantic definition: The tag indicates the location and area of the main subject in the overall scene.
+* Values: 2 or 3 or 4 SHORT values. A SHORT value is a 16-bit (2-byte) unsigned integer. All the values are measured in pixels.
+
+The Exif specification defines further that the shape of the area is set by the count of values:
+
+* 2 values: the x- and the y-coordinate of a single point
+* 3 values: the x- and the y-coordinate of the centre of a circle and its diameter
+* 4 values: the x- and the y-coordinate of the centre of a rectangle and its width and height.
+
+*IPTC Image Region specification*
+
+(_This is an overview of the IPTC Photo Metadata specification, please read the specification document about the Image Region in full._)
+
+The specification defines these details of a single Image Region among others (multiple regions may be used):
+
+* The boundary of the region, it includes:
+** A setting of the shape of the region by a value from the enumeration “rectangle”, “circle” and “polygon”
+** A setting of the measuring unit by a value from the enumeration “pixel” or “relative”.
+** For the rectangle shape: an x- and a y-coordinate of the upper left corner of the rectangle and its width and height
+** For the circle shape: an x- and a y-coordinate of the centre of the circle and its radius measured along the x-axis.
+** For the polygon shape: a sequence of x- and y-coordinates for each vertice of the polygon. The count of vertices starts at 1 for a single point, 2 vertices define a line.
+* The type of the content of the region. The value is an globally unique identifier of a term expressing the type, e.g. “Person”, “Animal”, “Building”, “Artwork”, etc. (IPTC works on a vocabulary of such terms.)
+* The role of the region, among other regions. The value is an globally unique identifier of a term expressing the role, e.g. “recommended cropping”, “entity”, or “subject area”.
+* Further an identifier and a name of the region. The scope of identifier and name is only local to the image.
+
+===== *Mapping Exif SubjectArea → IPTC Image Region*
+
+Point zero of the coordinates is defined in the same way for the Exif SubjectArea and for the IPTC Image region: the upper left corner of the pixels of an image, no rotation/orientation processing is applied.
+
+For an Exif Subject area an IPTC Image Region structure must be created.
+This structure includes:
+
+* An Image Region structure with values mapped as shown in the table below. 
+* The Measuring Unit value “pixel” is mandatory as the Exif specification builds on pixels only.
+* The Region Role property may show the value for “main subject area”, defined by the identifier http://cv.iptc.org/newscodes/imageregionrole/mainSubjectArea.
+* No other Image Region properties are required by the mapping. A local identifier and name may be applied as needed by the user.
+
+The table below describes how Exif SubjectArea metadata should be transformed to IPTC Image Region metadata.
+
+[%autowidth,options="header"]
+|===
+|Exif SubjectArea field value|Image Region Boundary property and its value|Processing instruction
+
+|*Shape: single point, 2 values*
+|
+|
+
+|
+|Boundary Shape = “polygon”
+|This value is mandatory
+
+|
+|Measuring Unit = “pixel”
+|This value is mandatory
+
+|SubjecArea 1st value
+|→ Polygon Vertices, 1st vertex: X-Axis Coordinate
+|Use the Exif value
+
+|SubjecArea 2nd value
+|→ Polygon Vertices, 1st vertex: Y-Axis Coordinate
+|Use the Exif value
+
+|*Shape: circle, 3 values*
+|
+|
+
+|
+|Boundary Shape = “circle”
+|This value is mandatory
+
+|
+|Measuring Unit = “pixel”
+|This value is mandatory
+
+|SubjectArea 1st value
+|→ X-Axis Coordinate
+|Use the Exif value
+
+|SubjectArea 2nd value
+|→ Y-Axis Coordinate
+|Use the Exif value
+
+|SubjectArea 3rd value
+|→ Circle Radius
+|SubjectArea 3rd value divided by 2, rounded as integer
+
+|*Shape: rectangle, 4 values*
+|
+|
+
+|
+|Boundary Shape = “rectangle”
+|This value is mandatory
+
+|
+|Measuring Unit = “pixel”
+|This value is mandatory
+
+|SubjectArea 1st value
+|→ X-Axis Coordinate
+|SubjectArea 1st value minus (SubjectArea 3rd value divided by 2, rounded as integer)
+
+
+|SubjectArea 2nd value
+|→ Y-Axis Coordinate
+|SubjectArea 2nd value minus (SubjectArea 4th value divided by 2, rounded as integer)
+
+|SubjectArea 3rd value
+|→ Rectangle Width
+|Use the Exif value
+
+|SubjectArea 4th value
+|→ Rectangle Height
+|Use the Exif value
+
+|===
 
 == What is a ... (help)
 
@@ -1218,25 +1205,13 @@ NOTE: Exif currently does not hold time zone information in its time stamp. A ti
 
 === Metadata values shown multiple times
 
-Some values may appear multiple times within software panels or tabs. This data is stored in only one location in the image file, but appears in the tabs for different schemas which use it as a ‘shared field'. 
+Some values may appear multiple times within software panels or tabs. This data is stored in only one location in the image file, but appears in the tabs for different schemas which use it as a ‘shared property'. 
 
 For example, in Adobe products data entered in the IPTC Creator field also appears in the Author field in the Description Panel. If a change is made to the data in any tab or panel, that change is replicated in the other locations.
 
-=== Making images accessible for people with special needs
-
-People with special visual needs, such as those who are blind or have low vision, use assistive technologies such as screen readers to navigate text and image content on the web. If a textual description is not provided for an image, assistive technologies will skip over the image as if it doesn’t exist on the page.
-
-Text alternatives are required to meet https://www.w3.org/TR/WCAG22/#text-alternatives[W3C Web Content Accessibility Guidelines (WCAG) Success Criterion 1.1.1 Text Alternatives].
-
-Adding descriptive text metadata to images enables software tools and technologies to populate alt text and extended description fields on websites and digital documents. Embedding accessible descriptions provides a method for efficiently passing information across products and platforms and improves the accuracy and availability of image descriptions on the web.
-
-<<Alt Text (Accessibility)>> and <<Extended Description (Accessibility)>> were added to the IPTC Photo Metadata Standard to make it easier to embed descriptive metadata that can be used to create more accessible websites or digital products. These are found in the <<Natural Language Free Text Descriptions>> section above. 
-
-In the past some may have used Description/Caption to populate Alt Text or Long Description (Extended Description is a more recent term) for websites and digital products, Alt Text (Accessibility) and/or Extended Description (Accessibility) should be used instead.
-
 === IPTC Photo Metadata and Google Images
 
-Google has introduced a new feature of their "image search" mode in 2018. When an image is shown, one can click on "Image Credits" and a popup will show the image's creator, credit line and a copyright notice. It works by reading the corresponding embedded IPTC photo metadata fields from the image file. The name of the creator, the copyright notices and the credit line is shown.
+Google has introduced a new feature of their “image search” mode in 2018. When an image is shown, one can click on “Image Credits” and a popup will show the image's creator, credit line and a copyright notice. It works by reading the corresponding embedded IPTC photo metadata fields from the image file. The name of the creator, the copyright notices and the credit line is shown.
 
 IPTC is taking the opportunity to show the best way that each metadata field can be filled in based on the definitions in the standard.
 
@@ -1245,17 +1220,17 @@ IPTC is taking the opportunity to show the best way that each metadata field can
 Google displays three IPTC photo metadata fields, wherever available, for an image shown as search result. This tells the viewer who is the creator and who is the copyright holder of the image and what credit line should be shown next to the image. This information is taken from the IPTC photo metadata embedded in the image file.
 
 Creator::
-For displaying the creator of the image, the Creator field is read and shown with the label Creator. Google first reads the ISO XMP dc:creator field, and if that is empty, then the IPTC IIM 2:80 Creator field. Your editing tool probably just gives you a single field labelled "creator" so just use that and you won't have to worry.
+For displaying the creator of the image, the Creator field is read and shown with the label Creator. Google first reads the ISO XMP dc:creator field, and if that is empty, then the IPTC IIM 2:80 Creator field. Your editing tool probably just gives you a single field labelled “creator” so just use that and you won't have to worry.
 +
-By its definition this field contains "the name of the photographer, but in cases where the photographer should not be identified the name of a company or organisation may be appropriate."
+By its definition this field contains “the name of the photographer, but in cases where the photographer should not be identified the name of a company or organisation may be appropriate.”
 
 Copyright Notice::
-Google displays the Copyright Notice field (XMP dc:rights or IIM 2:116 Copyright Notice). So while you're tidying up your image metadata it makes sense to get this right too. The definition for this field is: "Contains any necessary copyright notice for claiming the intellectual property for artwork or an object in the image and should identify the current owner of the copyright of this work with associated intellectual property rights." The format can differ according to the relevant copyright legislation of different countries. Again, Google first reads the ISO XMP dc:rights field, and if that is empty, then the IPTC IIM 2.116 Copyright notice field.
+Google displays the Copyright Notice field (XMP dc:rights or IIM 2:116 Copyright Notice). So while you're tidying up your image metadata it makes sense to get this right too. The definition for this field is: “Contains any necessary copyright notice for claiming the intellectual property for artwork or an object in the image and should identify the current owner of the copyright of this work with associated intellectual property rights.” The format can differ according to the relevant copyright legislation of different countries. Again, Google first reads the ISO XMP dc:rights field, and if that is empty, then the IPTC IIM 2.116 Copyright notice field.
 
 Credit Line::
-The Credit Line field (XMP photoshop:Credit or IIM 2:110 Credit) is used as "the credit to person(s) and/or organisation(s) required by the supplier of the image to be used when published." Generally this would be a line of text that the supplier expects users of the image (such as Google Images) to display to users alongside the image. Again, Google first reads the ISO XMP photoshop:credit field, and if that is empty, then the IPTC IIM 2.110 Credit field.
+The Credit Line field (XMP photoshop:Credit or IIM 2:110 Credit) is used as “the credit to person(s) and/or organisation(s) required by the supplier of the image to be used when published.” Generally this would be a line of text that the supplier expects users of the image (such as Google Images) to display to users alongside the image. Again, Google first reads the ISO XMP photoshop:credit field, and if that is empty, then the IPTC IIM 2.110 Credit field.
 +
-Most tools label this field as "Credit Line" in the editing interface, but some tools call it simply "Credit".
+Most tools label this field as “Credit Line” in the editing interface, but some tools call it simply “Credit”.
 
 ==== For photo creators and editors: how to edit the metadata fields
 
@@ -1267,7 +1242,7 @@ We maintain a list of tools for editing IPTC Photo Metadata. Here are a few of t
 * Photographer tools such as FotoStation, PhotoMechanic, ACDSee Pro and the Digital Asset Management system Extensis Portfolio
 * For the more technical, the command-line ExifTool can be run in a script to update many images at the same time.
 
-Each of these tools will allow you to edit fields a slightly different way. Usually there is some kind of "properties panel" or "metadata window" that lets you view and edit all embedded metadata fields.
+Each of these tools will allow you to edit fields a slightly different way. Usually there is some kind of “properties panel” or “metadata window” that lets you view and edit all embedded metadata fields.
 
 ==== For developers and site administrators: how to ensure the fields are preserved in images on your site
 
@@ -1275,67 +1250,30 @@ Your site's digital asset management system, content management system, image ma
 
 You should use a DAM and CMS that respects and conserves IPTC and XMP embedded metadata, and ensure that any configuration options that strip out metadata are turned off. Also you may need to look at image cropping and manipulation plugins for your CMS - for example the ImageMagick WordPress library retains embedded metadata, but some others strip it out.
 
-=== Applying Metadata to AI-generated Images
-
-Over the past few years, there has been an explosion of tools that can be used to create images of all kinds using 
-artificial intelligence (AI) and machine learning techniques such as Generative Adversarial Networks (GANs), Auto Regression models
-and Diffusion models. Together we refer to these as "AI-generated images".
-
-It may be important to distinguish AI-generated images from "regular" images: for example, to avoid re-training AI models
-on content that was already generated by a model, to understand which images can fall under copyright and which cannot
-(in some jurisdictions) and to understand which images may be used inappropriately suggesting that they are real photos.
-
-Indeed, some national governments are recommending that all AI-generated content be tagged as such. Using embedded
-IPTC Photo Metadata is a simple way to do this.
-
-In terms of specific IPTC Photo Metadata fields, here are our suggestions:
-
-* *Creator* is bound to the owner of the intellectual property of an image in many countries and there are first legal decisions that AI generated images are not considered as creative work generating an intellectual property.
-  Therefore, *our recommendation is to leave the Image Creator field empty*.
-* We recommend using the *Contributor* field, which was introduced to the IPTC Photo Metadata standard in version 2022.1. +
-Contributors are people and things that contributed to the creation of the image, so this includes what an AI generator does. +
-The Contributor field is represented by a structure consisting of a name, optional identifier and a role attribute. +
-The "role" attribute is a way to outline the way that each entity contributed to the creation of the image.
-In the Generative AI context, the URI value http://cv.iptc.org/newscodes/contentprodpartyrole/origcont should be used as it expresses "Content Originator = a party which originated the content of the item". +
-* The **Digital Source Type** field should be set to the URI value http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia or http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic. This is covered already by the <<digitalsourcetype,Digital Source Type guidance in this User Guide>>.
-
-An example:
-
-image:generative-ai-example.jpg[Cute robot sitting at a cast-iron table in a garden drawing a picture in a notebook,width=218]
-
-[cols="1h,3a",options="header"]
-|===
-|Title (en) | GenAI Robot in garden example
-|Description (en) | Cute robot sitting at a cast-iron table in a garden drawing a picture in a notebook
-|Created date | 2023-05-09
-|Creator | NOTE: _deliberately left blank_ 
-|Contributor |
-!===
-![1] Name (en) ! Bing Image Creator
-![1] Role      ! http://cv.iptc.org/newscodes/contentprodpartyrole/origcont
-![2] Name (en) ! Brendan Quinn
-![1] Role      ! http://cv.iptc.org/newscodes/contentprodpartyrole/genAIPromptWriter
-!===
-|Digital Source Type | http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
-|Credit Line (en) |Image created by Brendan Quinn using Bing Image Creator. This image file contains digitalsourcetype metadata which was added manually using exiftool.
-|===
-
 === [[digitalsourcetype]]Guidance for using Digital Source Type
 
-The DigitalSourceType field and its corresponding controlled vocabulary https://cv.iptc.org/newscodes/digitalsourcetype were originally added to the IPTC Photo Metadata Standard in 2008. The original goal was to represent the various sources of a digital image such as a direct capture from a digital camera, a scan from print, from a film negative or from positive film (also known as slide, reversal or transparency film).
+The DigitalSourceType property and its corresponding controlled vocabulary http://cv.iptc.org/newscodes/digitalsourcetype
+were originally added to the IPTC Photo Metadata Standard in 2008. The original goal was to represent the various
+sources of a digital image such as a scan from print, a film negative or from positive film (also known as slide,
+reversal or transparency film), or a direct capture from a digital camera.
 
-In the first version of the vocabulary, there was a single term, "Created by Software" (softwareImage) which covered all forms of image created using a computer.
+In the first version of the vocabulary, there was a single term, "Created by Software" (softwareImage) which covered
+all forms of image created using a computer.
 
-In 2022, with the proliferation of generative AI and "synthetic media" systems, the vocabulary was extended to include a more complete list of the different ways in which content might be created by or with the help of computer software.
+In 2022, with the proliferation of generative AI and "synthetic media" systems, the vocabulary was extended to
+include a more complete list of the different ways in which content might be created by or with the help of computer
+software.
 
-The vocabulary can also be used to describe other media therefore IPTC created the definitions so that they can equally apply to video, audio or text.
+The vocabulary can also be used to describe other media we created the definitions so that they can equally apply to
+video, audio or text.
 
-This table describes each of the terms and definitions, along with some examples of the kinds of content intended to be tagged with each category. Be aware that the identifier of a term must be applied to the Digital Source Type field.
+This table describes each of the terms and definitions, along with some examples of the kinds of content intended to
+be tagged with each category:
 
 [cols="1h,3",options="header"]
 |===
 |Name (en) |Original digital capture sampled from real life
-|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture`
+|Term URI |https://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture
 |Description (en) |The digital media is captured from a real-life source using a digital camera or digital recording device
 |Image example |Digital photo taken using a digital SLR or smartphone camera
 |Video example |Digital video taken using a digital film, video or smartphone camera
@@ -1346,7 +1284,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a negative on film
-|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm
 |Description (en) | The digital image was digitised from a negative on film on any other transparent medium
 |Image example | Digital photo scanned from a photographic negative
 |Video example | Film scanned from a moving image negative
@@ -1355,7 +1293,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a positive on film
-|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm
 |Description (en) | The digital image was digitised from a positive on a transparency on or any other transparent medium
 |Image example | Digital photo scanned from a photographic transparency
 |Video example | Film scanned from a moving image positive
@@ -1364,7 +1302,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digitised from a print on non-transparent medium
-|Identifier |`http://cv.iptc.org/newscodes/digitalsourcetype/print`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/print
 |Description (en) | The digital image was digitised from an image printed on a non-transparent medium
 |Image example | Digital photo scanned from a photographic print
 |===
@@ -1372,7 +1310,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Original media with minor human edits
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/minorHumanEdits`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/minorHumanEdits
 |Description (en) | Minor augmentation or correction by a human, such as a digitally-retouched photo used in a magazine
 |Note |	Also covers digitally edited video, audio and text content
 |Image example | A digitally-retouched photo used in a magazine
@@ -1384,7 +1322,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Composite of captured elements
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/compositeCapture`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeCapture
 |Description (en) | Mix or composite of several elements that are all captures of real life
 |Image example | A composite image created by a digital artist in Photoshop based on several source images
 |Video example | Edited sequence or composite of video shots
@@ -1394,7 +1332,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Algorithmic enhancement
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/algorithmicallyEnhanced`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicallyEnhanced
 |Description (en) | Minor augmentation or correction by algorithm
 |Image example | A photo that has been digitally enhanced using a mechanism such as Google Photos' "denoise" feature
 |Video example | Re-timing or other algorithmic enhancement
@@ -1403,7 +1341,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Data-driven media
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/dataDrivenMedia
 |Description (en) | Digital media representation of data via human programming or creativity
 |Image example a| * Data visualisation as a still image
 * A representation of a distant galaxy created by analysing the outputs of a deep-space telescope (as opposed to a regular camera)
@@ -1416,7 +1354,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Digital art
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/digitalArt`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/digitalArt
 |Description (en) | Media created by a human using digital tools
 |Image example | A cartoon drawn by an artist into a digital tool using a digital pencil, a tablet and a drawing package such as Procreate or Affinity Designer (4)
 |Video example | A scene from a film/movie created using Computer Graphic Imagery (CGI)
@@ -1426,7 +1364,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Virtual recording
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/virtualRecording`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/virtualRecording
 |Description (en)  | Live recording of virtual event based on synthetic and optionally captured elements
 |Image example | Screenshot of a virtual event such as a virtual reality scene or a Zoom meeting
 |Video example a| * A recording of a computer-generated sequence, e.g. from a video game
@@ -1436,7 +1374,7 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Composite including synthetic elements
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/compositeSynthetic
 |Description (en) | Mix or composite of several elements, at least one of which is synthetic 
 |Image example | A composite image created by a digital artist in Photoshop based on several source images, at least one of which is synthetic
 |Video example a| * Movie production using a combination of live-action and CGI content, e.g. using Unreal engine to generate backgrounds
@@ -1447,20 +1385,20 @@ This table describes each of the terms and definitions, along with some examples
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Trained algorithmic media
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia
 |Description (en) | Digital media created algorithmically using a model derived from sampled content
 |Image example a| * Image based on deep learning from a series of reference examples (training data)
 * "Text to image" generation using a text prompt to feed an algorithm using a trained model to create a synthetic image. 
 |Video example a|* A "deepfake" video using a combination of a real actor and a trained model.
 * A video created using a text prompt and an algorithm using a trained model to create a synthetic video, with or without audio.
-|Audio example | A "speech-to-speech" generated audio clip created using a combination of a real actor and an AI model.
+|Audio example | A “speech-to-speech” generated audio clip created using a combination of a real actor and an AI model.
 |Text example | A GPT-3 generated news story
 |===
 
 [cols="1h,3",options="header"]
 |===
 |Name (en) | Pure algorithmic media
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/algorithmicMedia`
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/algorithmicMedia
 |Description (en) | Media created purely by an algorithm not based on any sampled training data, e.g. an image created by software using a mathematical formula
 |Image example | A purely computer-generated image such as a pattern of pixels generated mathematically e.g. a Mandelbrot set or fractal diagram
 |Video example | A purely computer-generated moving image such as a pattern of pixels generated mathematically
@@ -1468,17 +1406,15 @@ This table describes each of the terms and definitions, along with some examples
 
 [cols="1h,3",options="header"]
 |===
-|Name (en) | Created by software (RETIRED)
-|Identifier | `http://cv.iptc.org/newscodes/digitalsourcetype/softwareImage`
+|Name (en) | Created by software
+|Term URI | https://cv.iptc.org/newscodes/digitalsourcetype/softwareImage - RETIRED
 |Description (en) | The digital image was created by computer software
 |Note | RETIRED. Use trainedAlgorithmicMedia or algorithmicMedia instead.
 |===
 
-
-
 === Guideline for mapping Category Codes to Subject NewsCodes
 
-Early versions of IIM included the Datasets 2:15 "Category" and 2:20 "Supplemental Category". But these two fields were replaced in IIM version 4 (released in 1999) by the Dataset 2:12 "Subject Reference" which must be populated by values from the IPTC Subject NewsCodes controlled vocabulary. In version 4 of the IIM specification document the Datasets Category and Supplemental Category were indicated as "deprecated" which meant that after the time of this release these two Datasets should not be populated with values any longer.
+Early versions of IIM included the Datasets 2:15 “Category” and 2:20 “Supplemental Category”. But these two fields were replaced in IIM version 4 (released in 1999) by the Dataset 2:12 “Subject Reference” which must be populated by values from the IPTC Subject NewsCodes controlled vocabulary. In version 4 of the IIM specification document the Datasets Category and Supplemental Category were indicated as “deprecated” which meant that after the time of this release these two Datasets should not be populated with values any longer.
 
 To support the move from the three letter codes used with the Category Dataset to the Subject NewsCodes this table provides a reference for mapping.
 
@@ -1530,10 +1466,10 @@ IPTC is asked how metadata about the different images the final image is made of
 IPTC recommends this procedure:
 
 .	Create a thumbnail of the final image and draw lines along the edges between the different photos it was made of. Then apply a number to each region representing a photo. 
-.	Assign numbers to the images making the composite photo: start at the left upper corner of the composite picture, go from left to right and from top to bottom. As soon as you encounter pixels from "another" image assign the next number from a sequence starting with 1. If the same source image is used for multiple regions of the composite image then apply the same number to all of them.
-.	Make this thumbnail available on the web. Add the URL of this thumbnail to the Instructions field: the added string should be "composite reference http://....". 
+.	Assign numbers to the images making the composite photo: start at the left upper corner of the composite picture, go from left to right and from top to bottom. As soon as you encounter pixels from “another” image assign the next number from a sequence starting with 1. If the same source image is used for multiple regions of the composite image then apply the same number to all of them.
+.	Make this thumbnail available on the web. Add the URL of this thumbnail to the Instructions field: the added string should be “composite reference http://....”. 
 +
-The rule for finding this link is: parse the Instructions field, any URL right after the words "composite reference" is the link to this thumbnail.
+The rule for finding this link is: parse the Instructions field, any URL right after the words “composite reference” is the link to this thumbnail.
 .	Prefix metadata about such a part-image with the assigned number of the reference thumbnail in square brackets. E.g. [1] …. [2] …. Metadata about the whole composite image should be prefixed with [0]
 
 Example for the Creator field: [0] Giorgio Tintoretto [1] John Hopper [2] Pierre Monet [3] Franz Haas
@@ -1545,7 +1481,7 @@ Some of the IIM metadata properties adopted by Adobe for the Photoshop File Info
 The following fields from the IIM schema are deprecated in the IPTC Core schema, but are synchronised with XMP properties, and available for future use, but outside the IPTC Core. 
 
 Urgency::
-is used for distribution management and is synchronised with the XMP field ‘photoshop:Urgency'
+is used for distribution management and is synchronised with the XMP property ‘photoshop:Urgency'
 
 *Category* and *Supplemental Category*::
 were deprecated and merged to form the later Subject Newscodes. See the this guideline for mapping Category Codes to the newer Subject Newscodes.
@@ -1554,7 +1490,7 @@ These two properties are synchronised with XMP properties ‘photoshop:Category'
 
 == Metadata Usage Examples
 
-These examples provide entries for many of the IPTC Core and Extension fields, see the list below.
+These examples provide entries for most of the IPTC Core and Extension fields for three uses cases, see the list below.
 
 These are examples of use of metadata and are not prescriptive. In-house rules for use of metadata differ, but we would like to encourage metadata use in line with IPTC semantics.
 
@@ -1595,14 +1531,16 @@ Example photo provided by and © David Riecks
 !Email(s)!infor@riecks.com
 !Website(s)!www.riecks.com
 !===
+
 |Creator's Jobtitle|Photographer
 |Credit Line|©1985 David Riecks: www.riecks.com
 |Date Created|1985-11-25
-|Description Writer|David Riecks
-|Description|Southern Himalayan Mountains, from Snow Peak, Nainital, Uttarakhand, India
-|Alt Text (Accessibility)| Landscape view of the snow-capped Southern Himalayan mountain range with jagged peaks towering above rolling foothills in the foreground.
-|Extended Description (Accessibility) | (empty, not required)
-|Digital Source Type|Original digital capture of a real life scene (http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture)
+|Description writer|David Riecks
+|Description|Southern Himalayan Mountains, from Snow Peak, Nainital, Uttarakhand, India longitude: 79.444542 latitude: 29.39805
+|Digital Source Type|Original digital capture of a real life scene
+|Event|
+|Featured Organisation (code)|
+|Featured Organisation (name)|
 |Headline|Southern Himalayan Mountains
 |Image Creator|
 !===
@@ -1637,7 +1575,6 @@ Example photo provided by and © David Riecks
 !Country Name!	India
 !Country Code!IN
 !World Region!Asia
-!Identifier!https://www.wikidata.org/entity/Q1797306 
 !===
 
 |Location Shown|
@@ -1648,13 +1585,12 @@ Example photo provided by and © David Riecks
 !Country Name!India
 !Country Code!IN
 !World Region!Asia
-!Identifier!https://www.wikidata.org/entity/Q213262 
-!GPS Longitude!79.444542
-!GPS Latitude!29.39805
 !===
 
 |Max available Height|3800
 |Max. available Width|5600
+|Person Shown|
+|Property Release Identifier|
 |Property Release Status|Not Applicable
 |Registry Entry|
 !===
@@ -1682,7 +1618,9 @@ Example photo provided by ©David Riecks
 [cols="1,2a",options="header"]
 |===
 |Field Name|Field Value
-|Additional Model Info|Farmer modeling in this image is of part Native American ancestry.
+|Additional Model Info|
+|Caption/Description writer|Susan Brown
+|Caption/Description|After digging the furrows another ten yards with the tractor, Jim Moore hops off to hand-set more leeks and onions.
 |City|Watseka
 |Copyright Notice| ©2007 Big Newspaper, all rights reserved
 |Copyright Owner Name|
@@ -1707,13 +1645,9 @@ Example photo provided by ©David Riecks
 
 |Creator's Jobtitle|Staff photographer
 |Credit Line|John Doe / Big Newspaper
-|Data Mining|Prohibited, see <Other Constraints> property (http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-SEECONSTRAINT)
 |Date Created|2007-04-19
-|Description Writer|Susan Brown
-|Description|After digging the furrows another ten yards with the tractor, Jim Moore hops off to hand-set more leeks and onions.
-|Alt Text (Accessibility)|Ground-level shot of a farmer bending forward to hand-set a tiny onion sprout. An older red tractor is seen in the row of crops in the background. 
-|Extended Description (Accessibility) |The farmer is wearing denim overalls, a white t-shirt, and faded blue baseball cap. We look up along the row of crops towards a red tractor and cloud-filled sky beyond. 
-|Digital Source Type|Original digital capture of a real life scene (http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture)
+|Digital Source Type|Original digital capture of a real life scene
+|Event|
 |Featured Organisation (code)|http://www.prairielandcsa.org/
 |Featured Organisation (name)|Prairieland Community Sponsored Agriculture
 |Headline|Farmer planting onions
@@ -1769,9 +1703,9 @@ Example photo provided by ©David Riecks
 |Max available Height|3800
 |Max. available Width|5600
 |Model Age Disclosure|Age 25 or Over
+|Model Age|
 |Model Release Identifier|Bng20070419jd
 |Model Release Status|Limited or Incomplete Model Releases
-|Other Constraints|Photograph may not be used for machine learning, inclusion in AI data sets, image prompt submissions to generative AI platforms, or other AI-related purposes without an advance license from bignewspapergroup.com
 |Person Shown|Jim Moore
 |Property Release Identifier|Bng20070420jd
 |Property Release Status|Limited or Incomplete Property Releases
@@ -1800,6 +1734,7 @@ Example photo provided by ©David Riecks
 [cols="1,2a",options="header"]
 |===
 |Field Name|Field Value
+|Additional Model Info|
 |Artwork/Object in the image|
 !===	
 !Title!Abraham Lincoln
@@ -1832,13 +1767,13 @@ Example photo provided by ©David Riecks
 |Creator|Julie Doe
 |Creator's Jobtitle|Mugwum contract photographer
 |Credit Line|Mugwum Press
-|Data Mining|Prohibited except for search engine indexing (http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING)
 |Date Created|2009-06-24
-|Description Writer|Jacques Brown
+|Description writer|Jacques Brown
 |Description|This statue of the 16th President of the United States depicts a 19 foot high seated Abraham Lincoln in contemplation inside the Lincoln Memorial. It was carved of Georgia white marble by the Piccirilli Brothers under the supervision of the sculptor, Daniel Chester French and took four years to create, and completed in 1920.
-|Alt Text (Accessibility)|Closeup of the Lincoln Memorial statue with Abraham Lincoln’s face and hand in view. Lincoln looks off with a steady expression, his hand curled into a loose fist resting on the arm of a large classical chair.
-|Extended Description (Accessibility) |Lincoln is depicted with deep-set eyes, a strong browline, prominent cheekbones, short wavy hair, and a close beard. Two creases extend down at an angle from his nose to his lower cheekbones. His fixed gaze is directed slightly upward, mouth set in a straight line. His wrist is resting on the edge of the chair, held out straight so we see the bony knuckles of his hand. 
-|Digital Source Type|Original digital capture of a real life scene (http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture)
+|Digital Source Type|Original digital capture of a real life scene
+|Event|
+|Featured Organisation (code)|
+|Featured Organisation (name)|	
 |Headline|Lincoln Memorial
 |Image Creator|
 !===
@@ -1874,7 +1809,6 @@ Example photo provided by ©David Riecks
 !Country Name!United States of America
 !Country Code!USA
 !World Region!North America
-!Identifier!https://www.wikidata.org/entity/Q213559
 !===
 |Location Shown|
 !===
@@ -1887,7 +1821,7 @@ Example photo provided by ©David Riecks
 !===
 |Max available Height|2868
 |Max. available Width|4312
-|Person Shown|Abraham Lincoln
+|Person Shown|
 |Property Release Identifier|
 |Property Release Status|Limited or Incomplete Property Releases
 |Registry Entry|
@@ -1930,11 +1864,7 @@ image::example-image-4.jpg[Example museum painting image]
 ![1] Copyright Owner Name!Photo Credit: St Edmundsbury Museums
 !===
 |Credit Line|Photo Credit: St Edmundsbury Museums
-|Data Mining|Allowed (http://ns.useplus.org/ldf/vocab/DMI-ALLOWED)
 |Description|Beale, Mary; Portrait of a Girl with a Cat; St Edmundsbury Museums; http://www.artuk.org/artworks/portrait-of-a-girl-with-a-cat-10550
-|Alt Text (Accessibility)|Painting of a young girl posing for a portrait with a cat curled up in her lap.
-|Extended Description (Accessibility) |She wears a dark gold dress with a low scooped neckline and short sleeves that are pinned up in front and draping down to her elbow. She looks at us with a serene expression, full rosy cheeks, pale skin, dark brown eyes, and a small pink mouth curling up slightly at the corners. Her hands delicately cradle the brown and black striped cat in her lap, one hand resting on its back and the other positioned close to its chest beside its head. The cat looks relaxed, perhaps sleepy, with its head tilted slightly towards the girl’s arm.
-|Description Writer|Jane Doe: Alt Text, Extended Description: Caroline Desrosier
 |Headline|Beale, Mary, 1633-1699; Portrait of a Girl with a Cat
 |Image Supplier|
 !===
@@ -1966,52 +1896,15 @@ image::example-image-5.jpg[Example museum sculpture image]
 ![1] Title!Figure
 !===
 |Copyright Notice|Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
-|Data Mining|Allowed (http://ns.useplus.org/ldf/vocab/DMI-ALLOWED)
 |Description|Figure; Hellenistic; Limestone sculpture; Height: 27.5 centimetres (max) ;Excavated/Findspot: Larnaka; Donated by Henry Christy; British Museum; 1852.0609.56; Upper part of limestone figure of Hera or Aphrodite; right arm and legs lost.
-|Alt Text (Accessibility)|Limestone sculpture shows a partial bust of Hera or Aphrodite, depicted with long hair, parted at the middle and tucked behind her ears, and a calm, focused expression.
-|Extended Description (Accessibility) |Her right arm is missing from the bust but we can see part of her left arm extending out and down to just above the elbow. Her face has a rounded oval shape with wide-set eyes, a small nose and mouth, and gaze directed slightly off to her left. She wears a tunic with delicate detailing around the high scooped neckline, hanging in loose folds down her arm and torso.
 |Headline|Figure
 |Keyword|Hellenistic,Woman,Upper Torso,Hera,Aphrodite
 |Usage Terms|For uses not covered under the Creative Commons license, or to license high-resolution versions of the images for commercial uses, contact the British Museum's image service at bmimages.com.
 |===
 
-=== Street photography image
-
-image::example-image-6.jpg[Example street photography image]
-
-(Fields listed in alphabetical order - see also Field Reference Table)
-
-[cols="1,2a",options="header"]
-|===
-|Field Name|Field Value
-|Creator|Yaopey Yong
-|Creator's Contact Info|
-!===
-!City!Manchester
-!County!United Kingdom
-!Website(s)!yaopey.com
-!===
-Data Mining: Prohibited except for search engine indexing (http://ns.useplus.org/ldf/vocab/DMI-PROHIBITED-EXCEPTSEARCHENGINEINDEXING)
-|Description|Little Children on a Bicycle, 2012 mural by Lithuanian artist Ernest Zacharevic in George Town, Penang, Malaysia.
-|Alt Text (Accessibility)|A realist street art wall mural of two life-size children positioned to appear as if they are riding an actual bicycle that is parked on a city sidewalk.
-|Extended Description (Accessibility) |The older child appears to be sitting on the seat of the black bicycle reaching towards the curved handlebars and looking out ahead with a joyous expression on their face. The younger child appears to be perched on the top of the back bicycle rack, hugging their arms tightly around the other’s waist and opening their mouth wide as if to scream. The distressed muted colors in the mural blend with the weathered gray and black patina stone wall and cracked sidewalk.
-|Date Created|2020-03-31
-|Headline|Mural by Lithuanian artist Zacharevic in Malaysia
-|Location Created|
-!===
-!City!Penang
-!Country Name!Malaysia
-!Country Code!MYS
-!World Region!Asia
-!===
-|===
-
 == User Guide History
 
 (Latest entry at the top of the list)
-
-December 2023::
-List with changes will follow ...
 
 March 2023::
 Add information on adding DigitalSourceType to images.
