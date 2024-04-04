@@ -2010,8 +2010,13 @@ Data Mining: Prohibited except for search engine indexing (http://ns.useplus.org
 
 (Latest entry at the top of the list)
 
-December 2023::
-List with changes will follow ...
+March 2024::
+
+* Guide for using Accessibility fields added
+* Guide for applying metadata to AI-generated images added
+* Guides for new fields added: Event Identifier, Product/Identifier, Contributor, Data Mining
+* Metadata Usage Examples updated
+* Text of guides on fields and topics reviewed and updated
 
 March 2023::
 Add information on adding DigitalSourceType to images.
