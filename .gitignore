@@ -1,3 +1,4 @@
 ﻿site/.vscode/
 .vscode/
 linktest-results/
+*/*/*/thumbs.db
