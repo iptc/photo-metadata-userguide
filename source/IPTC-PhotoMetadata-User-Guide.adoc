@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: March 2024
-:revnumber: 0
-:revremark: 2024-03-22
+:version-label: November 2024
+:revnumber: r0
+:revremark: 2024-11-27
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -116,10 +116,10 @@ The values are then displayed on the panel on your computer screen and are ready
 
 === IPTC Photo Metadata Standard version used by this User Guide
 
-This document is based on the IPTC Photo Metadata Standard specification document released in December 2019 including
+This document is based on the IPTC Photo Metadata Standard specification including
 
-* IPTC Core schema, version 1.4 of 19 October 2022
-* IPTC Extension schema, version 1.8 as of 4 October 2023
+* IPTC Core schema version 1.4, approved on 19 October 2022
+* IPTC Extension schema version 1.8, approved on 4 October 2023
 
 All formal details of the standard can be obtained from  
 https://iptc.org/std/photometadata/specification/IPTC-PhotoMetadata[the specification document].
@@ -343,6 +343,43 @@ Enter keywords to describe the visible and abstract content of the photograph.  
 Keywords are descriptive words added to an image to enable search and retrieval. They describe what is visible in the image and concepts associated with the image. Keywords are expressed as a list of terms. Keywords can be single or compound terms.
 
 Values from the controlled vocabulary IPTC Subject Codes should be placed into the "Subject Code" field.
+
+Terms should only be added to the Keywords property when the terms which can not be expressed using other properties.
+
+[TIP]
+====
+Examples of abstract keywords that can be used in the Keywords property:
+
+*Camera Viewpoint or Lens Effect*
+
+* VERTICAL (top of image is aligned to the short side of rectangle)
+* CLOSE-UP
+* FISH-EYE
+* SELFIE
+
+*Rating/Ranking*
+
+* TOPSHOTS
+* ESSENTIAL (Overview/Summary shots)
+* 1ST-IMAGES (photo is of first images distributed from an event)
+
+*Conceptual/Emotion*
+
+* INSPIRING
+
+*Dominant Color*
+
+* BLUE
+* RED
+
+*Type of Image*
+
+* COMBO (composite of more than one image)
+* ILLUSTRATION (for example, a drawing, rather than a photograph)
+
+Thanks to Philippe Mougin of AFP who provided these real-world examples as an illustration.
+====
+
 
 WARNING: Keywords may have to be separated by commas or other separators depending on the software. The field for each keyword is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 
@@ -1169,7 +1206,8 @@ IPTC has selected the following set of properties as a guide to the minimum requ
 
 * Description/Caption
 * Creator/Image Creator*
-* Copyright Owner* + Copyright Notice
+* Copyright Owner*
+* Copyright Notice
 * Credit line
 * Date Created - in many cases present at least as Exif value
 
@@ -2009,6 +2047,10 @@ Data Mining: Prohibited except for search engine indexing (http://ns.useplus.org
 == User Guide History
 
 (Latest entry at the top of the list)
+
+November 2024::
+Aligned the User Guide with version 2024.1 which is comprised of an update to the Keywords
+property to clarify its usage.
 
 March 2024::
 
