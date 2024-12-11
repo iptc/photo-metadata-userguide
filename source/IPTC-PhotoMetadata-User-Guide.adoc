@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: November 2024
+:version-label: December 2024
 :revnumber: r0
-:revremark: 2024-11-27
+:revremark: 2024-12-11
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -375,11 +375,10 @@ Examples of abstract keywords that can be used in the Keywords property:
 *Type of Image*
 
 * COMBO (composite of more than one image)
-* ILLUSTRATION (for example, a drawing, rather than a photograph)
+* ILLUSTRATION (illustrative image not directly related to current news content)
 
 Thanks to Philippe Mougin of AFP who provided these real-world examples as an illustration.
 ====
-
 
 WARNING: Keywords may have to be separated by commas or other separators depending on the software. The field for each keyword is limited by the IIM format to about 64 characters. In XMP there is effectively no character limit.
 
