@@ -435,13 +435,14 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <div class="details">
 <span id="author" class="author">IPTC Photo Metadata Working Group</span><br>
 <span id="email" class="email"><a href="mailto:office@iptc.org">office@iptc.org</a></span><br>
-<span id="revnumber">november 2024 0</span>
-<br><span id="revremark">2024-11-13</span>
+<span id="revnumber">january 2025 0</span>
+<br><span id="revremark">2025-01-10</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_about_iptc_photo_metadata">About IPTC Photo Metadata</a></li>
 <li><a href="#_help_on_some_kinds_of_fields_of_the_iptc_photo_all_view">Help on some kinds of fields of the IPTC Photo All view</a>
 <ul class="sectlevel2">
 <li><a href="#_text_fields">Text fields</a></li>
@@ -462,7 +463,7 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document helps using the IPTC Photo All view of the Adobe products extension <a href="https://exchange.adobe.com/apps/cc/103752">Custom Metadata Panel</a>. This IPTC view is included in release 2.0.2 of this extension.</p>
+<p>This document helps using the IPTC Photo All view of the Adobe products extension <a href="https://exchange.adobe.com/apps/cc/103752">Custom Metadata Panel</a>. This IPTC view is included in release 2.0.2 and later of this extension.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -471,10 +472,31 @@ h2>a.link, h3>a.link, h4>a.link { font-weight: bolder; }
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This document is a draft!
+The Custom Metadata Panel extension provides a generic technical framework for viewing and editing metadata. A user can install one to many different sets of metadata fields into the Custom Metadata Panel, such a set of fields is called <em>view</em> by the extension. This term is also used in this User Guide.
 </td>
 </tr>
 </table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently this document is a draft of the IPTC Photo Metadata Working Group!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_about_iptc_photo_metadata"><a class="anchor" href="#_about_iptc_photo_metadata"></a><a class="link" href="#_about_iptc_photo_metadata">About IPTC Photo Metadata</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The IPTC Photo All view covers all fields of the IPTC Photo Metadata Standard, version 2024.1.<br>
+This is the most widely used standard to describe photos, because of its universal acceptance among news agencies, photographers, photo agencies, libraries, museums, and other related industries. It structures and defines metadata properties that allow users to add precise and reliable data about images. Read more about <a href="https://iptc.org/standards/photo-metadata/iptc-standard/">this standard</a>.</p>
 </div>
 </div>
 </div>
@@ -484,19 +506,23 @@ This document is a draft!
 <div class="sect2">
 <h3 id="_text_fields"><a class="anchor" href="#_text_fields"></a><a class="link" href="#_text_fields">Text fields</a></h3>
 <div class="paragraph">
-<p>Three types of text field exist:</p>
+<p>Three types of text field are used in the IPTC Photo All view:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A "simple text field": Above the field only the field label is shown: type in a text expressing what the field covers - e.g. a headline text into the Headline field.</p>
+<p>A "simple text field": Above the field only the field label is shown: type in a text expressing what the field covers - e.g. a headline text into the Headline field.<br>
+This is an example: <span class="image"><img src="./images/cmp-plainText_1.jpg" alt="cmp plainText 1"></span></p>
 </li>
 <li>
-<p>A "Language Alternative <sup>*)</sup> field with x-default only": Above the field the field label and next to it <span class="blue">(Default)</span> (in blue) is shown: this is a field supporting a single text in any language. As only <span class="blue">(Default)</span> is shown only a single <em>default</em> text can be set, in the embedded metadata the generic x-default language identifier is associated with the text. Currently this is how such a Language Alternative field is used by a vast majority of imaging software.</p>
+<p>A "Language Alternative <sup>*)</sup> field with x-default only": Above the field the field label and next to it <span class="blue">(Default)</span> (in blue) is shown: this is a field supporting a single text in any language. As only <span class="blue">(Default)</span> is shown only a single <em>default</em> text can be set, in the embedded metadata the generic x-default language identifier is associated with the text. Currently this is how such a Language Alternative field is used by a vast majority of imaging software.<br>
+This is an example: <span class="image"><img src="./images/cmp-LangAlt-Default_1.jpg" alt="cmp LangAlt Default 1"></span></p>
 </li>
 <li>
 <p>A "Language Alternative <sup>*)</sup> field with at least one specific language, one of them is the default language": Above the field the field label and next to it <span class="blue">(en)(Default)</span> (in blue) shown: this is a field supporting text values in different languages in practice. This field requires a text in English and this language is considered as default language among texts in multiple languages. <br>
+This is the Alt Text field as example of the basic look of such a field: <span class="image"><img src="./images/cmp-LangAlt-notExpanded_1.jpg" alt="cmp LangAlt notExpanded 1"></span><br>
 If you click on "LANGUAGE ALTERANTIVES FOR &#8230;&#8203;" below this field - if available! - a group of additional fields is shown, each one has the same label but a different language identifier: fr = French, es = Spanish, de = German, pt = Portoguese. Fill in a text in the associated language having the same content as the text of (en)(Default). <br>
+This is the same Alt Text field after cklicking "LANGUAGE ALTERANTIVES FOR &#8230;&#8203;": <span class="image"><img src="./images/cmp-LangAlt-expanded_1.jpg" alt="cmp LangAlt expanded 1"></span><br>
 If "LANGUAGE ALTERANTIVES FOR &#8230;&#8203;" is not shown only a single specific language is supported.</p>
 </li>
 </ol>
@@ -509,14 +535,14 @@ If "LANGUAGE ALTERANTIVES FOR &#8230;&#8203;" is not shown only a single specifi
 <h3 id="_selecting_a_value_with_a_drop_down"><a class="anchor" href="#_selecting_a_value_with_a_drop_down"></a><a class="link" href="#_selecting_a_value_with_a_drop_down">Selecting a value with a drop down</a></h3>
 <div class="paragraph">
 <p>A field supports only a specific value out of a defined list of values (a controlled vocabulary).<br>
-Such a field may show a button like this one <span class="image"><img src="./images/cm-dropdown-icon1.jpg" alt="cm dropdown icon1"></span> to the right of the field. Clicking on this button opens the list of defined values: select a single one of them, the selcted text will be shown in the field. Be ware: you cannot type in a text.</p>
+Such a field may show a button like this one <span class="image"><img src="./images/cmp-dropdown-icon1.jpg" alt="cmp dropdown icon1"></span> to the right of the field. Clicking on this button opens the list of defined values: select a single one of them, the selcted text will be shown in the field. Be ware: you cannot type in a text.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_selecting_a_value_with_a_list_of_radion_buttons"><a class="anchor" href="#_selecting_a_value_with_a_list_of_radion_buttons"></a><a class="link" href="#_selecting_a_value_with_a_list_of_radion_buttons">Selecting a value with a list of radion buttons</a></h3>
 <div class="paragraph">
 <p>A field supports only a specific value out of a defined list of values (a controlled vocabulary).<br>
-Such a field may show below the label a list of radio buttons like <span class="image"><img src="./images/cm-radiobuttons-example1.jpg" alt="cm radiobuttons example1"></span> <br>
+Such a field may show below the label a list of radio buttons like <span class="image"><img src="./images/cmp-radiobuttons-example1.jpg" alt="cmp radiobuttons example1"></span> <br>
 Each one with the text of a defined value: select a single one of them - this value will be set as field value.</p>
 </div>
 </div>
@@ -526,7 +552,15 @@ Each one with the text of a defined value: select a single one of them - this va
 <p>This field is used with the structured fields Location Created and Location Shown. By the specification of the underlying XMP format the value is an integer number but it must be expressed as a fraction by 1.</p>
 </div>
 <div class="paragraph">
-<p>Example: you want to save an altitude of 140 metres. You have to type in <em>140/1</em>!</p>
+<p>Example: you want to save an altitude of 190 metres. You have to type in <em>190/1</em>!</p>
+</div>
+<div class="paragraph">
+<p>Below this field you have to set whether this altitude is above sea level or below sea level (rare, but it may be the case).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cmp-GPS-altitude_1.jpg" alt="cmp GPS altitude 1">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -535,10 +569,15 @@ Each one with the text of a defined value: select a single one of them - this va
 <p>Both field are used with the structured fields Location Created and Location Shown. These fields express a GPS geo coordinate by a special format defined by the underlying XMP standard.</p>
 </div>
 <div class="paragraph">
-<p>Example: you want to express the longitude geo coordinate of 17.20343 degrees east of the Greenwich meridian.<br>
+<p>Example: you want to express the longitude geo coordinate of 16.33064 degrees east of the Greenwich meridian.<br>
 First you have to transform the decimal value to a degrees-minutes-seconds value. The web provides some tools for this purpose, search for "transform decimal coordinates to minutes".<br>
-By such a tool 17.20343 degrees are converted to 17 degrees, 12 minutes and 12.348 seconds. This value has to be written in such a GPS field as 17,12.12348 and you have to append N for north, S for south, E for east and W for west. Be aware of the different separators: after the degrees a comma, after the minutes a dot. <br>
-Finally you have to type in <em>17,12.12348E</em></p>
+By such a tool 16.33064 degrees are converted to 16 degrees, 19 minutes and 50.3 seconds. This value has to be written in such a GPS field as 16,19.503 and you have to append N for north, S for south, E for east and W for west. Be aware of the different separators: after the degrees a comma, after the minutes a dot. <br>
+Finally you have to type in <em>16,19.503E</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cmp-GPS-longlat_2.jpg" alt="cmp GPS longlat 2">
+</div>
 </div>
 </div>
 </div>
@@ -568,7 +607,7 @@ Finally you have to type in <em>17,12.12348E</em></p>
 <div class="ulist">
 <ul>
 <li>
-<p>November 2024: First release about version 1.0.2 (2024.1)</p>
+<p>January 2025: First release about view version 1.0.2 (2024.1)</p>
 </li>
 </ul>
 </div>

@@ -10,9 +10,9 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 :icons: font
 :author: IPTC Photo Metadata Working Group
 :email: office@iptc.org
-:version-label: November 2024
+:version-label: January 2025
 :revnumber: 0
-:revremark: 2024-11-13
+:revremark: 2025-01-10
 :toc: left
 :toclevels: 2
 :nofooter:
@@ -22,20 +22,32 @@ keywords: iptc, photo metadata, photo library, image metadata, photos, images, n
 
 == Introduction
 
-This document helps using the IPTC Photo All view of the Adobe products extension link:https://exchange.adobe.com/apps/cc/103752[Custom Metadata Panel]. This IPTC view is included in release 2.0.2 of this extension.
+This document helps using the IPTC Photo All view of the Adobe products extension link:https://exchange.adobe.com/apps/cc/103752[Custom Metadata Panel]. This IPTC view is included in release 2.0.2 and later of this extension.
 
-NOTE: This document is a draft!
+NOTE: The Custom Metadata Panel extension provides a generic technical framework for viewing and editing metadata. A user can install one to many different sets of metadata fields into the Custom Metadata Panel, such a set of fields is called _view_ by the extension. This term is also used in this User Guide.
+
+NOTE: Currently this document is a draft of the IPTC Photo Metadata Working Group!
+
+
+== About IPTC Photo Metadata
+
+The IPTC Photo All view covers all fields of the IPTC Photo Metadata Standard, version 2024.1. +
+This is the most widely used standard to describe photos, because of its universal acceptance among news agencies, photographers, photo agencies, libraries, museums, and other related industries. It structures and defines metadata properties that allow users to add precise and reliable data about images. Read more about link:https://iptc.org/standards/photo-metadata/iptc-standard/[this standard].
 
 == Help on some kinds of fields of the IPTC Photo All view
 
 === Text fields
 
-Three types of text field exist:
+Three types of text field are used in the IPTC Photo All view:
 
-1. A "simple text field": Above the field only the field label is shown: type in a text expressing what the field covers - e.g. a headline text into the Headline field.
-2. A "Language Alternative ^*)^ field with x-default only": Above the field the field label and next to it [.blue]#(Default)# (in blue) is shown: this is a field supporting a single text in any language. As only [.blue]#(Default)# is shown only a single __default__ text can be set, in the embedded metadata the generic x-default language identifier is associated with the text. Currently this is how such a Language Alternative field is used by a vast majority of imaging software.
+1. A "simple text field": Above the field only the field label is shown: type in a text expressing what the field covers - e.g. a headline text into the Headline field. +
+This is an example: image:cmp-plainText_1.jpg[]
+2. A "Language Alternative ^*)^ field with x-default only": Above the field the field label and next to it [.blue]#(Default)# (in blue) is shown: this is a field supporting a single text in any language. As only [.blue]#(Default)# is shown only a single __default__ text can be set, in the embedded metadata the generic x-default language identifier is associated with the text. Currently this is how such a Language Alternative field is used by a vast majority of imaging software. +
+This is an example: image:cmp-LangAlt-Default_1.jpg[]
 3. A "Language Alternative ^*)^ field with at least one specific language, one of them is the default language": Above the field the field label and next to it [.blue]#(en)(Default)# (in blue) shown: this is a field supporting text values in different languages in practice. This field requires a text in English and this language is considered as default language among texts in multiple languages.  +
+This is the Alt Text field as example of the basic look of such a field: image:cmp-LangAlt-notExpanded_1.jpg[] +
 If you click on "LANGUAGE ALTERANTIVES FOR ..." below this field - if available! - a group of additional fields is shown, each one has the same label but a different language identifier: fr = French, es = Spanish, de = German, pt = Portoguese. Fill in a text in the associated language having the same content as the text of (en)(Default).  +
+This is the same Alt Text field after cklicking "LANGUAGE ALTERANTIVES FOR ...": image:cmp-LangAlt-expanded_1.jpg[] +
 If "LANGUAGE ALTERANTIVES FOR ..." is not shown only a single specific language is supported.
 
 ^*)^ Language Alternative fields - defined by the XMP standard - are able to hold the same textual information in different languages. Each of these texts needs a language identifier like "en" for English or "fr" for French. A special variant is if only the identifier "x-default" is supported: any language can be used, only a single text can be applied.
@@ -43,28 +55,34 @@ If "LANGUAGE ALTERANTIVES FOR ..." is not shown only a single specific language 
 === Selecting a value with a drop down
 
 A field supports only a specific value out of a defined list of values (a controlled vocabulary). +
-Such a field may show a button like this one image:cm-dropdown-icon1.jpg[] to the right of the field. Clicking on this button opens the list of defined values: select a single one of them, the selcted text will be shown in the field. Be ware: you cannot type in a text.
+Such a field may show a button like this one image:cmp-dropdown-icon1.jpg[] to the right of the field. Clicking on this button opens the list of defined values: select a single one of them, the selcted text will be shown in the field. Be ware: you cannot type in a text.
 
 === Selecting a value with a list of radion buttons
 
 A field supports only a specific value out of a defined list of values (a controlled vocabulary). +
-Such a field may show below the label a list of radio buttons like image:cm-radiobuttons-example1.jpg[]  +
+Such a field may show below the label a list of radio buttons like image:cmp-radiobuttons-example1.jpg[]  +
 Each one with the text of a defined value: select a single one of them - this value will be set as field value.
 
 === GPS Altitude field
 
 This field is used with the structured fields Location Created and Location Shown. By the specification of the underlying XMP format the value is an integer number but it must be expressed as a fraction by 1.
 
-Example: you want to save an altitude of 140 metres. You have to type in __140/1__!
+Example: you want to save an altitude of 190 metres. You have to type in __190/1__!
+
+Below this field you have to set whether this altitude is above sea level or below sea level (rare, but it may be the case).
+
+image::cmp-GPS-altitude_1.jpg[]
 
 === GPS Latitude and GPS Longitude fields.
 
 Both field are used with the structured fields Location Created and Location Shown. These fields express a GPS geo coordinate by a special format defined by the underlying XMP standard.
 
-Example: you want to express the longitude geo coordinate of 17.20343 degrees east of the Greenwich meridian. +
+Example: you want to express the longitude geo coordinate of 16.33064 degrees east of the Greenwich meridian. +
 First you have to transform the decimal value to a degrees-minutes-seconds value. The web provides some tools for this purpose, search for "transform decimal coordinates to minutes". +
-By such a tool 17.20343 degrees are converted to 17 degrees, 12 minutes and 12.348 seconds. This value has to be written in such a GPS field as 17,12.12348 and you have to append N for north, S for south, E for east and W for west. Be aware of the different separators: after the degrees a comma, after the minutes a dot.  +
-Finally you have to type in __17,12.12348E__
+By such a tool 16.33064 degrees are converted to 16 degrees, 19 minutes and 50.3 seconds. This value has to be written in such a GPS field as 16,19.503 and you have to append N for north, S for south, E for east and W for west. Be aware of the different separators: after the degrees a comma, after the minutes a dot.  +
+Finally you have to type in __16,19.503E__
+
+image::cmp-GPS-longlat_2.jpg[]
 
 
 == Help on the best use of IPTC Photo Metadata fields
@@ -80,5 +98,5 @@ If you want to share a feedback on the IPTC Photo All view or if you want to rai
 
 (Latest entry at the top of the list)
 
-* November 2024: First release about version 1.0.2 (2024.1)
+* January 2025: First release about view version 1.0.2 (2024.1)
 
